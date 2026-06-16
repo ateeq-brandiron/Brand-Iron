@@ -833,6 +833,7 @@ export default function Home() {
           <div style={{
             background: "#FFFFFF", borderRadius: 16,
             padding: "56px 64px",
+            maxWidth: 860, margin: "0 auto",
           }}>
             <h3 style={{
               fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
