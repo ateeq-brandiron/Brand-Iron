@@ -664,24 +664,28 @@ export default function Home() {
         backgroundImage: "url('/images/bg-haybales.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 20%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(28,54,82,0.75)" }} />
+        {/* Light warm overlay — shows golden field */}
+        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,225,0.82)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
-          <h1 className="section-heading" style={{ color: "#FFFFFF", marginBottom: 20 }}>
+
+          {/* Heading — dark navy on light bg */}
+          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
             What You Get
           </h1>
           <p style={{
-            fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)",
+            fontSize: 18, lineHeight: 1.7, color: "#555",
             textAlign: "center", maxWidth: 600, margin: "0 auto 56px",
           }}>
             Real outcomes that transform how your business operates and grows.
           </p>
 
-          {/* Stats box */}
+          {/* Floating dark stats box */}
           <div style={{
-            background: "rgba(10,18,35,0.85)", borderRadius: 16, padding: "56px 56px 44px",
-            marginBottom: 40, backdropFilter: "blur(6px)",
-            border: "1px solid rgba(203,119,45,0.2)",
+            background: "#0F1B2D",
+            borderRadius: 16, padding: "56px 56px 44px",
+            marginBottom: 32,
+            boxShadow: "0 20px 60px rgba(15,27,45,0.35)",
           }}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 48, textAlign: "center", marginBottom: 36 }}>
               {[
@@ -696,7 +700,6 @@ export default function Home() {
                     color: "#cb772d", lineHeight: 1, marginBottom: 10,
                   }}>{num}</div>
                   <div style={{ fontSize: 17, fontWeight: 600, color: "#FFFFFF", marginBottom: 22 }}>{label}</div>
-                  {/* Progress bar track */}
                   <div style={{ height: 8, background: "rgba(255,255,255,0.12)", borderRadius: 4, overflow: "hidden" }}>
                     <div className="progress-bar" style={{
                       height: "100%", width: `${pct}%`,
@@ -709,14 +712,14 @@ export default function Home() {
               ))}
             </div>
             <p style={{
-              fontSize: 13, color: "rgba(255,255,255,0.6)", textAlign: "center", fontStyle: "italic",
+              fontSize: 13, color: "rgba(255,255,255,0.5)", textAlign: "center", fontStyle: "italic",
             }}>
               * Representative outcomes based on client implementations. Results vary by business model and execution.
             </p>
           </div>
 
-          {/* Feature cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 60 }}>
+          {/* White feature cards on warm field bg */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 40 }}>
             {[
               {
                 icon: (
@@ -731,14 +734,8 @@ export default function Home() {
               {
                 icon: (
                   <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                    <path d="M18 4 L18 10" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M10 18 L4 18" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M26 18 L32 18" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M12.5 12.5 L8.5 8.5" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M23.5 12.5 L27.5 8.5" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M14 22 L22 22" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M16 26 L20 26" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-                    <circle cx="18" cy="17" r="5" stroke="#cb772d" strokeWidth="2"/>
+                    <path d="M18 6 L12 18 L18 15 L12 30" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M18 6 L24 18 L18 15 L24 30" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
                 title: "AI Working Behind The Scenes To Drive Efficiency",
@@ -767,32 +764,25 @@ export default function Home() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="feature-card" style={{
-                background: "rgba(255,255,255,0.12)",
+                background: "rgba(255,255,255,0.92)",
                 borderLeft: "4px solid #cb772d",
-                borderRadius: 10, padding: "28px 28px",
+                borderRadius: 12, padding: "32px 32px",
                 display: "flex", alignItems: "flex-start", gap: 20,
-                boxShadow: "0 2px 16px rgba(0,0,0,0.2)",
-                backdropFilter: "blur(4px)",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
               }}>
                 <div style={{ flexShrink: 0, marginTop: 2 }}>{icon}</div>
                 <div>
                   <h3 style={{
                     fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 14, fontWeight: 400,
                     textTransform: "uppercase", letterSpacing: "0.1em",
-                    color: "#FFFFFF", marginBottom: 10, lineHeight: 1.4,
+                    color: "#0F1B2D", marginBottom: 10, lineHeight: 1.4,
                   }}>{title}</h3>
-                  <p style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.8)" }}>{body}</p>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "#555" }}>{body}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Section divider */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12 }}>
-            <div style={{ width: 48, height: 2, background: "#cb772d", borderRadius: 2 }} />
-            <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#cb772d" }} />
-            <div style={{ width: 48, height: 2, background: "#cb772d", borderRadius: 2 }} />
-          </div>
         </div>
       </section>
 
