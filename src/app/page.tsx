@@ -374,8 +374,8 @@ export default function Home() {
         backgroundImage: "url('/images/bg-haybales.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 40%",
       }}>
-        {/* Very light warm overlay so saddle/rope texture shows subtly */}
-        <div style={{ position: "absolute", inset: 0, background: "rgba(245,235,218,0.88)" }} />
+        {/* Light warm overlay — rope texture clearly visible */}
+        <div style={{ position: "absolute", inset: 0, background: "rgba(245,235,218,0.60)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
           {/* Headline */}
@@ -469,20 +469,20 @@ export default function Home() {
               },
             ].map(({ icon, title, body, href }) => (
               <div key={title} className="service-card" style={{
-                background: "rgba(255,255,255,0.88)",
-                borderRadius: 12, padding: "44px 36px 36px",
-                boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
+                background: "#FFFFFF",
+                borderRadius: 16, padding: "48px 40px 40px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
                 display: "flex", flexDirection: "column",
               }}>
-                <div style={{ marginBottom: 26 }}>{icon}</div>
+                <div style={{ marginBottom: 32 }}>{icon}</div>
                 <h3 style={{
-                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 18, fontWeight: 400,
-                  textTransform: "uppercase", letterSpacing: "0.1em",
-                  color: "#cb772d", marginBottom: 14,
+                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 17, fontWeight: 400,
+                  textTransform: "uppercase", letterSpacing: "0.12em",
+                  color: "#0F1B2D", marginBottom: 14, lineHeight: 1.3,
                 }}>{title}</h3>
-                <p style={{ fontSize: 16, lineHeight: 1.7, color: "#555", flex: 1, marginBottom: 32 }}>{body}</p>
+                <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 15, lineHeight: 1.7, color: "#555", flex: 1, marginBottom: 32 }}>{body}</p>
                 <Link href={href} style={{ display: "block" }}>
-                  <div className="service-underline" style={{ width: 48, height: 3, background: "#0F1B2D", borderRadius: 2 }} />
+                  <div className="service-underline" style={{ width: 48, height: 3, background: "#1c3652", borderRadius: 2 }} />
                 </Link>
               </div>
             ))}
