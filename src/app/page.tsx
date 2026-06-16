@@ -19,7 +19,7 @@ export default function Home() {
         {/* Light overlay — only 20% dark so image shows clearly */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "rgba(10,20,35,0.20)",
+          background: "rgba(10,20,35,0.45)",
         }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
