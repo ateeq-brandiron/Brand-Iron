@@ -806,9 +806,9 @@ export default function Home() {
           <h1 style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 900,
-            fontSize: "clamp(36px, 5.5vw, 72px)",
+            fontSize: "clamp(28px, 4vw, 58px)",
             textTransform: "uppercase",
-            letterSpacing: "0.03em",
+            letterSpacing: "-0.01em",
             lineHeight: 1.1,
             color: "#FFFFFF",
             textAlign: "center",
