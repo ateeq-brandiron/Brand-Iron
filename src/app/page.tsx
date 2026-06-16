@@ -660,15 +660,13 @@ export default function Home() {
 
       {/* ── WHAT YOU GET (section 7) ───────────────────────── */}
       <section id="outcomes" style={{
-        position: "relative", padding: "100px 24px 0",
+        position: "relative", padding: "100px 24px 80px",
         backgroundImage: "url('/images/bg-haybales.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 20%",
       }}>
-        {/* Dark navy overlay per brand spec for haybales sections */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(28,54,82,0.75)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
-          {/* Headline */}
           <h1 className="section-heading" style={{ color: "#FFFFFF", marginBottom: 20 }}>
             What You Get
           </h1>
@@ -679,54 +677,45 @@ export default function Home() {
             Real outcomes that transform how your business operates and grows.
           </p>
 
-          {/* Dark navy stats box */}
+          {/* Stats box */}
           <div style={{
-            background: "#0F1B2D", borderRadius: 12, padding: "48px 48px 36px",
-            marginBottom: 32,
+            background: "rgba(10,18,35,0.85)", borderRadius: 16, padding: "56px 56px 44px",
+            marginBottom: 40, backdropFilter: "blur(6px)",
+            border: "1px solid rgba(203,119,45,0.2)",
           }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40, textAlign: "center", marginBottom: 32 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 48, textAlign: "center", marginBottom: 36 }}>
               {[
-                { num: "3X", label: "Pipeline Growth", pct: 60 },
-                { num: "60%", label: "Less Wasted Effort", pct: 60 },
-                { num: "100%", label: "Visibility", pct: 100 },
+                { num: "3X",   label: "Pipeline Growth",    pct: 60 },
+                { num: "60%",  label: "Less Wasted Effort", pct: 60 },
+                { num: "100%", label: "Visibility",         pct: 100 },
               ].map(({ num, label, pct }) => (
-                <div key={num}>
+                <div key={num} className="stat-block">
                   <div style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 64, fontWeight: 400,
-                    color: "#cb772d", lineHeight: 1, marginBottom: 8,
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+                    fontSize: 72, fontWeight: 400,
+                    color: "#cb772d", lineHeight: 1, marginBottom: 10,
                   }}>{num}</div>
-                  <div style={{
-                    fontSize: 16, fontWeight: 600, color: "#FFFFFF", marginBottom: 20,
-                  }}>{label}</div>
-                  {/* Progress bar */}
-                  <div style={{ height: 6, background: "rgba(255,255,255,0.15)", borderRadius: 3, overflow: "hidden" }}>
-                    <div style={{
+                  <div style={{ fontSize: 17, fontWeight: 600, color: "#FFFFFF", marginBottom: 22 }}>{label}</div>
+                  {/* Progress bar track */}
+                  <div style={{ height: 8, background: "rgba(255,255,255,0.12)", borderRadius: 4, overflow: "hidden" }}>
+                    <div className="progress-bar" style={{
                       height: "100%", width: `${pct}%`,
-                      background: "linear-gradient(to right, #8B5E24, #cb772d)",
-                      borderRadius: 3,
+                      background: "linear-gradient(to right, #1c3652, #506794, #a5621e, #cb772d, #e8a44a)",
+                      borderRadius: 4,
+                      backgroundSize: "200% 100%",
                     }} />
                   </div>
                 </div>
               ))}
             </div>
             <p style={{
-              fontSize: 13, color: "rgba(255,255,255,0.75)", textAlign: "center",
-              fontStyle: "italic",
+              fontSize: 13, color: "rgba(255,255,255,0.6)", textAlign: "center", fontStyle: "italic",
             }}>
               * Representative outcomes based on client implementations. Results vary by business model and execution.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Feature cards on wheat/straw field */}
-      <section style={{
-        position: "relative", padding: "40px 24px 80px",
-        backgroundImage: "url('/images/bg-haybales.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center",
-      }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,228,0.82)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
+          {/* Feature cards */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 60 }}>
             {[
               {
@@ -736,7 +725,7 @@ export default function Home() {
                     <path d="M11 18l5 5 9-9" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                title: "A Pipeline That Doesn’t Rely On Guesswork",
+                title: "A Pipeline That Doesn't Rely On Guesswork",
                 body: "Predictable lead flow backed by data, automation, and proven systems.",
               },
               {
@@ -763,7 +752,7 @@ export default function Home() {
                     <circle cx="18" cy="18" r="2" fill="#cb772d"/>
                   </svg>
                 ),
-                title: "Clear Visibility Into What’s Driving Revenue",
+                title: "Clear Visibility Into What's Driving Revenue",
                 body: "Dashboards and metrics that show exactly what's working and what needs adjustment.",
               },
               {
@@ -778,26 +767,27 @@ export default function Home() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className="feature-card" style={{
-                background: "rgba(255,255,255,0.90)",
+                background: "rgba(255,255,255,0.12)",
                 borderLeft: "4px solid #cb772d",
                 borderRadius: 10, padding: "28px 28px",
                 display: "flex", alignItems: "flex-start", gap: 20,
-                boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+                boxShadow: "0 2px 16px rgba(0,0,0,0.2)",
+                backdropFilter: "blur(4px)",
               }}>
                 <div style={{ flexShrink: 0, marginTop: 2 }}>{icon}</div>
                 <div>
                   <h3 style={{
                     fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 14, fontWeight: 400,
                     textTransform: "uppercase", letterSpacing: "0.1em",
-                    color: "#0F1B2D", marginBottom: 10, lineHeight: 1.4,
+                    color: "#FFFFFF", marginBottom: 10, lineHeight: 1.4,
                   }}>{title}</h3>
-                  <p style={{ fontSize: 14, lineHeight: 1.7, color: "#555" }}>{body}</p>
+                  <p style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.8)" }}>{body}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Section divider — two lines + dot */}
+          {/* Section divider */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12 }}>
             <div style={{ width: 48, height: 2, background: "#cb772d", borderRadius: 2 }} />
             <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#cb772d" }} />
@@ -805,6 +795,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* ── FINAL CTA + FORM (section 8) ───────────────────── */}
       <section style={{
