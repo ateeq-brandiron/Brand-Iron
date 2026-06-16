@@ -65,14 +65,14 @@ export default function Home() {
 
       {/* ── PROBLEM ────────────────────────────────────────── */}
       <section id="services" style={{
-        position: "relative", padding: "80px 24px 100px",
+        position: "relative", padding: "120px 40px 140px",
         backgroundImage: "url('/images/bg-wood.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         {/* Light overlay so wood texture shows through */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.78)" }} />
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", textAlign: "center" }}>
           {/* Full-width headline — centered, tight letter-spacing, one line */}
           <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 32 }}>
             The Problem Isn&apos;t Your Marketing. It&apos;s Your System.
@@ -89,11 +89,11 @@ export default function Home() {
           </p>
 
           {/* 4 cards — 15% bigger padding & icons */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
             {[
               {
                 icon: (
-                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
                     <path d="M16 4L2 28h28L16 4z" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M16 14v6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
                     <circle cx="16" cy="23" r="1.2" fill="#cb772d"/>
@@ -104,7 +104,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
                     <circle cx="16" cy="16" r="13" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M13 12.5c0-1.7 1.3-3 3-3s3 1.3 3 3c0 2-2 2.5-3 4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
                     <circle cx="16" cy="22.5" r="1.2" fill="#cb772d"/>
@@ -115,7 +115,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
                     <path d="M4 10l7 8 6-4 11 12" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M24 26h4v-4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -125,7 +125,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
                     <circle cx="16" cy="16" r="13" stroke="#cb772d" strokeWidth="2"/>
                     <circle cx="10" cy="16" r="1.5" fill="#cb772d"/>
                     <circle cx="16" cy="16" r="1.5" fill="#cb772d"/>
@@ -166,8 +166,8 @@ export default function Home() {
       </section>
 
       {/* ── AI GROWTH ENGINE (section 3) ───────────────────── */}
-      <section style={{ background: "#FFFFFF", padding: "100px 24px 110px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+      <section style={{ background: "#FFFFFF", padding: "120px 40px 130px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
           {/* Headline — filled navy, not stroke */}
           <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 28 }}>
             The AI Growth Engine
@@ -311,12 +311,12 @@ export default function Home() {
 
       {/* ── 5-STEP PROCESS (section 4) ─────────────────────── */}
       <section id="process" style={{
-        position: "relative", padding: "140px 24px 160px",
+        position: "relative", padding: "160px 40px 180px",
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.20)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             AI Alone Isn&apos;t The Advantage.
@@ -356,11 +356,11 @@ export default function Home() {
                     <span style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 38, color: "#cb772d", lineHeight: 1 }}>{n}</span>
                   </div>
                   <h3 style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 15,
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 18,
                     textTransform: "uppercase", letterSpacing: "0.12em",
                     color: "#cb772d", marginBottom: 14, textAlign: "center",
                   }}>{title}</h3>
-                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", textAlign: "center", maxWidth: 180 }}>{body}</p>
+                  <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", textAlign: "center", maxWidth: 180 }}>{body}</p>
                 </div>
               ))}
             </div>
@@ -370,14 +370,14 @@ export default function Home() {
 
       {/* ── WHAT WE BUILD (section 5) ──────────────────────── */}
       <section style={{
-        position: "relative", padding: "100px 24px 0",
+        position: "relative", padding: "120px 40px 20px",
         backgroundImage: "url('/images/bg-haybales.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 40%",
       }}>
         {/* Very light warm overlay so saddle/rope texture shows subtly */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,235,218,0.88)" }} />
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
           {/* Headline */}
           <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
             What We Build
@@ -390,11 +390,11 @@ export default function Home() {
           </p>
 
           {/* 6 cards — 3 columns */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
             {[
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <circle cx="18" cy="15" r="7" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M18 22v4M14 30h8" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
                     <path d="M13 12 Q18 7 23 12" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" fill="none"/>
@@ -408,7 +408,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <circle cx="18" cy="18" r="7" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M18 11V7M18 29v-4M11 18H7M29 18h-4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
                     <path d="M13.4 13.4L10.6 10.6M25.4 25.4l-2.8-2.8M22.6 13.4l2.8-2.8M10.6 25.4l2.8-2.8" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round"/>
@@ -421,7 +421,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <ellipse cx="18" cy="10" rx="10" ry="4" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M8 10v7c0 2.2 4.5 4 10 4s10-1.8 10-4v-7" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M8 17v7c0 2.2 4.5 4 10 4s10-1.8 10-4v-7" stroke="#cb772d" strokeWidth="2"/>
@@ -433,7 +433,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <rect x="6" y="8" width="16" height="20" rx="2" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M10 14h8M10 18h8M10 22h5" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round"/>
                     <path d="M22 14l8-6M26 8h4v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -445,7 +445,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <path d="M4 28l8-10 7 5 10-13" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M28 10l4-4M30 6h4v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -456,7 +456,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <rect x="5" y="22" width="6" height="10" rx="1" stroke="#cb772d" strokeWidth="2"/>
                     <rect x="15" y="14" width="6" height="18" rx="1" stroke="#cb772d" strokeWidth="2"/>
                     <rect x="25" y="6" width="6" height="26" rx="1" stroke="#cb772d" strokeWidth="2"/>
@@ -513,12 +513,12 @@ export default function Home() {
 
       {/* ── MOST AGENCIES + COMPARISON + TAGLINE (section 6) ── */}
       <section style={{
-        position: "relative", padding: "120px 24px 80px",
+        position: "relative", padding: "140px 40px 100px",
         backgroundImage: "url('/images/bg-barn.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 30%",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(12,22,42,0.80)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           {/* Stroke headline */}
           <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
@@ -529,7 +529,7 @@ export default function Home() {
           </p>
 
           {/* Two comparison cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 24 }}>
 
             {/* Left — Typical Agency */}
             <div className="compare-card" style={{
@@ -614,12 +614,12 @@ export default function Home() {
 
       {/* ── COMPARISON TABLE ───────────────────────────────── */}
       <section style={{
-        position: "relative", padding: "100px 24px",
+        position: "relative", padding: "120px 40px",
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <h1 className="section-heading" style={{ color: "#FFFFFF" }}>Brand Iron vs. Typical Agency</h1>
           </div>
@@ -658,14 +658,14 @@ export default function Home() {
 
       {/* ── WHAT YOU GET (section 7) ───────────────────────── */}
       <section id="outcomes" style={{
-        position: "relative", padding: "100px 24px 80px",
+        position: "relative", padding: "120px 40px 100px",
         backgroundImage: "url('/images/bg-haybales.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 20%",
       }}>
         {/* Light warm overlay — shows golden field */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,225,0.82)" }} />
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           {/* Heading — dark navy on light bg */}
           <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
@@ -694,10 +694,10 @@ export default function Home() {
                 <div key={num} className="stat-block">
                   <div style={{
                     fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
-                    fontSize: 72, fontWeight: 400,
+                    fontSize: 86, fontWeight: 400,
                     color: "#cb772d", lineHeight: 1, marginBottom: 10,
                   }}>{num}</div>
-                  <div style={{ fontSize: 17, fontWeight: 600, color: "#FFFFFF", marginBottom: 22 }}>{label}</div>
+                  <div style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", marginBottom: 22 }}>{label}</div>
                   <div style={{ height: 8, background: "rgba(255,255,255,0.12)", borderRadius: 4, overflow: "hidden" }}>
                     <div className="progress-bar" style={{
                       height: "100%", width: `${pct}%`,
@@ -717,11 +717,11 @@ export default function Home() {
           </div>
 
           {/* White feature cards on warm field bg */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40 }}>
             {[
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <circle cx="18" cy="18" r="14" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M11 18l5 5 9-9" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -731,7 +731,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <path d="M18 6 L12 18 L18 15 L12 30" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M18 6 L24 18 L18 15 L24 30" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -741,7 +741,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <circle cx="18" cy="18" r="14" stroke="#cb772d" strokeWidth="2"/>
                     <circle cx="18" cy="18" r="6" stroke="#cb772d" strokeWidth="2"/>
                     <circle cx="18" cy="18" r="2" fill="#cb772d"/>
@@ -752,7 +752,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
                     <path d="M6 26 L14 16 L22 21 L30 10" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M26 10 L30 10 L30 14" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -787,12 +787,12 @@ export default function Home() {
 
       {/* ── FINAL CTA + FORM (section 8) ───────────────────── */}
       <section style={{
-        position: "relative", padding: "80px 24px 100px",
+        position: "relative", padding: "120px 40px 140px",
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1000, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Orange dot divider at top */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 48 }}>
