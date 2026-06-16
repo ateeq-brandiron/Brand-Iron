@@ -124,6 +124,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-secondary:hover { background: #FFFFFF; color: #1c3652; }
 
+/* ── Hero Buttons ───────────────────────────────────────── */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: #cb772d;
+  color: #FFFFFF;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.hero-btn-primary:hover {
+  background: #a5621e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(203,119,45,0.45);
+}
+
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #FFFFFF;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.85);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+.hero-btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
 .section-label {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   font-size: 12px;

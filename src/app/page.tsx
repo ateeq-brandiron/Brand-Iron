@@ -10,24 +10,25 @@ export default function Home() {
         position: "relative", minHeight: "100vh", display: "flex", alignItems: "center",
         overflow: "hidden",
       }}>
-        {/* Western saddle hero */}
+        {/* Hero background */}
         <div style={{
           position: "absolute", inset: 0,
           backgroundImage: "url('/images/hero-saddle.jpg')",
           backgroundSize: "cover", backgroundPosition: "center 40%",
         }} />
+        {/* Light overlay — only 20% dark so image shows clearly */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(135deg, rgba(28,54,82,0.85) 0%, rgba(20,32,55,0.75) 100%)",
+          background: "rgba(10,20,35,0.20)",
         }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
           <h1 style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 400,
-            fontSize: "clamp(52px, 6.5vw, 84px)",
+            fontSize: "clamp(56px, 7vw, 92px)",
             textTransform: "uppercase",
-            letterSpacing: "0.04em",
+            letterSpacing: "-0.01em",
             lineHeight: 1.0,
             color: "transparent",
             WebkitTextStroke: "2px #FFFFFF",
@@ -38,13 +39,13 @@ export default function Home() {
           </h1>
 
           {/* Body copy */}
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.92)", maxWidth: 580, marginBottom: 16 }}>
+          <p style={{ fontSize: 20, lineHeight: 1.7, color: "rgba(255,255,255,0.95)", maxWidth: 600, marginBottom: 16 }}>
             We build systems that align strategy with execution, connect marketing and sales, and combine AI with expert human craft — designed to scale performance and drive results.
           </p>
 
-          {/* Orange stats line */}
+          {/* Orange stats line — not bold */}
           <p style={{
-            fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 17, fontWeight: 700,
+            fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 17, fontWeight: 400,
             letterSpacing: "0.04em", color: "#cb772d", marginBottom: 40,
           }}>
             3X pipeline. 60% less wasted effort. 100% visibility.
@@ -52,23 +53,10 @@ export default function Home() {
 
           {/* Buttons */}
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <Link href="/contact" style={{
-              display: "inline-flex", alignItems: "center",
-              background: "#cb772d", color: "#FFFFFF",
-              fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontWeight: 600, fontSize: 16,
-              letterSpacing: "0.06em", textTransform: "uppercase",
-              padding: "16px 36px", borderRadius: 6, textDecoration: "none",
-            }}>
+            <Link href="/contact" className="hero-btn-primary">
               3X Your Pipeline
             </Link>
-            <Link href="/contact" style={{
-              display: "inline-flex", alignItems: "center",
-              background: "transparent", color: "#FFFFFF",
-              fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontWeight: 600, fontSize: 16,
-              letterSpacing: "0.06em", textTransform: "uppercase",
-              padding: "16px 36px", borderRadius: 6, textDecoration: "none",
-              border: "2px solid rgba(255,255,255,0.85)",
-            }}>
+            <Link href="/contact" className="hero-btn-outline">
               Book Your Strategy Session
             </Link>
           </div>
