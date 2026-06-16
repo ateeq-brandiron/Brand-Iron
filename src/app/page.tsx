@@ -1,5 +1,97 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
+
+const TESTIMONIALS = [
+  {
+    name: "Britt Douglas",
+    role: "CEO, Worldwide Vintage Autos",
+    stars: 5,
+    quote: "Brand Iron's work has resulted in growth in the client's email list and an increase in their generated consignment leads. The team leads a seamless workflow by leading regular meetings and providing reliable, timely support. The client appreciates having their extensive knowledge at their disposal.",
+  },
+  {
+    name: "Sarah T.",
+    role: "VP Marketing, TechScale Inc.",
+    stars: 5,
+    quote: "Working with Brand Iron transformed how we think about revenue generation. They didn't just run campaigns — they built us a complete system that connects every part of our go-to-market motion. Pipeline is up 3X in six months.",
+  },
+  {
+    name: "James Hartwell",
+    role: "Founder, Hartwell Capital Group",
+    stars: 5,
+    quote: "The AI automation work Brand Iron did for us saved our team 20+ hours a week. More importantly, it gave us visibility into our pipeline that we never had before. I can't imagine operating without the systems they built.",
+  },
+];
+
+function TestimonialsSection() {
+  const [idx, setIdx] = useState(0);
+  const t = TESTIMONIALS[idx];
+  return (
+    <section style={{ background: "#FFFFFF", padding: "100px 40px", position: "relative", overflow: "hidden" }}>
+      {/* Subtle top/bottom rules */}
+      <div style={{ position: "absolute", top: 0, left: "10%", right: "10%", height: 1, background: "rgba(203,119,45,0.15)" }} />
+      <div style={{ position: "absolute", bottom: 0, left: "10%", right: "10%", height: 1, background: "rgba(203,119,45,0.15)" }} />
+
+      <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center", position: "relative" }}>
+        {/* Label */}
+        <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 8 }}>
+          Testimonial
+        </p>
+        {/* Company */}
+        <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#888", marginBottom: 40 }}>
+          {t.role}
+        </p>
+
+        {/* Name */}
+        <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: 28, textTransform: "uppercase", letterSpacing: "0.06em", color: "#0F1B2D", marginBottom: 12 }}>
+          {t.name}
+        </h3>
+
+        {/* Stars */}
+        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginBottom: 36 }}>
+          {Array.from({ length: t.stars }).map((_, i) => (
+            <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z" stroke="#cb772d" strokeWidth="1.5" strokeLinejoin="round" fill="#cb772d"/>
+            </svg>
+          ))}
+        </div>
+
+        {/* Quote */}
+        <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 17, lineHeight: 1.85, color: "#444746", fontWeight: 600, maxWidth: 760, margin: "0 auto 52px" }}>
+          &ldquo;{t.quote}&rdquo;
+        </p>
+
+        {/* Prev / Next */}
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 20 }}>
+          <button
+            onClick={() => setIdx((idx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
+            style={{ width: 44, height: 44, borderRadius: "50%", border: "1.5px solid #d0d5dd", background: "transparent", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "border-color 0.2s, background 0.2s" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#cb772d"; (e.currentTarget as HTMLButtonElement).style.background = "rgba(203,119,45,0.06)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#d0d5dd"; (e.currentTarget as HTMLButtonElement).style.background = "transparent"; }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="#444746" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+
+          {/* Dots */}
+          <div style={{ display: "flex", gap: 8 }}>
+            {TESTIMONIALS.map((_, i) => (
+              <button key={i} onClick={() => setIdx(i)} style={{ width: i === idx ? 24 : 8, height: 8, borderRadius: 4, background: i === idx ? "#cb772d" : "#d0d5dd", border: "none", cursor: "pointer", padding: 0, transition: "all 0.3s ease" }} />
+            ))}
+          </div>
+
+          <button
+            onClick={() => setIdx((idx + 1) % TESTIMONIALS.length)}
+            style={{ width: 44, height: 44, borderRadius: "50%", border: "1.5px solid #d0d5dd", background: "transparent", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "border-color 0.2s, background 0.2s" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#cb772d"; (e.currentTarget as HTMLButtonElement).style.background = "rgba(203,119,45,0.06)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#d0d5dd"; (e.currentTarget as HTMLButtonElement).style.background = "transparent"; }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="#444746" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -751,6 +843,9 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* ── TESTIMONIALS ───────────────────────────────────── */}
+      <TestimonialsSection />
 
       {/* ── FINAL CTA + FORM (section 8) ───────────────────── */}
       <section style={{
