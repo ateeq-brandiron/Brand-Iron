@@ -28,7 +28,7 @@ export default function Home() {
             fontWeight: 400,
             fontSize: "clamp(56px, 7vw, 92px)",
             textTransform: "uppercase",
-            letterSpacing: "-0.01em",
+            letterSpacing: "-0.04em",
             lineHeight: 1.0,
             color: "transparent",
             WebkitTextStroke: "2px #FFFFFF",
