@@ -157,10 +157,27 @@ export default function DataRevenueVisibilityPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "#cb772d", padding: "80px 24px", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", marginBottom: 16 }}>Get Complete Revenue Visibility</h2>
-        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.85)", marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>Book a session and we&apos;ll audit your current data setup and show you exactly what&apos;s possible.</p>
-        <Link href="/contact" className="cta-link-btn">Book Strategy Session</Link>
+      <section style={{ position: "relative", background: "#0D1A2E", padding: "100px 40px", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent 0%, #cb772d 30%, #cb772d 70%, transparent 100%)" }} />
+        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 700, height: 500, background: "radial-gradient(ellipse, rgba(203,119,45,0.10) 0%, transparent 68%)", pointerEvents: "none" }} />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div>
+            <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>Ready To Start?</p>
+            <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: "clamp(32px, 4vw, 54px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", lineHeight: 1.1, marginBottom: 28 }}>
+              Get Complete Revenue Visibility
+            </h2>
+            <div style={{ width: 64, height: 3, background: "#cb772d", borderRadius: 2 }} />
+          </div>
+          <div>
+            <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", marginBottom: 36 }}>
+              Book a session and we&apos;ll audit your current data setup and show you exactly what&apos;s possible.
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+              <Link href="/contact" className="btn-primary">Book Strategy Session</Link>
+              <Link href="/services" style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 2, transition: "color 0.2s ease, border-color 0.2s ease" }}>View All Services →</Link>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );

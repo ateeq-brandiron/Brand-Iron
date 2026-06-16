@@ -367,30 +367,27 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: COPPER, padding: "96px 24px", textAlign: "center" }}>
-        <h2 style={{ fontFamily: BURFORD, fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.02em", color: WHITE, marginBottom: 16 }}>
-          Ready To Work With BrandIron?
-        </h2>
-        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.88)", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px", fontFamily: MONTSERRAT }}>
-          Book a strategy session and let&apos;s design the revenue system your business deserves.
-        </p>
-        <Link href="/contact" className="cta-link-btn" style={{
-          display: "inline-flex",
-          alignItems: "center",
-          background: WHITE,
-          color: COPPER,
-          fontFamily: MONTSERRAT,
-          fontWeight: 700,
-          fontSize: 15,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          padding: "16px 36px",
-          borderRadius: 4,
-          textDecoration: "none",
-          transition: "background 0.2s, color 0.2s, transform 0.2s",
-        }}>
-          Book Strategy Session
-        </Link>
+      <section style={{ position: "relative", background: "#0D1A2E", padding: "100px 40px", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent 0%, #cb772d 30%, #cb772d 70%, transparent 100%)" }} />
+        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 700, height: 500, background: "radial-gradient(ellipse, rgba(203,119,45,0.10) 0%, transparent 68%)", pointerEvents: "none" }} />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div>
+            <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>Ready To Start?</p>
+            <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: "clamp(32px, 4vw, 54px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", lineHeight: 1.1, marginBottom: 28 }}>
+              Ready To Work With BrandIron?
+            </h2>
+            <div style={{ width: 64, height: 3, background: "#cb772d", borderRadius: 2 }} />
+          </div>
+          <div>
+            <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", marginBottom: 36 }}>
+              Book a strategy session and let&apos;s design the revenue system your business deserves.
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+              <Link href="/contact" className="btn-primary">Book Strategy Session</Link>
+              <Link href="/services" style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 2, transition: "color 0.2s ease, border-color 0.2s ease" }}>Our Services →</Link>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
