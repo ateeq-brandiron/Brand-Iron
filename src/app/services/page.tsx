@@ -61,7 +61,7 @@ export default function ServicesPage() {
           <h1 style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: "clamp(44px, 6vw, 72px)",
             textTransform: "uppercase", letterSpacing: "0.03em",
-            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
+            color: "#FFFFFF",
             maxWidth: 800, lineHeight: 1.0, marginBottom: 28,
           }}>
             Our Services
