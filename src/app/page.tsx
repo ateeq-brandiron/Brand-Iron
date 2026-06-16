@@ -19,19 +19,18 @@ export default function Home() {
         {/* Light overlay — only 20% dark so image shows clearly */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "rgba(10,20,35,0.50)",
+          background: "rgba(28,54,100,0.52)",
         }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
           <h1 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+            fontFamily: "'Burford Rustic Type 1', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 400,
             fontSize: "clamp(56px, 7vw, 92px)",
             textTransform: "uppercase",
-            letterSpacing: "-0.04em",
+            letterSpacing: "-0.01em",
             lineHeight: 1.0,
-            color: "transparent",
-            WebkitTextStroke: "2px #FFFFFF",
+            color: "#FFFFFF",
             maxWidth: 860,
             marginBottom: 32,
           }}>
