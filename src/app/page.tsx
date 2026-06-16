@@ -593,18 +593,28 @@ export default function Home() {
             textAlign: "center",
             background: "rgba(15,27,45,0.70)",
           }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginBottom: 16 }}>
-              {["Brand", "Demand", "AI", "Revenue"].map((word, i) => (
-                <div key={word} style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                  {i > 0 && <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#cb772d" }} />}
-                  <span style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 15,
-                    letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d",
-                  }}>{word}</span>
-                </div>
-              ))}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, marginBottom: 20 }}>
+              <span className="tagline-word" style={{
+                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 22,
+                letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d",
+              }}>Brand</span>
+              <span className="tagline-dot" />
+              <span className="tagline-word" style={{
+                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 22,
+                letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d",
+              }}>Demand</span>
+              <span className="tagline-dot" />
+              <span className="tagline-word" style={{
+                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 22,
+                letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d",
+              }}>AI</span>
+              <span className="tagline-dot" />
+              <span className="tagline-word" style={{
+                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 22,
+                letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d",
+              }}>Revenue</span>
             </div>
-            <p style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif" }}>
+            <p style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif" }}>
               That&apos;s how growth is forged.
             </p>
           </div>
