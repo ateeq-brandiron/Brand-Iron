@@ -74,13 +74,7 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
           {/* Full-width headline — centered, tight letter-spacing, one line */}
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(28px, 4.2vw, 60px)",
-            textTransform: "uppercase", letterSpacing: "-0.03em",
-            color: "#0F1B2D", marginBottom: 32, lineHeight: 1,
-            textAlign: "center",
-          }}>
+          <h2 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 32 }}>
             The Problem Isn&apos;t Your Marketing. It&apos;s Your System.
           </h2>
 
@@ -175,12 +169,7 @@ export default function Home() {
       <section style={{ background: "#FFFFFF", padding: "100px 24px 110px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           {/* Headline — filled navy, not stroke */}
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(32px, 5vw, 64px)",
-            textTransform: "uppercase", letterSpacing: "0.06em",
-            color: "#0F1B2D", marginBottom: 28, lineHeight: 1.05,
-          }}>
+          <h2 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 28 }}>
             The AI Growth Engine
           </h2>
 
@@ -313,13 +302,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.82)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
 
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(36px, 6vw, 80px)",
-            textTransform: "uppercase", letterSpacing: "0.04em",
-            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
-            textAlign: "center", marginBottom: 28, lineHeight: 1,
-          }}>
+          <h2 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             AI Alone Isn&apos;t The Advantage.
           </h2>
 
@@ -379,12 +362,7 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           {/* Headline */}
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(36px, 5.5vw, 72px)",
-            textTransform: "uppercase", letterSpacing: "0.06em",
-            color: "#0F1B2D", textAlign: "center", marginBottom: 20,
-          }}>
+          <h2 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
             What We Build
           </h2>
           <p style={{
@@ -527,13 +505,7 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
 
           {/* Stroke headline */}
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(40px, 7vw, 96px)",
-            textTransform: "uppercase", letterSpacing: "0.04em",
-            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
-            lineHeight: 1.05, marginBottom: 28, textAlign: "center",
-          }}>
+          <h2 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             Most Agencies Focus On One Piece Of The Puzzle.
           </h2>
           <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", textAlign: "center", marginBottom: 64 }}>
@@ -635,10 +607,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <h2 style={{
-              fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: "clamp(30px, 4vw, 52px)",
-              textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF",
-            }}>Brand Iron vs. Typical Agency</h2>
+            <h2 className="section-heading" style={{ color: "#FFFFFF" }}>Brand Iron vs. Typical Agency</h2>
           </div>
           <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, overflow: "hidden" }}>
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", background: "rgba(0,0,0,0.3)" }}>
@@ -684,12 +653,7 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
           {/* Headline */}
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(36px, 5.5vw, 72px)",
-            textTransform: "uppercase", letterSpacing: "0.06em",
-            color: "#FFFFFF", textAlign: "center", marginBottom: 20,
-          }}>
+          <h2 className="section-heading" style={{ color: "#FFFFFF", marginBottom: 20 }}>
             What You Get
           </h2>
           <p style={{
@@ -843,13 +807,7 @@ export default function Home() {
           </div>
 
           {/* Stroke headline */}
-          <h2 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(32px, 5.5vw, 76px)",
-            textTransform: "uppercase", letterSpacing: "0.04em",
-            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
-            textAlign: "center", lineHeight: 1.05, marginBottom: 56,
-          }}>
+          <h2 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 56 }}>
             Ready To Stop Chasing Tools And Start Building A Complete Strategy Delivers 3X Revenue?
           </h2>
 

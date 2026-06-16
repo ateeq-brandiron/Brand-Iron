@@ -124,6 +124,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-secondary:hover { background: #FFFFFF; color: #1c3652; }
 
+/* ── Section Heading (H2) ───────────────────────────────── */
+.section-heading {
+  font-family: 'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(36px, 5vw, 70px);
+  letter-spacing: 1.44px;
+  line-height: 1.05;
+  text-align: center;
+}
+
 /* ── Hero Buttons ───────────────────────────────────────── */
 .hero-btn-primary {
   display: inline-flex;
