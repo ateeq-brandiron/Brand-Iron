@@ -622,50 +622,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── COMPARISON TABLE ───────────────────────────────── */}
-      <section style={{
-        position: "relative", padding: "120px 40px",
-        backgroundImage: "url('/images/bg-fence.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center",
-      }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <h1 className="section-heading" style={{ color: "#FFFFFF" }}>Brand Iron vs. Typical Agency</h1>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", background: "rgba(0,0,0,0.3)" }}>
-              <div style={{ padding: "16px 24px", fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)" }}>Capability</div>
-              <div style={{ padding: "16px 24px", fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", textAlign: "center" }}>Typical Agency</div>
-              <div style={{ padding: "16px 24px", fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#cb772d", textAlign: "center" }}>Brand Iron</div>
-            </div>
-            {[
-              "Integrated Revenue Strategy",
-              "AI-Powered Automation",
-              "CRM & RevOps Architecture",
-              "Full-Funnel Analytics",
-              "Ongoing Optimization Loop",
-              "Transparent ROI Reporting",
-              "Dedicated Revenue Team",
-            ].map((row, i) => (
-              <div key={row} className="table-row" style={{
-                display: "grid", gridTemplateColumns: "2fr 1fr 1fr",
-                borderTop: "1px solid rgba(255,255,255,0.07)",
-                background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)",
-              }}>
-                <div style={{ padding: "20px 28px", fontSize: 17, color: "rgba(255,255,255,0.85)" }}>{row}</div>
-                <div style={{ padding: "16px 24px", textAlign: "center" }}>
-                  <span style={{ color: "#cb772d", fontSize: 18 }}>✗</span>
-                </div>
-                <div style={{ padding: "16px 24px", textAlign: "center" }}>
-                  <span style={{ color: "#22C55E", fontSize: 18 }}>✓</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── WHAT YOU GET (section 7) ───────────────────────── */}
       <section id="outcomes" style={{
         position: "relative", padding: "120px 40px 100px",
