@@ -124,6 +124,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-secondary:hover { background: #FFFFFF; color: #1c3652; }
 
+/* ── AI Growth Engine — icon boxes & arrows ─────────────── */
+.engine-icon-box:hover {
+  background: #0F1B2D !important;
+  border-color: #cb772d !important;
+  box-shadow: 0 8px 28px rgba(203,119,45,0.35) !important;
+  transform: translateY(-4px);
+}
+.engine-arrow:hover {
+  transform: translateX(5px);
+}
+.engine-arrow:hover svg path {
+  stroke: #0F1B2D;
+}
+
 /* ── Section Heading (H2) ───────────────────────────────── */
 .section-heading {
   font-family: 'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif;

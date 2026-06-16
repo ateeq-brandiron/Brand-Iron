@@ -200,8 +200,8 @@ export default function Home() {
 
         {/* 5 icon boxes with arrows */}
         <div style={{
-          maxWidth: 1100, margin: "0 auto",
-          display: "flex", alignItems: "flex-start", justifyContent: "center", gap: 0,
+          maxWidth: 1200, margin: "0 auto",
+          display: "flex", alignItems: "center", justifyContent: "center", gap: 0,
         }}>
           {[
             {
@@ -265,26 +265,32 @@ export default function Home() {
           ].map(({ label, icon }, i, arr) => (
             <div key={label} style={{ display: "flex", alignItems: "center" }}>
               {/* Icon box */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
-                <div style={{
-                  width: 110, height: 110, borderRadius: 16,
+              <div className="engine-box" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+                <div className="engine-icon-box" style={{
+                  width: 120, height: 120, borderRadius: 16,
                   border: "2.5px solid #0F1B2D",
                   background: "#FFFFFF",
                   display: "flex", alignItems: "center", justifyContent: "center",
+                  transition: "background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease",
                 }}>
                   {icon}
                 </div>
                 <span style={{
                   fontFamily: "'Montserrat', sans-serif", fontWeight: 500, fontSize: 14,
-                  color: "#0F1B2D", textAlign: "center", maxWidth: 110,
+                  color: "#0F1B2D", textAlign: "center", maxWidth: 120,
                 }}>{label}</span>
               </div>
 
-              {/* Arrow between items */}
+              {/* Arrow between items — perfectly centered via flexbox */}
               {i < arr.length - 1 && (
-                <div style={{ padding: "0 16px", paddingBottom: 32 }}>
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <path d="M6 14h16M16 8l6 6-6 6" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <div className="engine-arrow" style={{
+                  padding: "0 20px",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  marginBottom: 38,
+                  transition: "transform 0.2s ease",
+                }}>
+                  <svg width="38" height="28" viewBox="0 0 38 28" fill="none">
+                    <path d="M2 14h29M24 6l9 8-9 8" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
               )}
