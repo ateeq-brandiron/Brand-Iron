@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 13, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 22 }}>Services</p>
+            <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 16, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 22 }}>Services</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
               {[
                 ["AI Strategy", "/ai-strategy"],
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 13, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 22 }}>Company</p>
+            <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 16, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 22 }}>Company</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
               {[
                 ["About", "/about"],
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 13, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 22 }}>Resources</p>
+            <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 16, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 22 }}>Resources</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
               {[
                 ["Case Studies", "/transformation-stories"],
