@@ -1,6 +1,67 @@
 "use client";
 import { useState } from "react";
 
+const contactOptions = [
+  {
+    title: "Book A Strategy Session",
+    desc: "30-minute call to explore how BrandIron can transform your revenue engine.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="7" width="26" height="24" rx="2" stroke="#cb772d" strokeWidth="2"/>
+        <line x1="5" y1="13" x2="31" y2="13" stroke="#cb772d" strokeWidth="2"/>
+        <line x1="12" y1="4" x2="12" y2="10" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="24" y1="4" x2="24" y2="10" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="18" y1="19" x2="18" y2="27" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="14" y1="23" x2="22" y2="23" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "AI Transformation Inquiry",
+    desc: "Discuss your AI readiness and where automation can create real business value.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="7" stroke="#cb772d" strokeWidth="2"/>
+        <circle cx="18" cy="18" r="2" fill="#cb772d"/>
+        <line x1="18" y1="4" x2="18" y2="9" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="18" y1="27" x2="18" y2="32" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="4" y1="18" x2="9" y2="18" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="27" y1="18" x2="32" y2="18" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="8" y1="8" x2="11.5" y2="11.5" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="24.5" y1="24.5" x2="28" y2="28" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="28" y1="8" x2="24.5" y2="11.5" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="11.5" y1="24.5" x2="8" y2="28" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Capital Raise Discussion",
+    desc: "Explore how we can help you build investor-ready positioning and raise capital.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="22" width="6" height="10" rx="1" stroke="#cb772d" strokeWidth="2"/>
+        <rect x="13" y="16" width="6" height="16" rx="1" stroke="#cb772d" strokeWidth="2"/>
+        <rect x="22" y="10" width="6" height="22" rx="1" stroke="#cb772d" strokeWidth="2"/>
+        <text x="14" y="9" fill="#cb772d" fontSize="9" fontFamily="Montserrat, sans-serif" fontWeight="700">$</text>
+        <polyline points="6,18 14,10 20,14 28,5" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        <polyline points="24,5 28,5 28,9" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    title: "General Inquiry",
+    desc: "Any other questions about BrandIron services or capabilities.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 6 Q5 4 7 4 L29 4 Q31 4 31 6 L31 22 Q31 24 29 24 L20 24 L14 31 L14 24 L7 24 Q5 24 5 22 Z" stroke="#cb772d" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+        <circle cx="12" cy="15" r="1.5" fill="#cb772d"/>
+        <circle cx="18" cy="15" r="1.5" fill="#cb772d"/>
+        <circle cx="24" cy="15" r="1.5" fill="#cb772d"/>
+      </svg>
+    ),
+  },
+];
+
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", company: "", phone: "", size: "", interest: "", investment: "", timeline: "", message: "" });
@@ -12,7 +73,7 @@ export default function ContactPage() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%", padding: "13px 16px",
-    background: "#FFFFFF", border: "1px solid rgba(255,255,255,0.25)",
+    background: "#FFFFFF", border: "1.5px solid #d0d5dd",
     borderRadius: 4, fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "#333333",
     outline: "none",
   };
@@ -26,7 +87,7 @@ export default function ContactPage() {
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px", textAlign: "center" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", padding: "140px 24px 80px", textAlign: "center" }}>
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Get In Touch</p>
           <h1 style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(44px, 6vw, 72px)",
@@ -44,15 +105,10 @@ export default function ContactPage() {
 
       {/* Contact options */}
       <section style={{ background: "#0D1A2E", padding: "60px 24px 0" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
-          {[
-            { icon: "📅", title: "Book A Strategy Session", desc: "30-minute call to explore how BrandIron can transform your revenue engine." },
-            { icon: "🤖", title: "AI Transformation Inquiry", desc: "Discuss your AI readiness and where automation can create real business value." },
-            { icon: "📈", title: "Capital Raise Discussion", desc: "Explore how we can help you build investor-ready positioning and raise capital." },
-            { icon: "💬", title: "General Inquiry", desc: "Any other questions about BrandIron services or capabilities." },
-          ].map(({ icon, title, desc }) => (
-            <div key={title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "24px 20px", textAlign: "center", borderTop: "3px solid #cb772d" }}>
-              <div style={{ fontSize: 28, marginBottom: 12 }}>{icon}</div>
+        <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          {contactOptions.map(({ icon, title, desc }) => (
+            <div key={title} className="contact-opt" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderTop: "3px solid #cb772d", borderRadius: 10, padding: "24px 20px", textAlign: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: 12 }}>{icon}</div>
               <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 20, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 8, lineHeight: 1.3 }}>{title}</h3>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", lineHeight: 1.6 }}>{desc}</p>
             </div>
@@ -62,7 +118,7 @@ export default function ContactPage() {
 
       {/* Form + Info */}
       <section style={{ background: "#0D1A2E", padding: "60px 24px 80px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 48, alignItems: "start" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 48, alignItems: "start" }}>
 
           {/* Form */}
           <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "40px 36px" }}>
@@ -148,7 +204,7 @@ export default function ContactPage() {
                   <label style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.8)", display: "block", marginBottom: 6 }}>Message</label>
                   <textarea rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your business and what you're looking to achieve..." style={{ ...inputStyle, resize: "vertical" }} />
                 </div>
-                <button type="submit" style={{ background: "#cb772d", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase", padding: "16px 32px", borderRadius: 4, border: "none", cursor: "pointer", alignSelf: "flex-start", marginTop: 4 }}>
+                <button type="submit" className="submit-btn" style={{ background: "#cb772d", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase", padding: "16px 32px", borderRadius: 4, border: "none", cursor: "pointer", alignSelf: "flex-start", marginTop: 4 }}>
                   Send Message →
                 </button>
                 <p style={{ fontSize: 12, color: "rgba(255,255,255,0.8)", lineHeight: 1.5 }}>No spam. No obligation. We respond within 1 business day.</p>
@@ -172,7 +228,7 @@ export default function ContactPage() {
                 { label: "Serving", value: "Global clients, enterprise to startup" },
                 { label: "First Step", value: "30-min Revenue Strategy Session" },
               ].map(({ label, value }) => (
-                <div key={label} style={{ display: "flex", alignItems: "center", gap: 14, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "14px 18px" }}>
+                <div key={label} className="info-row" style={{ display: "flex", alignItems: "center", gap: 14, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "14px 18px" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#cb772d", flexShrink: 0 }} />
                   <div>
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#cb772d" }}>{label}</p>
@@ -185,7 +241,7 @@ export default function ContactPage() {
             <div style={{ background: "#cb772d", borderRadius: 10, padding: "24px 24px" }}>
               <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 18, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em", color: "#FFFFFF", marginBottom: 8 }}>Ready to start immediately?</p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.80)", marginBottom: 16, lineHeight: 1.6 }}>Book a Revenue Strategy Session directly in our calendar and we&apos;ll get you started right away.</p>
-              <a href="mailto:contact@brandiron.net" style={{ display: "inline-block", background: "#0D1A2E", color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", padding: "12px 24px", borderRadius: 4, textDecoration: "none" }}>Email Us Directly →</a>
+              <a href="mailto:contact@brandiron.net" className="cta-link-btn">Email Us Directly →</a>
             </div>
           </div>
         </div>
