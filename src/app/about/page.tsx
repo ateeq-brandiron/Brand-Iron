@@ -1,103 +1,364 @@
+"use client";
 import Link from "next/link";
 
+const BURFORD = "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif";
+const MONTSERRAT = "'Montserrat', sans-serif";
+const COPPER = "#cb772d";
+const NAVY1 = "#0F1B2D";
+const NAVY2 = "#0D1A2E";
+const WHITE = "#FFFFFF";
+const WHITE80 = "rgba(255,255,255,0.8)";
+const WHITE04 = "rgba(255,255,255,0.04)";
+const WHITE08 = "rgba(255,255,255,0.08)";
+
+// ── SVG Icons ──────────────────────────────────────────────────────────────────
+function IconRevenueFirst() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="2,26 10,16 16,20 24,8 30,8" stroke={COPPER} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="24,8 30,8 30,14" stroke={COPPER} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconIntegratedThinking() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="6" cy="16" r="3" stroke={COPPER} strokeWidth="2" />
+      <circle cx="26" cy="7" r="3" stroke={COPPER} strokeWidth="2" />
+      <circle cx="26" cy="25" r="3" stroke={COPPER} strokeWidth="2" />
+      <line x1="9" y1="16" x2="23" y2="8.5" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="9" y1="16" x2="23" y2="23.5" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="26" y1="10" x2="26" y2="22" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconAIAugmented() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 22 C8 16 10 10 16 10 C22 10 24 16 24 22" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="16" y1="10" x2="16" y2="6" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="8" y1="22" x2="24" y2="22" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="12" cy="18" r="1.5" stroke={COPPER} strokeWidth="1.5" />
+      <circle cx="20" cy="18" r="1.5" stroke={COPPER} strokeWidth="1.5" />
+      <line x1="12" y1="18" x2="20" y2="18" stroke={COPPER} strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="16" cy="14" r="1.5" stroke={COPPER} strokeWidth="1.5" />
+      <line x1="16" y1="14" x2="12" y2="18" stroke={COPPER} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="14" x2="20" y2="18" stroke={COPPER} strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconRadicalTransparency() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 16 C6 8 10 5 16 5 C22 5 26 8 30 16 C26 24 22 27 16 27 C10 27 6 24 2 16Z" stroke={COPPER} strokeWidth="2" strokeLinejoin="round" />
+      <circle cx="16" cy="16" r="5" stroke={COPPER} strokeWidth="2" />
+      <circle cx="16" cy="16" r="2" stroke={COPPER} strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function IconMeasurableImpact() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="13" stroke={COPPER} strokeWidth="2" />
+      <circle cx="16" cy="16" r="8" stroke={COPPER} strokeWidth="2" />
+      <circle cx="16" cy="16" r="3" stroke={COPPER} strokeWidth="2" />
+      <line x1="16" y1="3" x2="16" y2="7" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="16" y1="25" x2="16" y2="29" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="3" y1="16" x2="7" y2="16" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <line x1="25" y1="16" x2="29" y2="16" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconExecutionOverTheory() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="9" stroke={COPPER} strokeWidth="2" />
+      <path d="M16 7 A9 9 0 0 1 25 16" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="16" cy="16" r="3" stroke={COPPER} strokeWidth="2" />
+      <polyline points="20,8 22,6 24,8" stroke={COPPER} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="27,23 29,25 27,27" stroke={COPPER} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <line x1="22" y1="24" x2="28" y2="26" stroke={COPPER} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+const VALUE_ICONS: Record<string, React.ReactNode> = {
+  "Revenue First": <IconRevenueFirst />,
+  "Integrated Thinking": <IconIntegratedThinking />,
+  "AI-Augmented Excellence": <IconAIAugmented />,
+  "Radical Transparency": <IconRadicalTransparency />,
+  "Measurable Impact": <IconMeasurableImpact />,
+  "Execution Over Theory": <IconExecutionOverTheory />,
+};
+
+// ── Data ───────────────────────────────────────────────────────────────────────
+const VALUES = [
+  { title: "Revenue First", body: "Every decision is evaluated through the lens of revenue impact. We don't do things that look good. We do things that work." },
+  { title: "Integrated Thinking", body: "We connect strategy to execution, marketing to sales, technology to outcomes. Silos are the enemy of revenue." },
+  { title: "AI-Augmented Excellence", body: "We combine the power of AI with the judgment of experienced operators to deliver outcomes neither could achieve alone." },
+  { title: "Radical Transparency", body: "We tell you what you need to hear, not what you want to hear. Our clients grow because we hold them to a higher standard." },
+  { title: "Measurable Impact", body: "If we can't measure it, we don't do it. Every engagement is structured around KPIs that connect to business performance." },
+  { title: "Execution Over Theory", body: "Strategy without execution is just planning. We are operators who build the systems and run the plays alongside you." },
+];
+
+const TEAM = [
+  {
+    name: "Ateeq Ahmed",
+    initials: "AA",
+    title: "Founder & CEO",
+    bio: "25+ years of experience building revenue systems for high-growth companies. Ateeq combines executive strategy with hands-on execution to deliver measurable growth.",
+  },
+  {
+    name: "Sarah Mitchell",
+    initials: "SM",
+    title: "Head of AI & Automation",
+    bio: "AI systems architect who translates cutting-edge technology into practical revenue outcomes. She leads BrandIron's AI build practice.",
+  },
+  {
+    name: "Marcus Chen",
+    initials: "MC",
+    title: "Head of Demand Generation",
+    bio: "Performance marketer who has built demand engines for B2B SaaS and enterprise companies across North America and APAC.",
+  },
+];
+
+const APPROACH_STEPS = [
+  { step: "01", title: "Diagnose", body: "We start by understanding how revenue actually flows through your business — not how it's supposed to work, but how it does." },
+  { step: "02", title: "Design", body: "We design the integrated revenue system your business needs — strategy, positioning, technology, and processes aligned to outcomes." },
+  { step: "03", title: "Build", body: "We build the infrastructure: CRM systems, AI automation, demand generation engines, and revenue intelligence platforms." },
+  { step: "04", title: "Deploy", body: "We deploy the system with your team, ensuring adoption, training, and the organizational buy-in that determines success." },
+  { step: "05", title: "Optimize", body: "We continuously monitor performance, identify optimization opportunities, and iterate based on real revenue data." },
+];
+
+const STATS = [
+  { num: "3X", label: "Average Pipeline Growth" },
+  { num: "60%", label: "Less Manual Work" },
+  { num: "50+", label: "Clients Transformed" },
+  { num: "100%", label: "Revenue Visibility" },
+];
+
+// ── Shared styles ──────────────────────────────────────────────────────────────
+const labelStyle: React.CSSProperties = {
+  fontFamily: MONTSERRAT,
+  fontWeight: 600,
+  fontSize: 13,
+  letterSpacing: "0.2em",
+  textTransform: "uppercase",
+  color: COPPER,
+  marginBottom: 12,
+};
+
+const h2Style: React.CSSProperties = {
+  fontFamily: BURFORD,
+  fontWeight: 700,
+  fontSize: "clamp(30px, 4vw, 52px)",
+  textTransform: "uppercase",
+  letterSpacing: "0.03em",
+  color: WHITE,
+  lineHeight: 1.1,
+  marginBottom: 20,
+};
+
+// ── Page ───────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
     <main>
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section style={{
         position: "relative", minHeight: "60vh", display: "flex", alignItems: "center",
         backgroundImage: "url('/images/hero-saddle.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(28,54,82,0.85) 0%, rgba(20,32,55,0.75) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px" }}>
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>About BrandIron</p>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", padding: "140px 24px 80px" }}>
+          <p style={labelStyle}>About BrandIron</p>
           <h1 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(44px, 6vw, 72px)",
-            textTransform: "uppercase", letterSpacing: "0.03em",
-            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
-            maxWidth: 800, lineHeight: 1.0, marginBottom: 28,
+            fontFamily: BURFORD,
+            fontWeight: 700,
+            fontSize: "clamp(44px, 6vw, 72px)",
+            textTransform: "uppercase",
+            letterSpacing: "0.03em",
+            color: "transparent",
+            WebkitTextStroke: "2px #FFFFFF",
+            maxWidth: 800,
+            lineHeight: 1.0,
+            marginBottom: 28,
           }}>
             We Build Revenue Engines.
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: 560 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: 560, fontFamily: MONTSERRAT }}>
             BrandIron exists because too many organizations invest in disconnected strategies, tools, and agencies — and wonder why growth doesn&apos;t compound.
           </p>
         </div>
       </section>
 
-      {/* Mission + Stats */}
-      <section style={{ background: "#0D1A2E", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", marginBottom: 72 }}>
+      {/* ── Mission + Stats ── */}
+      <section style={{ background: NAVY2, padding: "80px 24px" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", marginBottom: 80 }}>
             <div>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Mission</p>
-              <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.03em", color: "#FFFFFF", marginBottom: 20, lineHeight: 1.1 }}>
-                Transform How Companies Generate Revenue
-              </h2>
-              <p style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.8)", marginBottom: 16 }}>
+              <p style={labelStyle}>Our Mission</p>
+              <h2 style={h2Style}>Transform How Companies Generate Revenue</h2>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: WHITE80, marginBottom: 16, fontFamily: MONTSERRAT }}>
                 We combine strategy, branding, go-to-market, AI, automation, CRM, and revenue operations into integrated systems that drive compounding, measurable growth.
               </p>
-              <p style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.8)" }}>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: WHITE80, fontFamily: MONTSERRAT }}>
                 Companies don&apos;t fail because they lack effort. They fail because their revenue systems are fragmented — marketing, sales, technology, and data all operating in separate lanes.
               </p>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, background: "rgba(203,119,45,0.2)", borderRadius: 12, overflow: "hidden" }}>
-              {[
-                { num: "3X", label: "Average Pipeline Growth" },
-                { num: "60%", label: "Less Manual Work" },
-                { num: "50+", label: "Clients Transformed" },
-                { num: "100%", label: "Revenue Visibility" },
-              ].map(({ num, label }) => (
-                <div key={num} style={{ background: "#0F1B2D", padding: "36px 24px", textAlign: "center" }}>
-                  <div style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 52, fontWeight: 700, color: "#cb772d", lineHeight: 1 }}>{num}</div>
-                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", lineHeight: 1.4, marginTop: 8 }}>{label}</div>
+              {STATS.map(({ num, label }) => (
+                <div key={num} className="stat-cell" style={{ background: NAVY1, padding: "36px 24px", textAlign: "center", transition: "background 0.2s" }}>
+                  <div style={{ fontFamily: BURFORD, fontSize: 52, fontWeight: 700, color: COPPER, lineHeight: 1 }}>{num}</div>
+                  <div style={{ fontSize: 13, color: WHITE80, lineHeight: 1.4, marginTop: 8, fontFamily: MONTSERRAT }}>{label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Values */}
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 8 }}>Core Values</p>
-          <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.03em", color: "#FFFFFF", marginBottom: 36, lineHeight: 1.1 }}>What We Stand For</h2>
+          {/* ── Core Values ── */}
+          <p style={labelStyle}>Core Values</p>
+          <h2 style={{ ...h2Style, marginBottom: 40 }}>What We Stand For</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-            {[
-              { title: "Revenue First", body: "Every decision is evaluated through the lens of revenue impact. We don't do things that look good. We do things that work." },
-              { title: "Integrated Thinking", body: "We connect strategy to execution, marketing to sales, technology to outcomes. Silos are the enemy of revenue." },
-              { title: "AI-Augmented Excellence", body: "We combine the power of AI with the judgment of experienced operators to deliver outcomes neither could achieve alone." },
-              { title: "Radical Transparency", body: "We tell you what you need to hear, not what you want to hear. Our clients grow because we hold them to a higher standard." },
-              { title: "Measurable Impact", body: "If we can't measure it, we don't do it. Every engagement is structured around KPIs that connect to business performance." },
-              { title: "Execution Over Theory", body: "Strategy without execution is just planning. We are operators who build the systems and run the plays alongside you." },
-            ].map(({ title, body }) => (
-              <div key={title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "28px 24px", borderLeft: "3px solid #cb772d" }}>
-                <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 24, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#cb772d", marginBottom: 10 }}>{title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.8)" }}>{body}</p>
+            {VALUES.map(({ title, body }) => (
+              <div key={title} className="value-card" style={{
+                background: WHITE04,
+                border: `1px solid ${WHITE08}`,
+                borderRadius: 10,
+                padding: "32px 28px",
+                borderLeft: `3px solid ${COPPER}`,
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}>
+                <div style={{ marginBottom: 14 }}>{VALUE_ICONS[title]}</div>
+                <h3 style={{ fontFamily: BURFORD, fontSize: 22, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: COPPER, marginBottom: 10 }}>{title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.7, color: WHITE80, fontFamily: MONTSERRAT }}>{body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Approach */}
-      <section style={{ background: "#0F1B2D", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 8 }}>Our Approach</p>
-          <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.03em", color: "#FFFFFF", marginBottom: 48, lineHeight: 1.1 }}>How We Work</h2>
+      {/* ── Vision & Mission ── */}
+      <section style={{ background: NAVY1, padding: "96px 24px" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 3px 1fr", gap: "0 48px", alignItems: "start" }}>
+            {/* Vision */}
+            <div style={{ paddingRight: 24 }}>
+              <p style={labelStyle}>Vision</p>
+              <h2 style={{ fontFamily: BURFORD, fontWeight: 700, fontSize: "clamp(28px, 3.5vw, 48px)", textTransform: "uppercase", letterSpacing: "0.03em", color: WHITE, lineHeight: 1.1, marginBottom: 24 }}>
+                A World Where Revenue Is Engineered, Not Hoped For
+              </h2>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: WHITE80, fontFamily: MONTSERRAT }}>
+                We envision a future where every revenue-generating organization operates with complete alignment — where strategy, brand, technology, and talent work as a single compounding system rather than competing factions.
+              </p>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: WHITE80, fontFamily: MONTSERRAT, marginTop: 16 }}>
+                In that world, growth is predictable. Pipelines are engineered. And revenue becomes a function of design — not luck.
+              </p>
+            </div>
+            {/* Vertical copper divider */}
+            <div style={{ background: COPPER, minHeight: 360, borderRadius: 2 }} />
+            {/* Mission */}
+            <div style={{ paddingLeft: 24 }}>
+              <p style={labelStyle}>Mission</p>
+              <h2 style={{ fontFamily: BURFORD, fontWeight: 700, fontSize: "clamp(28px, 3.5vw, 48px)", textTransform: "uppercase", letterSpacing: "0.03em", color: WHITE, lineHeight: 1.1, marginBottom: 24 }}>
+                Transform How Companies Generate Revenue
+              </h2>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: WHITE80, fontFamily: MONTSERRAT }}>
+                We combine strategy, brand, go-to-market, AI automation, CRM, and revenue operations into integrated systems that produce compounding, measurable growth.
+              </p>
+              <p style={{ fontSize: 16, lineHeight: 1.8, color: WHITE80, fontFamily: MONTSERRAT, marginTop: 16 }}>
+                Our work is not advisory. We build, deploy, and optimize the revenue infrastructure our clients need — and we stay accountable to results, not deliverables.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Team ── */}
+      <section style={{ background: NAVY2, padding: "96px 24px" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 56 }}>
+            <p style={labelStyle}>Our People</p>
+            <h2 style={{ ...h2Style, marginBottom: 0 }}>Meet The Team</h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
+            {TEAM.map(({ name, initials, title, bio }) => (
+              <div key={name} className="team-card" style={{
+                background: WHITE04,
+                border: `1px solid ${WHITE08}`,
+                borderRadius: 12,
+                overflow: "hidden",
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}>
+                {/* Top copper stripe */}
+                <div style={{ height: 4, background: COPPER }} />
+                <div style={{ padding: "36px 28px 32px" }}>
+                  {/* Avatar */}
+                  <div style={{
+                    width: 64,
+                    height: 64,
+                    borderRadius: "50%",
+                    background: NAVY1,
+                    border: `2px solid ${COPPER}`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 20,
+                  }}>
+                    <span style={{ fontFamily: BURFORD, fontSize: 20, fontWeight: 700, color: COPPER }}>{initials}</span>
+                  </div>
+                  {/* Name */}
+                  <h3 style={{ fontFamily: BURFORD, fontSize: 24, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: WHITE, marginBottom: 6 }}>{name}</h3>
+                  {/* Title */}
+                  <p style={{ fontFamily: MONTSERRAT, fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: COPPER, marginBottom: 16 }}>{title}</p>
+                  {/* Bio */}
+                  <p style={{ fontFamily: MONTSERRAT, fontSize: 14, lineHeight: 1.75, color: WHITE80 }}>{bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Approach ── */}
+      <section style={{ background: NAVY1, padding: "96px 24px" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <p style={labelStyle}>Our Approach</p>
+          <h2 style={{ ...h2Style, marginBottom: 56 }}>How We Work</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-            {[
-              { step: "01", title: "Diagnose", body: "We start by understanding how revenue actually flows through your business — not how it's supposed to work, but how it does." },
-              { step: "02", title: "Design", body: "We design the integrated revenue system your business needs — strategy, positioning, technology, and processes aligned to outcomes." },
-              { step: "03", title: "Build", body: "We build the infrastructure: CRM systems, AI automation, demand generation engines, and revenue intelligence platforms." },
-              { step: "04", title: "Deploy", body: "We deploy the system with your team, ensuring adoption, training, and the organizational buy-in that determines success." },
-              { step: "05", title: "Optimize", body: "We continuously monitor performance, identify optimization opportunities, and iterate based on real revenue data." },
-            ].map(({ step, title, body }) => (
-              <div key={step} style={{ display: "flex", gap: 28, alignItems: "flex-start" }}>
-                <div style={{ width: 60, height: 60, borderRadius: "50%", background: "#0D1A2E", border: "2px solid #cb772d", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: 18, color: "#cb772d" }}>{step}</span>
+            {APPROACH_STEPS.map(({ step, title, body }) => (
+              <div key={step} className="approach-step" style={{
+                display: "flex",
+                gap: 32,
+                alignItems: "flex-start",
+                padding: "24px 28px",
+                background: WHITE04,
+                border: `1px solid ${WHITE08}`,
+                borderRadius: 10,
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}>
+                <div className="approach-circle" style={{
+                  width: 60,
+                  height: 60,
+                  borderRadius: "50%",
+                  background: NAVY2,
+                  border: `2px solid ${COPPER}`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  transition: "background 0.2s, border-color 0.2s",
+                }}>
+                  <span style={{ fontFamily: BURFORD, fontWeight: 700, fontSize: 18, color: COPPER }}>{step}</span>
                 </div>
-                <div style={{ paddingTop: 10 }}>
-                  <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 24, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 8 }}>{title}</h3>
-                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.8)" }}>{body}</p>
+                <div style={{ paddingTop: 8 }}>
+                  <h3 style={{ fontFamily: BURFORD, fontSize: 24, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: WHITE, marginBottom: 8 }}>{title}</h3>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, color: WHITE80, fontFamily: MONTSERRAT }}>{body}</p>
                 </div>
               </div>
             ))}
@@ -105,11 +366,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: "#cb772d", padding: "80px 24px", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", marginBottom: 16 }}>Ready To Work With BrandIron?</h2>
-        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.88)", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px" }}>Book a strategy session and let&apos;s design the revenue system your business deserves.</p>
-        <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", background: "#FFFFFF", color: "#cb772d", fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontWeight: 700, fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase", padding: "16px 36px", borderRadius: 4, textDecoration: "none" }}>Book Strategy Session</Link>
+      {/* ── CTA ── */}
+      <section style={{ background: COPPER, padding: "96px 24px", textAlign: "center" }}>
+        <h2 style={{ fontFamily: BURFORD, fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.02em", color: WHITE, marginBottom: 16 }}>
+          Ready To Work With BrandIron?
+        </h2>
+        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.88)", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px", fontFamily: MONTSERRAT }}>
+          Book a strategy session and let&apos;s design the revenue system your business deserves.
+        </p>
+        <Link href="/contact" className="cta-link-btn" style={{
+          display: "inline-flex",
+          alignItems: "center",
+          background: WHITE,
+          color: COPPER,
+          fontFamily: MONTSERRAT,
+          fontWeight: 700,
+          fontSize: 15,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          padding: "16px 36px",
+          borderRadius: 4,
+          textDecoration: "none",
+          transition: "background 0.2s, color 0.2s, transform 0.2s",
+        }}>
+          Book Strategy Session
+        </Link>
       </section>
     </main>
   );
