@@ -124,21 +124,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-secondary:hover { background: #FFFFFF; color: #1c3652; }
 
-/* ── Global hover philosophy: NO fills — use glow/ring/lift ─ */
+/* ════════════════════════════════════════════════════════════
+   GLOBAL HOVER SYSTEM
+   Philosophy: no solid fills — use glow rings, lift, border
+   light-up, underline slides, and subtle scale
+   ════════════════════════════════════════════════════════════ */
 
-/* ── AI Growth Engine — icon boxes & arrows ─────────────── */
+/* ── Section 2 — Problem cards ──────────────────────────── */
+.problem-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(203,119,45,0.18) !important;
+  border-left-color: #0F1B2D !important;
+}
+
+/* ── Section 3 — AI Growth Engine icon boxes & arrows ───── */
+.engine-icon-box {
+  cursor: default;
+}
 .engine-icon-box:hover {
   border-color: #cb772d !important;
-  box-shadow: 0 0 0 4px rgba(203,119,45,0.25), 0 8px 28px rgba(203,119,45,0.2) !important;
+  box-shadow: 0 0 0 4px rgba(203,119,45,0.22), 0 8px 28px rgba(203,119,45,0.18) !important;
   transform: translateY(-5px) scale(1.04);
 }
 .engine-arrow:hover {
   transform: translateX(6px);
 }
 
-/* ── Process Steps ──────────────────────────────────────── */
+/* ── Section 4 — Process Steps ──────────────────────────── */
+.process-step {
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+.process-circle {
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
 .process-step:hover .process-circle {
-  box-shadow: 0 0 0 6px rgba(203,119,45,0.25), 0 0 32px rgba(203,119,45,0.3);
+  box-shadow: 0 0 0 6px rgba(203,119,45,0.22), 0 0 40px rgba(203,119,45,0.28);
   transform: translateY(-6px) scale(1.06);
   border-color: #FFFFFF;
 }
@@ -149,6 +173,90 @@ h1, h2, h3, h4, h5, h6 {
 .process-step:hover p {
   color: rgba(255,255,255,1) !important;
   transition: color 0.3s ease;
+}
+
+/* ── Section 5 — Service cards (What We Build) ───────────── */
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
+}
+.service-card:hover .service-underline {
+  width: 100% !important;
+  background: #cb772d !important;
+  transition: width 0.35s ease, background 0.25s ease;
+}
+.service-underline {
+  transition: width 0.35s ease, background 0.25s ease;
+}
+.service-card:hover h3 {
+  color: #cb772d;
+  transition: color 0.25s ease;
+}
+
+/* ── Section 5 — Feature cards (What You Get) ────────────── */
+.feature-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px) translateX(3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
+  border-left-color: #0F1B2D !important;
+}
+.feature-card:hover h3 {
+  color: #cb772d;
+  transition: color 0.25s ease;
+}
+
+/* ── Section 6 — Comparison cards ───────────────────────── */
+.compare-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.compare-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0 2px #cb772d, 0 16px 40px rgba(203,119,45,0.2) !important;
+}
+
+/* ── Comparison table rows ───────────────────────────────── */
+.table-row {
+  transition: background 0.2s ease;
+  cursor: default;
+}
+.table-row:hover {
+  background: rgba(203,119,45,0.08) !important;
+}
+
+/* ── Section 8 — Form inputs ─────────────────────────────── */
+.form-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  border-color: #cb772d !important;
+  box-shadow: 0 0 0 3px rgba(203,119,45,0.15) !important;
+  outline: none !important;
+}
+
+/* ── Submit button ───────────────────────────────────────── */
+.submit-btn {
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.submit-btn:hover {
+  background: #a5621e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(203,119,45,0.4);
+}
+
+/* ── Navbar CTA ──────────────────────────────────────────── */
+.nav-cta:hover {
+  background: #a5621e !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(203,119,45,0.35);
+}
+.nav-cta {
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 /* ── Section Heading (H2) ───────────────────────────────── */

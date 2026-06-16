@@ -136,7 +136,7 @@ export default function Home() {
                 body: "Teams operating in separate worlds with different goals and no shared accountability.",
               },
             ].map(({ icon, title, body }) => (
-              <div key={title} style={{
+              <div key={title} className="problem-card" style={{
                 background: "rgba(255,255,255,0.93)",
                 borderRadius: 10,
                 borderLeft: "4px solid #cb772d",
@@ -468,7 +468,7 @@ export default function Home() {
                 href: "/demand-generation",
               },
             ].map(({ icon, title, body, href }) => (
-              <div key={title} style={{
+              <div key={title} className="service-card" style={{
                 background: "rgba(255,255,255,0.88)",
                 borderRadius: 12, padding: "36px 28px 28px",
                 boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
@@ -481,9 +481,8 @@ export default function Home() {
                   color: "#cb772d", marginBottom: 10,
                 }}>{title}</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: "#555", flex: 1, marginBottom: 28 }}>{body}</p>
-                {/* Navy underline bar */}
                 <Link href={href} style={{ display: "block" }}>
-                  <div style={{ width: 48, height: 3, background: "#0F1B2D", borderRadius: 2 }} />
+                  <div className="service-underline" style={{ width: 48, height: 3, background: "#0F1B2D", borderRadius: 2 }} />
                 </Link>
               </div>
             ))}
@@ -533,7 +532,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
 
             {/* Left — Typical Agency */}
-            <div style={{
+            <div className="compare-card" style={{
               background: "#0F1B2D",
               border: "1.5px solid #cb772d",
               borderRadius: 12, padding: "40px 36px",
@@ -562,7 +561,7 @@ export default function Home() {
             </div>
 
             {/* Right — Brand Iron (texture shows through) */}
-            <div style={{
+            <div className="compare-card" style={{
               background: "rgba(180,100,20,0.18)",
               border: "1.5px solid #cb772d",
               borderRadius: 12, padding: "40px 36px",
@@ -641,7 +640,7 @@ export default function Home() {
               "Transparent ROI Reporting",
               "Dedicated Revenue Team",
             ].map((row, i) => (
-              <div key={row} style={{
+              <div key={row} className="table-row" style={{
                 display: "grid", gridTemplateColumns: "2fr 1fr 1fr",
                 borderTop: "1px solid rgba(255,255,255,0.07)",
                 background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)",
@@ -778,7 +777,7 @@ export default function Home() {
                 body: "Infrastructure built to handle increasing volume without breaking or requiring constant fixes.",
               },
             ].map(({ icon, title, body }) => (
-              <div key={title} style={{
+              <div key={title} className="feature-card" style={{
                 background: "rgba(255,255,255,0.90)",
                 borderLeft: "4px solid #cb772d",
                 borderRadius: 10, padding: "28px 28px",
@@ -850,7 +849,7 @@ export default function Home() {
               {/* Your Name */}
               <div>
                 <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>Your Name *</label>
-                <input type="text" placeholder="" style={{
+                <input type="text" placeholder="" className="form-input" style={{
                   width: "100%", padding: "14px 16px", fontSize: 15,
                   border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                   fontFamily: "'Montserrat', sans-serif", color: "#333",
@@ -860,7 +859,7 @@ export default function Home() {
               {/* Company */}
               <div>
                 <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>Company</label>
-                <input type="text" placeholder="" style={{
+                <input type="text" placeholder="" className="form-input" style={{
                   width: "100%", padding: "14px 16px", fontSize: 15,
                   border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                   fontFamily: "'Montserrat', sans-serif", color: "#333",
@@ -871,7 +870,7 @@ export default function Home() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
                 <div>
                   <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>Email *</label>
-                  <input type="email" style={{
+                  <input type="email" className="form-input" style={{
                     width: "100%", padding: "14px 16px", fontSize: 15,
                     border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                     fontFamily: "'Montserrat', sans-serif", color: "#333",
@@ -879,7 +878,7 @@ export default function Home() {
                 </div>
                 <div>
                   <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>Phone Number</label>
-                  <input type="tel" style={{
+                  <input type="tel" className="form-input" style={{
                     width: "100%", padding: "14px 16px", fontSize: 15,
                     border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                     fontFamily: "'Montserrat', sans-serif", color: "#333",
@@ -890,7 +889,7 @@ export default function Home() {
               {/* Company Size */}
               <div>
                 <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>Company Size</label>
-                <select style={{
+                <select className="form-input" style={{
                   width: "100%", padding: "14px 16px", fontSize: 15,
                   border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                   fontFamily: "'Montserrat', sans-serif", color: "#888", background: "#FFFFFF",
@@ -908,7 +907,7 @@ export default function Home() {
               {/* What are you looking to build */}
               <div>
                 <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>What are you looking to build?</label>
-                <select style={{
+                <select className="form-input" style={{
                   width: "100%", padding: "14px 16px", fontSize: 15,
                   border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                   fontFamily: "'Montserrat', sans-serif", color: "#888", background: "#FFFFFF",
@@ -927,7 +926,7 @@ export default function Home() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
                 <div>
                   <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>Monthly Investment Range</label>
-                  <select style={{
+                  <select className="form-input" style={{
                     width: "100%", padding: "14px 16px", fontSize: 15,
                     border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                     fontFamily: "'Montserrat', sans-serif", color: "#888", background: "#FFFFFF",
@@ -942,7 +941,7 @@ export default function Home() {
                 </div>
                 <div>
                   <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#333", marginBottom: 8 }}>How soon are you looking to start?</label>
-                  <select style={{
+                  <select className="form-input" style={{
                     width: "100%", padding: "14px 16px", fontSize: 15,
                     border: "1px solid #E0E0E0", borderRadius: 6, outline: "none",
                     fontFamily: "'Montserrat', sans-serif", color: "#888", background: "#FFFFFF",
@@ -958,7 +957,7 @@ export default function Home() {
               </div>
 
               {/* Submit */}
-              <button type="submit" style={{
+              <button type="submit" className="submit-btn" style={{
                 width: "100%", padding: "18px",
                 background: "#cb772d",
                 color: "#FFFFFF", border: "none", borderRadius: 8,
