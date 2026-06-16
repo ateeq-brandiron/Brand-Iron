@@ -88,7 +88,7 @@ export default function GTMSalesSystemsPage() {
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(15,27,45,0.88)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", padding: "140px 24px 80px" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px" }}>
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Services</p>
           <h1 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(36px, 5vw, 68px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", maxWidth: 700, marginBottom: 24, lineHeight: 1.05 }}>
             GTM &<br /><span style={{ color: "#cb772d" }}>Sales Systems</span>

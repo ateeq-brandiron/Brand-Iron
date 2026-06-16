@@ -175,7 +175,7 @@ export default function AboutPage() {
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(28,54,82,0.85) 0%, rgba(20,32,55,0.75) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", padding: "140px 24px 80px" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px" }}>
           <p style={labelStyle}>About BrandIron</p>
           <h1 style={{
             fontFamily: BURFORD,
