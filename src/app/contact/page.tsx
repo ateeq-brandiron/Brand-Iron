@@ -92,7 +92,7 @@ export default function ContactPage() {
           <h1 style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(44px, 6vw, 72px)",
             textTransform: "uppercase", letterSpacing: "0.03em",
-            color: "#FFFFFF",
+            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
             lineHeight: 1.0, marginBottom: 28,
           }}>
             Let&apos;s Build Your Revenue Engine
