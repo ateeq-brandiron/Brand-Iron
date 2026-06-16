@@ -201,7 +201,7 @@ export default function Home() {
         {/* 5 icon boxes with arrows */}
         <div style={{
           maxWidth: 1200, margin: "0 auto",
-          display: "flex", alignItems: "center", justifyContent: "center", gap: 0,
+          display: "flex", alignItems: "flex-start", justifyContent: "center", gap: 0,
         }}>
           {[
             {
@@ -281,12 +281,12 @@ export default function Home() {
                 }}>{label}</span>
               </div>
 
-              {/* Arrow between items — perfectly centered via flexbox */}
+              {/* Arrow — marginTop pins it to center of 120px box */}
               {i < arr.length - 1 && (
                 <div className="engine-arrow" style={{
                   padding: "0 20px",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  marginBottom: 38,
+                  marginTop: 46,
                   transition: "transform 0.2s ease",
                 }}>
                   <svg width="38" height="28" viewBox="0 0 38 28" fill="none">
