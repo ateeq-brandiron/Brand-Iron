@@ -108,22 +108,40 @@ const VALUES = [
 
 const TEAM = [
   {
-    name: "Ateeq Ahmed",
-    initials: "AA",
-    title: "Founder & CEO",
-    bio: "25+ years of experience building revenue systems for high-growth companies. Ateeq combines executive strategy with hands-on execution to deliver measurable growth.",
+    name: "Michael Doyle",
+    initials: "MD",
+    title: "CEO | Brand Champion",
+    bio: "Michael Doyle is a trailblazer in Brand Marketing and has reshaped the industry for 20+ years. He launched Brand Iron in 2002, after successfully building and selling a multi-million dollar tech-based advertising agency. His tough precision has steered countless businesses in different industries to success worldwide.",
   },
   {
-    name: "Sarah Mitchell",
-    initials: "SM",
-    title: "Head of AI & Automation",
-    bio: "AI systems architect who translates cutting-edge technology into practical revenue outcomes. She leads BrandIron's AI build practice.",
+    name: "Carmen Barker",
+    initials: "CB",
+    title: "CFO",
+    bio: "Carmen Barker is the financial genius at Brand Iron — handling everything that's money-related from payroll to HR. Carmen's roots go back to being a partner in an award-winning startup business that provides water treatment for humanitarian and disaster relief efforts. Under her leadership, the company was recognized by Fast Company in 2011 for the Top 50 Colorado Companies to Watch and Top 100 Women Owned Companies.",
   },
   {
-    name: "Marcus Chen",
-    initials: "MC",
-    title: "Head of Demand Generation",
-    bio: "Performance marketer who has built demand engines for B2B SaaS and enterprise companies across North America and APAC.",
+    name: "Valeria Rodriguez Quintanilla",
+    initials: "VR",
+    title: "Project Manager / Business Development",
+    bio: "Valeria was born and raised in Northern Mexico near the Texas border, and she attended the University of Texas at Austin, where she received a degree in Mathematics and Actuarial Science in 2019. She's applied her knowledge working in tech as an Analyst and Team Lead prior to lending her many talents to Brand Iron. Valeria is analytical, creative, and always up for a challenge.",
+  },
+  {
+    name: "Shelly Barson",
+    initials: "SB",
+    title: "Design Manager",
+    bio: "Born in Utah, Shelly grew up living in most of the Western states, spending summers on her grandpa's Wyoming cattle ranch. Shelly is passionate about creating simple, smart design that tells a compelling story. She's a seasoned art director with experience working on projects for small startups to global brands like Intel, Vivint and Microsoft.",
+  },
+  {
+    name: "Katrina",
+    initials: "KA",
+    title: "Account Manager",
+    bio: "Katrina brings sharp client relationship skills and a results-driven approach to every account she manages. She ensures our clients receive seamless communication, timely delivery, and consistent value across every engagement.",
+  },
+  {
+    name: "Ateeq",
+    initials: "AT",
+    title: "Program Manager",
+    bio: "Ateeq oversees the execution of Brand Iron's integrated programs, ensuring strategy translates into measurable outcomes. He connects teams, tools, and timelines to keep every initiative on track and aligned to client goals.",
   },
 ];
 
@@ -286,7 +304,7 @@ export default function AboutPage() {
             <p style={labelStyle}>Our People</p>
             <h2 style={{ ...h2Style, marginBottom: 0 }}>Meet The Team</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28, maxWidth: 1200, margin: "0 auto" }}>
             {TEAM.map(({ name, initials, title, bio }) => (
               <div key={name} className="team-card" style={{
                 background: WHITE04,
