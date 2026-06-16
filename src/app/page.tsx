@@ -66,39 +66,40 @@ export default function Home() {
       {/* ── PROBLEM ────────────────────────────────────────── */}
       <section id="services" style={{
         position: "relative", padding: "80px 24px 100px",
-        backgroundImage: "url('/images/bg-barn.jpg')",
+        backgroundImage: "url('/images/bg-wood.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        {/* Bleached wood overlay — very light so wood texture shows through */}
-        <div style={{ position: "absolute", inset: 0, background: "rgba(235,228,218,0.82)" }} />
+        {/* Light overlay so wood texture shows through */}
+        <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.78)" }} />
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto" }}>
-          {/* Full-width huge headline */}
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
+          {/* Full-width headline — centered, tight letter-spacing, one line */}
           <h2 style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400,
-            fontSize: "clamp(32px, 5.5vw, 72px)",
-            textTransform: "uppercase", letterSpacing: "0.03em",
+            fontSize: "clamp(28px, 4.2vw, 60px)",
+            textTransform: "uppercase", letterSpacing: "-0.03em",
             color: "#0F1B2D", marginBottom: 32, lineHeight: 1,
+            textAlign: "center",
           }}>
             The Problem Isn&apos;t Your Marketing. It&apos;s Your System.
           </h2>
 
-          {/* Centered subtext */}
+          {/* Centered subtext — 20px matching hero body */}
           <p style={{
-            fontSize: 18, lineHeight: 1.75, color: "#444",
-            maxWidth: 680, margin: "0 auto 64px", textAlign: "center",
+            fontSize: 20, lineHeight: 1.75, color: "#444",
+            maxWidth: 720, margin: "0 auto 64px", textAlign: "center",
           }}>
             You&apos;re running campaigns. You&apos;re using AI. You&apos;re creating content.
             But your pipeline isn&apos;t growing. Because nothing is connected. AI on
             top of a broken system scales inefficiency.
           </p>
 
-          {/* 4 cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          {/* 4 cards — 15% bigger padding & icons */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
             {[
               {
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
                     <path d="M16 4L2 28h28L16 4z" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M16 14v6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
                     <circle cx="16" cy="23" r="1.2" fill="#cb772d"/>
@@ -109,7 +110,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
                     <circle cx="16" cy="16" r="13" stroke="#cb772d" strokeWidth="2"/>
                     <path d="M13 12.5c0-1.7 1.3-3 3-3s3 1.3 3 3c0 2-2 2.5-3 4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
                     <circle cx="16" cy="22.5" r="1.2" fill="#cb772d"/>
@@ -120,7 +121,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
                     <path d="M4 10l7 8 6-4 11 12" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M24 26h4v-4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -130,7 +131,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <svg width="37" height="37" viewBox="0 0 32 32" fill="none">
                     <circle cx="16" cy="16" r="13" stroke="#cb772d" strokeWidth="2"/>
                     <circle cx="10" cy="16" r="1.5" fill="#cb772d"/>
                     <circle cx="16" cy="16" r="1.5" fill="#cb772d"/>
@@ -142,19 +143,19 @@ export default function Home() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} style={{
-                background: "rgba(255,255,255,0.92)",
+                background: "rgba(255,255,255,0.93)",
                 borderRadius: 10,
                 borderLeft: "4px solid #cb772d",
-                padding: "32px 24px 36px",
+                padding: "37px 28px 41px",
                 boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
               }}>
-                <div style={{ marginBottom: 24 }}>{icon}</div>
+                <div style={{ marginBottom: 26 }}>{icon}</div>
                 <h3 style={{
-                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 16, fontWeight: 400,
-                  textTransform: "uppercase", letterSpacing: "0.1em",
-                  color: "#0F1B2D", marginBottom: 14, lineHeight: 1.3,
+                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 19, fontWeight: 400,
+                  textTransform: "uppercase", letterSpacing: "0.08em",
+                  color: "#0F1B2D", marginBottom: 16, lineHeight: 1.3,
                 }}>{title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.7, color: "#555" }}>{body}</p>
+                <p style={{ fontSize: 16, lineHeight: 1.75, color: "#555" }}>{body}</p>
               </div>
             ))}
           </div>
