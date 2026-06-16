@@ -813,9 +813,21 @@ export default function Home() {
             <div style={{ width: 48, height: 2, background: "#cb772d", borderRadius: 2 }} />
           </div>
 
-          {/* Stroke headline */}
-          <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 56 }}>
-            Ready To Stop Chasing Tools And Start Building A Complete Strategy Delivers 3X Revenue?
+          {/* Filled white headline — 3 lines */}
+          <h1 style={{
+            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+            fontWeight: 900,
+            fontSize: "clamp(36px, 5.5vw, 72px)",
+            textTransform: "uppercase",
+            letterSpacing: "0.06em",
+            lineHeight: 1.1,
+            color: "#FFFFFF",
+            textAlign: "center",
+            marginBottom: 56,
+          }}>
+            Ready To Stop Chasing Tools And Start<br />
+            Building A Complete Strategy Delivers 3X<br />
+            Revenue?
           </h1>
 
           {/* White form card */}
