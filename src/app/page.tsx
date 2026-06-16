@@ -807,7 +807,7 @@ export default function Home() {
             fontWeight: 900,
             fontSize: "clamp(36px, 5.5vw, 72px)",
             textTransform: "uppercase",
-            letterSpacing: "0.06em",
+            letterSpacing: "0.03em",
             lineHeight: 1.1,
             color: "#FFFFFF",
             textAlign: "center",
