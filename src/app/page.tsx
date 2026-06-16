@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const TESTIMONIALS = [
   {
@@ -93,8 +93,144 @@ function TestimonialsSection() {
   );
 }
 
-export default function Home() {
+function PitchDeckPopup({ onClose }: { onClose: () => void }) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setVisible(true), 30); return () => clearTimeout(t); }, []);
+
   return (
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 9999,
+      display: "flex", alignItems: "center", justifyContent: "center",
+      background: "rgba(10,18,35,0.75)",
+      backdropFilter: "blur(6px)",
+      opacity: visible ? 1 : 0,
+      transition: "opacity 0.35s ease",
+    }}
+      onClick={e => { if (e.target === e.currentTarget) { setVisible(false); setTimeout(onClose, 350); } }}
+    >
+      <div style={{
+        position: "relative",
+        width: "min(680px, 92vw)",
+        borderRadius: 16,
+        overflow: "hidden",
+        boxShadow: "0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(203,119,45,0.25)",
+        transform: visible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.96)",
+        transition: "transform 0.4s cubic-bezier(0.34,1.26,0.64,1), opacity 0.35s ease",
+        opacity: visible ? 1 : 0,
+      }}>
+        {/* Background image with overlay */}
+        <div style={{
+          position: "absolute", inset: 0,
+          backgroundImage: "url('/images/hero-saddle.jpg')",
+          backgroundSize: "cover", backgroundPosition: "center 30%",
+        }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.82)" }} />
+        {/* Top copper line */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
+
+        {/* Close button */}
+        <button
+          onClick={() => { setVisible(false); setTimeout(onClose, 350); }}
+          style={{
+            position: "absolute", top: 16, right: 16, zIndex: 10,
+            width: 36, height: 36, borderRadius: "50%",
+            background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
+            cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+            transition: "background 0.2s ease",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.background = "rgba(203,119,45,0.35)")}
+          onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 1l12 12M13 1L1 13" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 2, padding: "60px 48px 52px", textAlign: "center" }}>
+          {/* Label */}
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>
+            Limited Offer
+          </p>
+
+          {/* Main heading */}
+          <h2 style={{
+            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+            fontWeight: 700, fontSize: "clamp(32px, 5vw, 52px)",
+            textTransform: "uppercase", letterSpacing: "0.03em",
+            color: "transparent", WebkitTextStroke: "2px #FFFFFF",
+            lineHeight: 1.05, marginBottom: 18,
+          }}>
+            Free Pitch Deck Audit
+          </h2>
+
+          {/* Scarcity */}
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 28 }}>
+            ✦ Limited to first 3 qualified companies per week ✦
+          </p>
+
+          {/* Copper divider */}
+          <div style={{ width: 48, height: 2, background: "#cb772d", borderRadius: 2, margin: "0 auto 28px" }} />
+
+          {/* Sub-headline */}
+          <p style={{
+            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+            fontWeight: 700, fontSize: "clamp(15px, 2vw, 20px)",
+            textTransform: "uppercase", letterSpacing: "0.06em",
+            color: "#FFFFFF", lineHeight: 1.4, marginBottom: 36,
+          }}>
+            Already have a pitch deck?<br />Let us review it for you!
+          </p>
+
+          {/* CTA Button */}
+          <Link
+            href="/contact"
+            onClick={() => { setVisible(false); setTimeout(onClose, 350); }}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 10,
+              background: "#cb772d", color: "#FFFFFF",
+              fontFamily: "'Montserrat', sans-serif", fontWeight: 700,
+              fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase",
+              padding: "16px 40px", borderRadius: 8,
+              textDecoration: "none",
+              transition: "background 0.2s ease, transform 0.15s ease",
+              boxShadow: "0 8px 28px rgba(203,119,45,0.4)",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#a5621e"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#cb772d"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"; }}
+          >
+            Let&apos;s Go! →
+          </Link>
+
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 20 }}>
+            No commitment. 100% free. We&apos;ll get back to you within 1 business day.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Home() {
+  const [showPopup, setShowPopup] = useState(false);
+  const popupShown = useRef(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (popupShown.current) return;
+      // Show after scrolling ~2 sections (~160vh)
+      if (window.scrollY > window.innerHeight * 1.6) {
+        popupShown.current = true;
+        setShowPopup(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <>
+      {showPopup && <PitchDeckPopup onClose={() => setShowPopup(false)} />}
     <main style={{ fontFamily: "'Montserrat', sans-serif" }}>
 
       {/* ── HERO ──────────────────────────────────────────── */}
@@ -1040,5 +1176,6 @@ export default function Home() {
       </section>
 
     </main>
+    </>
   );
 }
