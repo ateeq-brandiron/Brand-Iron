@@ -356,11 +356,11 @@ export default function Home() {
                     <span style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 38, color: "#cb772d", lineHeight: 1 }}>{n}</span>
                   </div>
                   <h3 style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 18,
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 22,
                     textTransform: "uppercase", letterSpacing: "0.12em",
                     color: "#cb772d", marginBottom: 14, textAlign: "center",
                   }}>{title}</h3>
-                  <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", textAlign: "center", maxWidth: 180 }}>{body}</p>
+                  <p style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", textAlign: "center", maxWidth: 180 }}>{body}</p>
                 </div>
               ))}
             </div>
