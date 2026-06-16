@@ -315,7 +315,7 @@ export default function Home() {
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center top",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.82)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.20)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto" }}>
 
           <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
