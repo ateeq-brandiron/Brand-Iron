@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" fill="none">
+  <!-- Circular B mark - light version for dark backgrounds -->
+  <g>
+    <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.15)"/>
+    <!-- Horizontal band cuts -->
+    <rect x="2" y="21" width="52" height="7" fill="rgba(255,255,255,0.9)"/>
+    <rect x="2" y="31" width="52" height="7" fill="rgba(255,255,255,0.9)"/>
+    <!-- B letterform -->
+    <path d="M 15 13 L 15 43 L 29 43 Q 38 43 38 36.5 Q 38 31 32.5 29.5 Q 37 28 37 22 Q 37 13 28 13 Z
+             M 21 18.5 L 27.5 18.5 Q 31.5 18.5 31.5 22.5 Q 31.5 26.5 27.5 26.5 L 21 26.5 Z
+             M 21 32.5 L 28.5 32.5 Q 32.5 32.5 32.5 37 Q 32.5 41.5 28 41.5 L 21 41.5 Z" fill="rgba(255,255,255,0.95)"/>
+    <circle cx="28" cy="28" r="25.5" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  </g>
+  <!-- BRAND IRON text -->
+  <text x="62" y="22" font-family="'Plus Jakarta Sans', Arial Black, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#FFFFFF">BRAND</text>
+  <text x="62" y="41" font-family="'Plus Jakarta Sans', Arial Black, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#D87307">IRON</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" fill="none">
+  <!-- Circular B mark -->
+  <g>
+    <!-- Outer circle background -->
+    <circle cx="28" cy="28" r="26" fill="#7A5C2E"/>
+    <!-- Top arc mask (darker) -->
+    <path d="M 28 2 A 26 26 0 0 1 54 28 L 54 24 A 22 22 0 0 0 28 2 Z" fill="#6B4E24" opacity="0.3"/>
+    <!-- Horizontal band cuts through circle -->
+    <rect x="2" y="21" width="52" height="7" fill="white"/>
+    <rect x="2" y="31" width="52" height="7" fill="white"/>
+    <!-- Circle stroke clipping mask effect - redraw circle border -->
+    <circle cx="28" cy="28" r="26" fill="none" stroke="#7A5C2E" stroke-width="0"/>
+    <!-- B letterform in white knockout -->
+    <path d="M 15 13 L 15 43 L 29 43 Q 38 43 38 36.5 Q 38 31 32.5 29.5 Q 37 28 37 22 Q 37 13 28 13 Z
+             M 21 18.5 L 27.5 18.5 Q 31.5 18.5 31.5 22.5 Q 31.5 26.5 27.5 26.5 L 21 26.5 Z
+             M 21 32.5 L 28.5 32.5 Q 32.5 32.5 32.5 37 Q 32.5 41.5 28 41.5 L 21 41.5 Z" fill="white"/>
+    <!-- Clip circle -->
+    <circle cx="28" cy="28" r="26" fill="none" stroke="white" stroke-width="0"/>
+    <!-- Outer ring slight highlight -->
+    <circle cx="28" cy="28" r="25.5" fill="none" stroke="#9B7A40" stroke-width="1"/>
+  </g>
+  <!-- BRAND IRON text -->
+  <text x="62" y="22" font-family="'Plus Jakarta Sans', Arial Black, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#111111">BRAND</text>
+  <text x="62" y="41" font-family="'Plus Jakarta Sans', Arial Black, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#D87307">IRON</text>
+</svg>
