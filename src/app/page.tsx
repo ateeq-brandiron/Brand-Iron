@@ -24,13 +24,14 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
           <h1 style={{
-            fontFamily: "'Burford Rustic Type 1', Helvetica, Arial, Lucida, sans-serif",
+            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 400,
             fontSize: "clamp(56px, 7vw, 92px)",
             textTransform: "uppercase",
-            letterSpacing: "-0.01em",
+            letterSpacing: "-0.04em",
             lineHeight: 1.0,
-            color: "#FFFFFF",
+            color: "transparent",
+            WebkitTextStroke: "2px #FFFFFF",
             maxWidth: 860,
             marginBottom: 32,
           }}>
