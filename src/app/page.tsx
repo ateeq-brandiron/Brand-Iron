@@ -93,6 +93,146 @@ function TestimonialsSection() {
   );
 }
 
+function useCountUp(target: number, duration = 2000, started = false) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!started) return;
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { setCount(target); clearInterval(timer); }
+      else setCount(start);
+    }, 16);
+    return () => clearInterval(timer);
+  }, [target, duration, started]);
+  return count;
+}
+
+function BrandMarkStats() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setStarted(true); obs.disconnect(); }
+    }, { threshold: 0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const billions = useCountUp(5, 1800, started);
+  const companies = useCountUp(200, 2000, started);
+  const decks = useCountUp(500, 2200, started);
+
+  const stats = [
+    {
+      value: `$${billions}B+`,
+      label: "Raised",
+      sublabel: "Capital Raised",
+      icon: (
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="13" stroke="#cb772d" strokeWidth="1.8"/>
+          <ellipse cx="18" cy="13" rx="7" ry="3" stroke="#cb772d" strokeWidth="1.8"/>
+          <path d="M11 13v5c0 1.66 3.13 3 7 3s7-1.34 7-3v-5" stroke="#cb772d" strokeWidth="1.8"/>
+          <path d="M11 18v5c0 1.66 3.13 3 7 3s7-1.34 7-3v-5" stroke="#cb772d" strokeWidth="1.8"/>
+        </svg>
+      ),
+    },
+    {
+      value: `${companies}+`,
+      label: "Companies",
+      sublabel: "Branded / Rebranded",
+      icon: (
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="16" width="10" height="14" rx="1.5" stroke="#cb772d" strokeWidth="1.8"/>
+          <rect x="13" y="10" width="10" height="20" rx="1.5" stroke="#cb772d" strokeWidth="1.8"/>
+          <rect x="22" y="6" width="10" height="24" rx="1.5" stroke="#cb772d" strokeWidth="1.8"/>
+          <path d="M4 30h28" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      ),
+    },
+    {
+      value: `${decks}+`,
+      label: "Pitch Decks",
+      sublabel: "Created",
+      icon: (
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="6" y="5" width="18" height="22" rx="2" stroke="#cb772d" strokeWidth="1.8"/>
+          <path d="M10 11h10M10 15h10M10 19h6" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round"/>
+          <path d="M22 20l8-6M26 14h4v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <section ref={ref} style={{ background: "#FFFFFF", padding: "80px 40px", borderBottom: "1px solid #F0EDE8" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "center" }}>
+
+        {/* Left — logo in circular frame */}
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{
+            width: 280, height: 280, borderRadius: "50%",
+            border: "2px solid #E8E4DC",
+            overflow: "hidden",
+            boxShadow: "0 12px 48px rgba(0,0,0,0.08)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            background: "#FAFAF8",
+          }}>
+            <img src="/logo-dark.png" alt="Brand Iron" style={{ width: "72%", height: "auto", objectFit: "contain" }}
+              onError={e => { (e.currentTarget as HTMLImageElement).src = "/logo.png"; }} />
+          </div>
+        </div>
+
+        {/* Right — tagline + stats */}
+        <div>
+          <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 16, fontWeight: 500, color: "#888", letterSpacing: "0.02em", marginBottom: 8 }}>
+            In the Wild West of Marketing,
+          </p>
+          <h2 style={{
+            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+            fontWeight: 700, fontSize: "clamp(36px, 4.5vw, 60px)",
+            textTransform: "uppercase", letterSpacing: "0.02em",
+            color: "#0F1B2D", lineHeight: 1.0, marginBottom: 20,
+          }}>
+            Make Your Mark<br />On The World
+          </h2>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.75, color: "#666", marginBottom: 48, maxWidth: 480 }}>
+            Where brands, entrepreneurs, and businesses — from start-ups to large firms — achieve their desired outcomes.
+          </p>
+
+          {/* Stats row */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+            {stats.map(({ value, label, sublabel, icon }) => (
+              <div key={label} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                <div style={{
+                  width: 52, height: 52, borderRadius: "50%",
+                  background: "rgba(203,119,45,0.08)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  flexShrink: 0, marginTop: 4,
+                }}>
+                  {icon}
+                </div>
+                <div>
+                  <div style={{
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+                    fontWeight: 700, fontSize: 28, color: "#cb772d", lineHeight: 1, marginBottom: 4,
+                  }}>{value}</div>
+                  <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 2 }}>{label}</div>
+                  <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "#888" }}>{sublabel}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PitchDeckPopup({ onClose }: { onClose: () => void }) {
   const [visible, setVisible] = useState(false);
   useEffect(() => { const t = setTimeout(() => setVisible(true), 30); return () => clearTimeout(t); }, []);
@@ -290,6 +430,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── BRAND MARK STATS ──────────────────────────────── */}
+      <BrandMarkStats />
 
       {/* ── PROBLEM ────────────────────────────────────────── */}
       <section id="services" style={{
