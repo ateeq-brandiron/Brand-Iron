@@ -74,9 +74,9 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
           {/* Full-width headline — centered, tight letter-spacing, one line */}
-          <h2 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 32 }}>
+          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 32 }}>
             The Problem Isn&apos;t Your Marketing. It&apos;s Your System.
-          </h2>
+          </h1>
 
           {/* Centered subtext — 20px matching hero body */}
           <p style={{
@@ -169,9 +169,9 @@ export default function Home() {
       <section style={{ background: "#FFFFFF", padding: "100px 24px 110px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           {/* Headline — filled navy, not stroke */}
-          <h2 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 28 }}>
+          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 28 }}>
             The AI Growth Engine
-          </h2>
+          </h1>
 
           {/* Subtext */}
           <p style={{
@@ -302,9 +302,9 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.82)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
 
-          <h2 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
+          <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             AI Alone Isn&apos;t The Advantage.
-          </h2>
+          </h1>
 
           <p style={{
             fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)",
@@ -362,9 +362,9 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           {/* Headline */}
-          <h2 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
+          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
             What We Build
-          </h2>
+          </h1>
           <p style={{
             fontSize: 18, lineHeight: 1.7, color: "#555",
             textAlign: "center", maxWidth: 620, margin: "0 auto 64px",
@@ -505,9 +505,9 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
 
           {/* Stroke headline */}
-          <h2 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
+          <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             Most Agencies Focus On One Piece Of The Puzzle.
-          </h2>
+          </h1>
           <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", textAlign: "center", marginBottom: 64 }}>
             We build the whole system.
           </p>
@@ -607,7 +607,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <h2 className="section-heading" style={{ color: "#FFFFFF" }}>Brand Iron vs. Typical Agency</h2>
+            <h1 className="section-heading" style={{ color: "#FFFFFF" }}>Brand Iron vs. Typical Agency</h1>
           </div>
           <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, overflow: "hidden" }}>
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", background: "rgba(0,0,0,0.3)" }}>
@@ -653,9 +653,9 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1100, margin: "0 auto" }}>
           {/* Headline */}
-          <h2 className="section-heading" style={{ color: "#FFFFFF", marginBottom: 20 }}>
+          <h1 className="section-heading" style={{ color: "#FFFFFF", marginBottom: 20 }}>
             What You Get
-          </h2>
+          </h1>
           <p style={{
             fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)",
             textAlign: "center", maxWidth: 600, margin: "0 auto 56px",
@@ -807,9 +807,9 @@ export default function Home() {
           </div>
 
           {/* Stroke headline */}
-          <h2 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 56 }}>
+          <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 56 }}>
             Ready To Stop Chasing Tools And Start Building A Complete Strategy Delivers 3X Revenue?
-          </h2>
+          </h1>
 
           {/* White form card */}
           <div style={{
