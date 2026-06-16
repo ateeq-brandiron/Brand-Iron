@@ -140,16 +140,16 @@ export default function Home() {
                 background: "rgba(255,255,255,0.93)",
                 borderRadius: 10,
                 borderLeft: "4px solid #cb772d",
-                padding: "37px 28px 41px",
+                padding: "48px 36px 52px",
                 boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
               }}>
                 <div style={{ marginBottom: 26 }}>{icon}</div>
                 <h3 style={{
-                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 19, fontWeight: 400,
+                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 22, fontWeight: 400,
                   textTransform: "uppercase", letterSpacing: "0.08em",
-                  color: "#0F1B2D", marginBottom: 16, lineHeight: 1.3,
+                  color: "#0F1B2D", marginBottom: 18, lineHeight: 1.3,
                 }}>{title}</h3>
-                <p style={{ fontSize: 16, lineHeight: 1.75, color: "#555" }}>{body}</p>
+                <p style={{ fontSize: 17, lineHeight: 1.75, color: "#555" }}>{body}</p>
               </div>
             ))}
           </div>
@@ -470,17 +470,17 @@ export default function Home() {
             ].map(({ icon, title, body, href }) => (
               <div key={title} className="service-card" style={{
                 background: "rgba(255,255,255,0.88)",
-                borderRadius: 12, padding: "36px 28px 28px",
+                borderRadius: 12, padding: "44px 36px 36px",
                 boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
                 display: "flex", flexDirection: "column",
               }}>
-                <div style={{ marginBottom: 22 }}>{icon}</div>
+                <div style={{ marginBottom: 26 }}>{icon}</div>
                 <h3 style={{
-                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 15, fontWeight: 400,
+                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 18, fontWeight: 400,
                   textTransform: "uppercase", letterSpacing: "0.1em",
-                  color: "#cb772d", marginBottom: 10,
+                  color: "#cb772d", marginBottom: 14,
                 }}>{title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.65, color: "#555", flex: 1, marginBottom: 28 }}>{body}</p>
+                <p style={{ fontSize: 16, lineHeight: 1.7, color: "#555", flex: 1, marginBottom: 32 }}>{body}</p>
                 <Link href={href} style={{ display: "block" }}>
                   <div className="service-underline" style={{ width: 48, height: 3, background: "#0F1B2D", borderRadius: 2 }} />
                 </Link>
@@ -504,7 +504,7 @@ export default function Home() {
                     <path d="M2.5 7l3 3L11.5 4" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 500, color: "#0F1B2D" }}>{item}</span>
+                <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, fontWeight: 500, color: "#0F1B2D" }}>{item}</span>
               </div>
             ))}
           </div>
@@ -535,26 +535,25 @@ export default function Home() {
             <div className="compare-card" style={{
               background: "#0F1B2D",
               border: "1.5px solid #cb772d",
-              borderRadius: 12, padding: "40px 36px",
+              borderRadius: 12, padding: "52px 44px",
             }}>
               <h3 style={{
-                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 20,
+                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 24,
                 textTransform: "uppercase", letterSpacing: "0.15em",
-                color: "#cb772d", textAlign: "center", marginBottom: 36,
+                color: "#cb772d", textAlign: "center", marginBottom: 40,
               }}>Typical Agency</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
                 {["Disconnected services", "Single-channel focus", "Tool-first thinking", "No revenue visibility", "Siloed execution"].map(item => (
-                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    {/* Red X */}
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 18 }}>
                     <div style={{
-                      width: 28, height: 28, flexShrink: 0,
+                      width: 30, height: 30, flexShrink: 0,
                       display: "flex", alignItems: "center", justifyContent: "center",
                     }}>
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                      <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
                         <path d="M5 5l12 12M17 5L5 17" stroke="#C0392B" strokeWidth="2.5" strokeLinecap="round"/>
                       </svg>
                     </div>
-                    <span style={{ fontSize: 16, color: "rgba(255,255,255,0.85)" }}>{item}</span>
+                    <span style={{ fontSize: 17, color: "rgba(255,255,255,0.85)" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -564,24 +563,23 @@ export default function Home() {
             <div className="compare-card" style={{
               background: "rgba(180,100,20,0.18)",
               border: "1.5px solid #cb772d",
-              borderRadius: 12, padding: "40px 36px",
+              borderRadius: 12, padding: "52px 44px",
               backdropFilter: "blur(2px)",
             }}>
               <h3 style={{
-                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 20,
+                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 24,
                 textTransform: "uppercase", letterSpacing: "0.15em",
-                color: "#cb772d", textAlign: "center", marginBottom: 36,
+                color: "#cb772d", textAlign: "center", marginBottom: 40,
               }}>Brand Iron</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
                 {["Integrated revenue engine", "Full-funnel systems", "Outcome-first approach", "Clear ROI tracking", "Orchestrated execution"].map(item => (
-                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    {/* Orange checkmark */}
-                    <div style={{ width: 28, height: 28, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 18 }}>
+                    <div style={{ width: 30, height: 30, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
                         <path d="M4 11l5 5L18 6" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
-                    <span style={{ fontSize: 16, color: "rgba(255,255,255,0.92)" }}>{item}</span>
+                    <span style={{ fontSize: 17, color: "rgba(255,255,255,0.92)" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -645,7 +643,7 @@ export default function Home() {
                 borderTop: "1px solid rgba(255,255,255,0.07)",
                 background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)",
               }}>
-                <div style={{ padding: "16px 24px", fontSize: 15, color: "rgba(255,255,255,0.85)" }}>{row}</div>
+                <div style={{ padding: "20px 28px", fontSize: 17, color: "rgba(255,255,255,0.85)" }}>{row}</div>
                 <div style={{ padding: "16px 24px", textAlign: "center" }}>
                   <span style={{ color: "#cb772d", fontSize: 18 }}>✗</span>
                 </div>
@@ -766,18 +764,18 @@ export default function Home() {
               <div key={title} className="feature-card" style={{
                 background: "rgba(255,255,255,0.92)",
                 borderLeft: "4px solid #cb772d",
-                borderRadius: 12, padding: "32px 32px",
+                borderRadius: 12, padding: "40px 40px",
                 display: "flex", alignItems: "flex-start", gap: 20,
                 boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
               }}>
                 <div style={{ flexShrink: 0, marginTop: 2 }}>{icon}</div>
                 <div>
                   <h3 style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 14, fontWeight: 400,
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 17, fontWeight: 400,
                     textTransform: "uppercase", letterSpacing: "0.1em",
-                    color: "#0F1B2D", marginBottom: 10, lineHeight: 1.4,
+                    color: "#0F1B2D", marginBottom: 12, lineHeight: 1.4,
                   }}>{title}</h3>
-                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "#555" }}>{body}</p>
+                  <p style={{ fontSize: 16, lineHeight: 1.75, color: "#555" }}>{body}</p>
                 </div>
               </div>
             ))}
