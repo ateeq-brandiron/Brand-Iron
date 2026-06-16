@@ -70,7 +70,7 @@ export default function Home() {
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         {/* Light overlay so wood texture shows through */}
-        <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.78)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.55)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", textAlign: "center" }}>
           {/* Full-width headline — centered, tight letter-spacing, one line */}
