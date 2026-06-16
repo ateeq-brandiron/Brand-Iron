@@ -672,6 +672,7 @@ export default function Home() {
             What You Get
           </h1>
           <p style={{
+            fontFamily: "'Montserrat', Helvetica, Arial, sans-serif",
             fontSize: 18, lineHeight: 1.7, color: "#555",
             textAlign: "center", maxWidth: 600, margin: "0 auto 56px",
           }}>
@@ -694,10 +695,10 @@ export default function Home() {
                 <div key={num} className="stat-block">
                   <div style={{
                     fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
-                    fontSize: 86, fontWeight: 400,
-                    color: "#cb772d", lineHeight: 1, marginBottom: 10,
+                    fontSize: 90, fontWeight: 400,
+                    color: "#cb772d", lineHeight: 1, marginBottom: 8,
                   }}>{num}</div>
-                  <div style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", marginBottom: 22 }}>{label}</div>
+                  <div style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 16, fontWeight: 700, color: "#FFFFFF", marginBottom: 20, letterSpacing: "0.04em", textTransform: "uppercase" }}>{label}</div>
                   <div style={{ height: 8, background: "rgba(255,255,255,0.12)", borderRadius: 4, overflow: "hidden" }}>
                     <div className="progress-bar" style={{
                       height: "100%", width: `${pct}%`,
@@ -771,11 +772,11 @@ export default function Home() {
                 <div style={{ flexShrink: 0, marginTop: 2 }}>{icon}</div>
                 <div>
                   <h3 style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 17, fontWeight: 400,
-                    textTransform: "uppercase", letterSpacing: "0.1em",
-                    color: "#0F1B2D", marginBottom: 12, lineHeight: 1.4,
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 19, fontWeight: 400,
+                    textTransform: "uppercase", letterSpacing: "0.08em",
+                    color: "#0F1B2D", marginBottom: 12, lineHeight: 1.35,
                   }}>{title}</h3>
-                  <p style={{ fontSize: 16, lineHeight: 1.75, color: "#555" }}>{body}</p>
+                  <p style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 15, lineHeight: 1.75, color: "#555" }}>{body}</p>
                 </div>
               </div>
             ))}
