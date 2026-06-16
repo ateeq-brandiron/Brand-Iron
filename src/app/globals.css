@@ -124,18 +124,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-secondary:hover { background: #FFFFFF; color: #1c3652; }
 
+/* ── Global hover philosophy: NO fills — use glow/ring/lift ─ */
+
 /* ── AI Growth Engine — icon boxes & arrows ─────────────── */
 .engine-icon-box:hover {
-  background: #0F1B2D !important;
   border-color: #cb772d !important;
-  box-shadow: 0 8px 28px rgba(203,119,45,0.35) !important;
-  transform: translateY(-4px);
+  box-shadow: 0 0 0 4px rgba(203,119,45,0.25), 0 8px 28px rgba(203,119,45,0.2) !important;
+  transform: translateY(-5px) scale(1.04);
 }
 .engine-arrow:hover {
-  transform: translateX(5px);
+  transform: translateX(6px);
 }
-.engine-arrow:hover svg path {
-  stroke: #0F1B2D;
+
+/* ── Process Steps ──────────────────────────────────────── */
+.process-step:hover .process-circle {
+  box-shadow: 0 0 0 6px rgba(203,119,45,0.25), 0 0 32px rgba(203,119,45,0.3);
+  transform: translateY(-6px) scale(1.06);
+  border-color: #FFFFFF;
+}
+.process-step:hover h3 {
+  color: #FFFFFF;
+  transition: color 0.3s ease;
+}
+.process-step:hover p {
+  color: rgba(255,255,255,1) !important;
+  transition: color 0.3s ease;
 }
 
 /* ── Section Heading (H2) ───────────────────────────────── */

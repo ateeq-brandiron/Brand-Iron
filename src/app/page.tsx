@@ -311,20 +311,20 @@ export default function Home() {
 
       {/* ── 5-STEP PROCESS (section 4) ─────────────────────── */}
       <section id="process" style={{
-        position: "relative", padding: "100px 24px 120px",
+        position: "relative", padding: "140px 24px 160px",
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.82)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto" }}>
 
           <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             AI Alone Isn&apos;t The Advantage.
           </h1>
 
           <p style={{
-            fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)",
-            textAlign: "center", maxWidth: 600, margin: "0 auto 80px",
+            fontSize: 20, lineHeight: 1.7, color: "rgba(255,255,255,0.85)",
+            textAlign: "center", maxWidth: 640, margin: "0 auto 100px",
           }}>
             Anyone can use AI. Very few know how to use it correctly.<br />
             Human expertise guiding AI is what drives results.
@@ -333,11 +333,11 @@ export default function Home() {
           {/* Timeline */}
           <div style={{ position: "relative" }}>
             <div style={{
-              position: "absolute", top: 52,
-              left: "10%", right: "10%",
+              position: "absolute", top: 66,
+              left: "8%", right: "8%",
               height: 2, background: "#cb772d", zIndex: 0,
             }} />
-            <div style={{ display: "flex", justifyContent: "space-between", position: "relative", zIndex: 1 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", position: "relative", zIndex: 1, gap: 16 }}>
               {[
                 { n: "01", title: "Define The Strategy", body: "Define positioning, audience, and growth strategy." },
                 { n: "02", title: "Build The System", body: "Design CRM, automation, and AI infrastructure." },
@@ -345,21 +345,22 @@ export default function Home() {
                 { n: "04", title: "Drive Pipeline", body: "Activate campaigns that generate pipeline." },
                 { n: "05", title: "Scale Results", body: "Track, optimize, and expand." },
               ].map(({ n, title, body }) => (
-                <div key={n} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
-                  <div style={{
-                    width: 104, height: 104, borderRadius: "50%",
+                <div key={n} className="process-step" style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
+                  <div className="process-circle" style={{
+                    width: 132, height: 132, borderRadius: "50%",
                     background: "#0F1B2D", border: "3px solid #cb772d",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    marginBottom: 32, flexShrink: 0,
+                    marginBottom: 36, flexShrink: 0,
+                    transition: "box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease",
                   }}>
-                    <span style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 32, color: "#cb772d", lineHeight: 1 }}>{n}</span>
+                    <span style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 38, color: "#cb772d", lineHeight: 1 }}>{n}</span>
                   </div>
                   <h3 style={{
-                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 13,
+                    fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 15,
                     textTransform: "uppercase", letterSpacing: "0.12em",
-                    color: "#cb772d", marginBottom: 12, textAlign: "center",
+                    color: "#cb772d", marginBottom: 14, textAlign: "center",
                   }}>{title}</h3>
-                  <p style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.8)", textAlign: "center", maxWidth: 160 }}>{body}</p>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", textAlign: "center", maxWidth: 180 }}>{body}</p>
                 </div>
               ))}
             </div>
