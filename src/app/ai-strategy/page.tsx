@@ -1,4 +1,80 @@
+"use client";
 import Link from "next/link";
+
+// SVG Icons — copper stroke, no fill, 44x44 viewBox 0 0 36 36
+
+function IconStrategyDoc() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Document body */}
+      <rect x="6" y="4" width="18" height="24" rx="2" stroke="#cb772d" strokeWidth="2.5" />
+      <line x1="10" y1="11" x2="20" y2="11" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" />
+      <line x1="10" y1="15" x2="20" y2="15" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" />
+      <line x1="10" y1="19" x2="16" y2="19" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" />
+      {/* Sparkle star top-right */}
+      <line x1="26" y1="4" x2="26" y2="10" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" />
+      <line x1="23" y1="7" x2="29" y2="7" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" />
+      <line x1="23.8" y1="4.8" x2="28.2" y2="9.2" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="28.2" y1="4.8" x2="23.8" y2="9.2" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconRoadmap() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Horizontal timeline line */}
+      <line x1="4" y1="18" x2="32" y2="18" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" />
+      {/* 4 milestone dots */}
+      <circle cx="8" cy="18" r="3" stroke="#cb772d" strokeWidth="2" />
+      <circle cx="16" cy="18" r="3" stroke="#cb772d" strokeWidth="2" />
+      <circle cx="24" cy="18" r="3" stroke="#cb772d" strokeWidth="2" />
+      <circle cx="32" cy="18" r="3" stroke="#cb772d" strokeWidth="2" />
+      {/* Tick marks below each dot */}
+      <line x1="8" y1="23" x2="8" y2="27" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="23" x2="16" y2="27" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="24" y1="23" x2="24" y2="27" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="32" y1="23" x2="32" y2="27" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconROI() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* X axis */}
+      <line x1="4" y1="30" x2="32" y2="30" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" />
+      {/* Bar chart */}
+      <rect x="5" y="20" width="5" height="10" stroke="#cb772d" strokeWidth="2" />
+      <rect x="13" y="14" width="5" height="16" stroke="#cb772d" strokeWidth="2" />
+      <rect x="21" y="10" width="5" height="20" stroke="#cb772d" strokeWidth="2" />
+      {/* Upward trend line */}
+      <polyline points="7,22 15,16 23,10 30,6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Arrow head */}
+      <polyline points="27,5 30,6 29,9" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconVendor() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Left circle */}
+      <circle cx="14" cy="18" r="9" stroke="#cb772d" strokeWidth="2" />
+      {/* Right circle */}
+      <circle cx="22" cy="18" r="9" stroke="#cb772d" strokeWidth="2" />
+      {/* Checkmark in overlap centre */}
+      <polyline points="15,18 17.5,21 22,15" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+const outcomeItems = [
+  { icon: <IconStrategyDoc />, title: "AI Strategy Document", body: "A clear, board-ready AI strategy aligned to your revenue goals." },
+  { icon: <IconRoadmap />, title: "Phased Roadmap", body: "Quarter-by-quarter implementation plan with milestones and KPIs." },
+  { icon: <IconROI />, title: "ROI Projections", body: "Quantified estimates of revenue impact and cost savings per initiative." },
+  { icon: <IconVendor />, title: "Vendor Shortlist", body: "Curated recommendations of tools and partners that fit your stack and budget." },
+];
 
 export default function AIStrategyPage() {
   return (
@@ -10,7 +86,7 @@ export default function AIStrategyPage() {
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(28,54,82,0.85) 0%, rgba(20,32,55,0.75) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px" }}>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", padding: "140px 24px 80px" }}>
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Services</p>
           <h1 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: "clamp(36px, 5vw, 68px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", maxWidth: 700, marginBottom: 24, lineHeight: 1.05 }}>
             AI Strategy &<br /><span style={{ color: "#cb772d" }}>Consulting</span>
@@ -24,7 +100,7 @@ export default function AIStrategyPage() {
 
       {/* What It Is */}
       <section style={{ background: "#FFFFFF", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>What We Do</p>
             <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(28px, 3vw, 44px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#0F1B2D", marginBottom: 24 }}>Strategy Before Execution</h2>
@@ -37,7 +113,7 @@ export default function AIStrategyPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {["AI Readiness Audit", "Use Case Prioritisation", "ROI Modelling", "Vendor Selection", "Implementation Roadmap", "Team Enablement Plan"].map(item => (
-              <div key={item} style={{ background: "#F8F7F4", borderRadius: 8, padding: "20px", borderTop: "2px solid #cb772d" }}>
+              <div key={item} className="process-card" style={{ background: "#F8F7F4", borderRadius: 8, padding: "20px", borderTop: "2px solid #cb772d" }}>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: "#0F1B2D" }}>{item}</div>
               </div>
             ))}
@@ -47,7 +123,7 @@ export default function AIStrategyPage() {
 
       {/* Process */}
       <section style={{ background: "#0F1B2D", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(26px, 3vw, 42px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", textAlign: "center", marginBottom: 56 }}>How It Works</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 24 }}>
             {[
@@ -56,7 +132,7 @@ export default function AIStrategyPage() {
               { n: "03", title: "Opportunity Map", body: "We identify and score AI use cases by ROI potential, effort, and strategic fit." },
               { n: "04", title: "Roadmap Delivery", body: "You receive a phased, prioritised AI roadmap with success metrics, budget guidance, and vendor recommendations." },
             ].map(({ n, title, body }) => (
-              <div key={n} style={{ borderTop: "3px solid #cb772d", padding: "28px 20px" }}>
+              <div key={n} className="process-card" style={{ borderTop: "3px solid #cb772d", padding: "28px 20px" }}>
                 <div style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 44, fontWeight: 700, color: "rgba(203,119,45,0.65)", lineHeight: 1, marginBottom: 12 }}>{n}</div>
                 <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 24, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 10 }}>{title}</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.85)" }}>{body}</p>
@@ -68,17 +144,12 @@ export default function AIStrategyPage() {
 
       {/* Outcomes */}
       <section style={{ background: "#F8F7F4", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(26px, 3vw, 42px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#0F1B2D", marginBottom: 48 }}>What You Walk Away With</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24, textAlign: "left" }}>
-            {[
-              { icon: "📋", title: "AI Strategy Document", body: "A clear, board-ready AI strategy aligned to your revenue goals." },
-              { icon: "🗺️", title: "Phased Roadmap", body: "Quarter-by-quarter implementation plan with milestones and KPIs." },
-              { icon: "💰", title: "ROI Projections", body: "Quantified estimates of revenue impact and cost savings per initiative." },
-              { icon: "🤝", title: "Vendor Shortlist", body: "Curated recommendations of tools and partners that fit your stack and budget." },
-            ].map(({ icon, title, body }) => (
-              <div key={title} style={{ background: "#FFFFFF", borderRadius: 8, padding: "28px 24px", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>
-                <div style={{ fontSize: 32, marginBottom: 14 }}>{icon}</div>
+            {outcomeItems.map(({ icon, title, body }) => (
+              <div key={title} className="outcome-card" style={{ background: "#FFFFFF", borderRadius: 8, padding: "28px 24px", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>
+                <div style={{ marginBottom: 14 }}>{icon}</div>
                 <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 24, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", color: "#0F1B2D", marginBottom: 10 }}>{title}</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: "#666" }}>{body}</p>
               </div>
@@ -91,12 +162,7 @@ export default function AIStrategyPage() {
       <section style={{ background: "#cb772d", padding: "80px 24px", textAlign: "center" }}>
         <h2 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: "clamp(30px, 4vw, 52px)", textTransform: "uppercase", letterSpacing: "0.02em", color: "#FFFFFF", marginBottom: 16 }}>Ready to Build Your AI Strategy?</h2>
         <p style={{ fontSize: 17, color: "rgba(255,255,255,0.85)", marginBottom: 36, maxWidth: 480, margin: "0 auto 36px" }}>Book a 30-minute strategy session and we&apos;ll show you exactly where AI can move the needle in your business.</p>
-        <Link href="/contact" style={{
-          display: "inline-flex", alignItems: "center", gap: 8,
-          background: "#FFFFFF", color: "#cb772d",
-          fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 700, fontSize: 15, letterSpacing: "0.1em", textTransform: "uppercase",
-          padding: "16px 36px", borderRadius: 4, textDecoration: "none",
-        }}>Book Strategy Session</Link>
+        <Link href="/contact" className="cta-link-btn">Book Strategy Session</Link>
       </section>
     </main>
   );
