@@ -24,7 +24,7 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
           <h1 style={{
-            fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+            fontFamily: "'Burford Rustic Type 1', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 700,
             fontSize: "clamp(44px, 6vw, 72px)",
             textTransform: "uppercase",
