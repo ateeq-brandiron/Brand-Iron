@@ -64,8 +64,7 @@ export default function ProcessPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ position: "relative", backgroundImage: "url(\"/images/bg-leather.svg\")", backgroundSize: "cover", backgroundPosition: "center", padding: "100px 40px", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(15,8,2,0.72)" }} />
+      <section className="cta-leather">
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent 0%, #cb772d 30%, #cb772d 70%, transparent 100%)" }} />
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 700, height: 500, background: "radial-gradient(ellipse, rgba(203,119,45,0.10) 0%, transparent 68%)", pointerEvents: "none" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
