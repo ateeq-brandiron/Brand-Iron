@@ -55,7 +55,7 @@ export default function ServicesPage() {
         backgroundImage: "url('/images/bg-barn.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.80)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.45)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px" }}>
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>What We Do</p>
           <h1 style={{
