@@ -457,7 +457,7 @@ export default function Home() {
       </section>
 
       {/* ── S2: BUYING JOURNEY ────────────────────────────── */}
-      <section style={{ background: "#FFFFFF", padding: "120px 40px 120px" }}>
+      <section style={{ background: "#FFFFFF", padding: "120px 40px 120px", borderBottom: "1px solid #F0ECE8" }}>
         <div ref={buyerView.ref} style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
@@ -562,8 +562,9 @@ export default function Home() {
       </section>
 
       {/* ── S4: BRAND IRON DIFFERENCE ─────────────────────── */}
-      <section style={{ background: "#0F1B2D", padding: "120px 40px 120px" }}>
-        <div ref={diffView.ref} style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/horse mane circuit lines_1.png')", backgroundSize: "cover", backgroundPosition: "center top" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.92)" }} />
+        <div ref={diffView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
               Our Approach
@@ -813,8 +814,9 @@ export default function Home() {
       </section>
 
       {/* ── S8: RESULTS THAT MATTER ───────────────────────── */}
-      <section style={{ background: "#0F1B2D", padding: "120px 40px 120px" }}>
-        <div ref={resultsView.ref} style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-barn.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(8,15,32,0.90)" }} />
+        <div ref={resultsView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
               What You Get
@@ -933,8 +935,9 @@ export default function Home() {
       </section>
 
       {/* ── S11: STRATEGIC GROWTH PARTNER ────────────────── */}
-      <section style={{ background: "#FFFFFF", padding: "120px 40px 100px" }}>
-        <div ref={partnerView.ref} style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 100px", backgroundImage: "url('/images/bg-fence.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,228,0.88)" }} />
+        <div ref={partnerView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
               More Than An Agency
@@ -950,20 +953,62 @@ export default function Home() {
           {/* 4 partnership values */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28, marginBottom: 64 }}>
             {[
-              { icon: "🎯", title: "Strategy First", body: "We start with your business goals, not a service menu. Every recommendation is built around what actually moves the needle for you." },
-              { icon: "🤝", title: "Embedded Partner", body: "We act as an extension of your team — not a vendor you manage. You get direct access to senior strategists, not account managers." },
-              { icon: "⚡", title: "Execution That Delivers", body: "Strategy without execution is just a document. We build, run, and optimize — you see real results, not slide decks." },
-              { icon: "📈", title: "Built To Scale", body: "Everything we build is designed to grow with you. Not just for today — but for the next stage of your business." },
+              {
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="12" stroke="#cb772d" strokeWidth="2"/>
+                    <circle cx="18" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/>
+                    <path d="M18 6V2M18 34v-4M6 18H2M34 18h-4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="18" cy="18" r="2" fill="#cb772d"/>
+                  </svg>
+                ),
+                title: "Strategy First",
+                body: "We start with your business goals, not a service menu. Every recommendation is built around what actually moves the needle for you.",
+              },
+              {
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <path d="M8 20c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M18 10V6M12 28h12M18 28v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="18" cy="20" r="3" fill="#cb772d"/>
+                  </svg>
+                ),
+                title: "Embedded Partner",
+                body: "We act as an extension of your team — not a vendor you manage. You get direct access to senior strategists, not account managers.",
+              },
+              {
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <path d="M6 30l8-12 6 4 10-14" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M26 8l4-4M28 4h4v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                title: "Execution That Delivers",
+                body: "Strategy without execution is just a document. We build, run, and optimize — you see real results, not slide decks.",
+              },
+              {
+                icon: (
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <rect x="4" y="22" width="7" height="10" rx="1" stroke="#cb772d" strokeWidth="2"/>
+                    <rect x="14" y="14" width="7" height="18" rx="1" stroke="#cb772d" strokeWidth="2"/>
+                    <rect x="24" y="6" width="7" height="26" rx="1" stroke="#cb772d" strokeWidth="2"/>
+                    <path d="M6 18l10-7 10-6" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                title: "Built To Scale",
+                body: "Everything we build is designed to grow with you. Not just for today — but for the next stage of your business.",
+              },
             ].map(({ icon, title, body }) => (
               <div key={title} className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{
-                background: "#F9F8F6", borderRadius: 12, padding: "40px 28px",
+                background: "rgba(255,255,255,0.88)", borderRadius: 12, padding: "40px 28px",
                 textAlign: "center",
-                transition: "background 0.25s, transform 0.25s",
+                transition: "background 0.25s, transform 0.25s, box-shadow 0.25s",
+                boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "#F0ECE5"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "#F9F8F6"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.98)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 12px 40px rgba(0,0,0,0.12)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.88)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.06)"; }}
               >
-                <div style={{ fontSize: 36, marginBottom: 20 }}>{icon}</div>
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>{icon}</div>
                 <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 14 }}>{title}</h3>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "#666" }}>{body}</p>
               </div>
