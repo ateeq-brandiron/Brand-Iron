@@ -172,18 +172,9 @@ function BrandMarkStats() {
     <section ref={ref} style={{ background: "#FFFFFF", padding: "80px 40px", borderBottom: "1px solid #F0EDE8" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "center" }}>
 
-        {/* Left — logo in circular frame */}
+        {/* Left — section image */}
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{
-            width: 280, height: 280, borderRadius: "50%",
-            border: "2px solid #E8E4DC",
-            overflow: "hidden",
-            boxShadow: "0 12px 48px rgba(0,0,0,0.08)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            background: "#FAFAF8",
-          }}>
-            <img src="/logo.png" alt="Brand Iron" style={{ width: "72%", height: "auto", objectFit: "contain" }} />
-          </div>
+          <img src="/section2-home.png" alt="Brand Iron" style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: 12 }} />
         </div>
 
         {/* Right — tagline + stats */}
