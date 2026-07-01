@@ -472,8 +472,8 @@ export default function Home() {
             top of a broken system scales inefficiency.
           </p>
 
-          {/* 4 cards — 15% bigger padding & icons */}
-          <div className="reveal-group" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
+          {/* 4 cards — accordion hover: hovered expands, siblings shrink */}
+          <div className="problem-accordion reveal-group">
             {[
               {
                 icon: (
@@ -520,20 +520,10 @@ export default function Home() {
                 body: "Teams operating in separate worlds with different goals and no shared accountability.",
               },
             ].map(({ icon, title, body }) => (
-              <div key={title} className={`problem-card reveal${problemView.inView ? ' visible' : ''}`} style={{
-                background: "rgba(255,255,255,0.93)",
-                borderRadius: 10,
-                borderLeft: "4px solid #cb772d",
-                padding: "48px 36px 52px",
-                boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
-              }}>
-                <div style={{ marginBottom: 26 }}>{icon}</div>
-                <h3 style={{
-                  fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 22, fontWeight: 400,
-                  textTransform: "uppercase", letterSpacing: "0.08em",
-                  color: "#0F1B2D", marginBottom: 18, lineHeight: 1.3,
-                }}>{title}</h3>
-                <p style={{ fontSize: 17, lineHeight: 1.75, color: "#555" }}>{body}</p>
+              <div key={title} className={`problem-card reveal${problemView.inView ? ' visible' : ''}`}>
+                <div className="problem-card-icon">{icon}</div>
+                <h3 className="problem-card-title">{title}</h3>
+                <p className="problem-card-body">{body}</p>
               </div>
             ))}
           </div>
