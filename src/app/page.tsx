@@ -182,8 +182,7 @@ function BrandMarkStats() {
             display: "flex", alignItems: "center", justifyContent: "center",
             background: "#FAFAF8",
           }}>
-            <img src="/logo-dark.png" alt="Brand Iron" style={{ width: "72%", height: "auto", objectFit: "contain" }}
-              onError={e => { (e.currentTarget as HTMLImageElement).src = "/logo.png"; }} />
+            <img src="/logo.png" alt="Brand Iron" style={{ width: "72%", height: "auto", objectFit: "contain" }} />
           </div>
         </div>
 
