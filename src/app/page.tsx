@@ -1009,13 +1009,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tagline banner box */}
-          <div style={{
-            border: "1.5px solid #cb772d",
-            borderRadius: 12, padding: "32px 40px",
-            textAlign: "center",
-            background: "rgba(15,27,45,0.70)",
-          }}>
+          {/* Tagline banner — no box, just text */}
+          <div style={{ textAlign: "center", padding: "32px 40px" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, marginBottom: 20 }}>
               <span className="tagline-word" style={{
                 fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 22,
@@ -1037,7 +1032,7 @@ export default function Home() {
                 letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d",
               }}>Revenue</span>
             </div>
-            <p style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif" }}>
+            <p style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", fontFamily: "'Montserrat', sans-serif", display: "inline-block", borderBottom: "2.5px solid #cb772d", paddingBottom: 4 }}>
               That&apos;s how growth is forged.
             </p>
           </div>
