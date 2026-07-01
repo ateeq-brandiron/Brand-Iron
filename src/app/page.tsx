@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import CircuitOverlay from "@/components/CircuitOverlay";
 
 const TESTIMONIALS = [
   {
@@ -424,12 +425,13 @@ export default function Home() {
 
       {/* ── PROBLEM ────────────────────────────────────────── */}
       <section id="services" style={{
-        position: "relative", padding: "120px 40px 140px",
-        backgroundImage: "url('/images/bg-wood.jpg')",
+        position: "relative", overflow: "hidden", padding: "120px 40px 140px",
+        backgroundImage: "url('/images/techy sagebrush.png')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        {/* Light overlay so wood texture shows through */}
+        {/* Light overlay so texture shows through */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.55)" }} />
+        <CircuitOverlay />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", textAlign: "center" }}>
           {/* Full-width headline — centered, tight letter-spacing, one line */}
@@ -670,11 +672,12 @@ export default function Home() {
 
       {/* ── 5-STEP PROCESS (section 4) ─────────────────────── */}
       <section id="process" style={{
-        position: "relative", padding: "160px 40px 180px",
-        backgroundImage: "url('/images/bg-fence.jpg')",
+        position: "relative", overflow: "hidden", padding: "160px 40px 180px",
+        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
         backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.20)" }} />
+        <CircuitOverlay />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
@@ -729,12 +732,13 @@ export default function Home() {
 
       {/* ── WHAT WE BUILD (section 5) ──────────────────────── */}
       <section style={{
-        position: "relative", padding: "120px 40px 20px",
-        backgroundImage: "url('/images/bg-haybales.jpg')",
+        position: "relative", overflow: "hidden", padding: "120px 40px 20px",
+        backgroundImage: "url('/images/techy sagebrush.png')",
         backgroundSize: "cover", backgroundPosition: "center 40%",
       }}>
         {/* Light warm overlay — rope texture clearly visible */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,235,218,0.60)" }} />
+        <CircuitOverlay />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
           {/* Headline */}
@@ -872,11 +876,12 @@ export default function Home() {
 
       {/* ── MOST AGENCIES + COMPARISON + TAGLINE (section 6) ── */}
       <section style={{
-        position: "relative", padding: "140px 40px 100px",
-        backgroundImage: "url('/images/bg-barn.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center 30%",
+        position: "relative", overflow: "hidden", padding: "140px 40px 100px",
+        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
+        backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(12,22,42,0.80)" }} />
+        <CircuitOverlay />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           {/* Stroke headline */}
@@ -983,12 +988,13 @@ export default function Home() {
 
       {/* ── WHAT YOU GET (section 7) ───────────────────────── */}
       <section id="outcomes" style={{
-        position: "relative", padding: "120px 40px 100px",
-        backgroundImage: "url('/images/bg-haybales.jpg')",
+        position: "relative", overflow: "hidden", padding: "120px 40px 100px",
+        backgroundImage: "url('/images/techy sagebrush.png')",
         backgroundSize: "cover", backgroundPosition: "center 20%",
       }}>
         {/* Light warm overlay — shows golden field */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,225,0.82)" }} />
+        <CircuitOverlay />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
@@ -1116,11 +1122,12 @@ export default function Home() {
 
       {/* ── FINAL CTA + FORM (section 8) ───────────────────── */}
       <section style={{
-        position: "relative", padding: "120px 40px 140px",
-        backgroundImage: "url('/images/bg-fence.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center",
+        position: "relative", overflow: "hidden", padding: "120px 40px 140px",
+        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
+        backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
+        <CircuitOverlay />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Orange dot divider at top */}
