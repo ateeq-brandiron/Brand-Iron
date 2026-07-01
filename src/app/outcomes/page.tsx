@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 export default function OutcomesPage() {
@@ -46,15 +47,33 @@ export default function OutcomesPage() {
           {/* Outcome cards */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
             {[
-              { icon: "🎯", title: "Predictable Pipeline", body: "A system that generates consistent, qualified leads — not dependent on luck, referrals, or heroic individual effort." },
-              { icon: "⚡", title: "AI-Powered Efficiency", body: "Automation handles the repetitive work. Your team focuses on high-value activities. Output multiplies without headcount." },
-              { icon: "👁️", title: "Full Revenue Visibility", body: "Live dashboards showing pipeline, conversion rates, CAC, LTV, and revenue forecast — updated automatically." },
-              { icon: "📈", title: "Compounding Growth", body: "Each month builds on the last. Systems optimize continuously. Results compound as data accumulates." },
-              { icon: "🔗", title: "Aligned Teams", body: "Marketing, sales, and ops finally working from the same data, toward the same goals, with clear accountability." },
-              { icon: "🚀", title: "Scalable Infrastructure", body: "Revenue systems built to handle 2X, 5X, 10X volume — without rebuilding from scratch every time you grow." },
+              {
+                icon: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="14" stroke="#cb772d" strokeWidth="2"/><circle cx="22" cy="22" r="8" stroke="#cb772d" strokeWidth="2"/><circle cx="22" cy="22" r="3" fill="#cb772d"/><line x1="22" y1="4" x2="22" y2="10" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/><line x1="22" y1="34" x2="22" y2="40" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/><line x1="4" y1="22" x2="10" y2="22" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/><line x1="34" y1="22" x2="40" y2="22" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/></svg>,
+                title: "Predictable Pipeline", body: "A system that generates consistent, qualified leads — not dependent on luck, referrals, or heroic individual effort."
+              },
+              {
+                icon: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><path d="M22 8v6M22 30v6M8 22h6M30 22h6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/><circle cx="22" cy="22" r="7" stroke="#cb772d" strokeWidth="2"/><path d="M15 10l3 5M26 29l3 5M10 29l5-3M29 15l5-3" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+                title: "AI-Powered Efficiency", body: "Automation handles the repetitive work. Your team focuses on high-value activities. Output multiplies without headcount."
+              },
+              {
+                icon: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="6" y="12" width="32" height="22" rx="3" stroke="#cb772d" strokeWidth="2"/><path d="M14 34v4M30 34v4M10 38h24" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/><path d="M12 26l7-7 5 5 8-9" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+                title: "Full Revenue Visibility", body: "Live dashboards showing pipeline, conversion rates, CAC, LTV, and revenue forecast — updated automatically."
+              },
+              {
+                icon: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><path d="M8 34l9-10 6 6 13-16" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M30 14h6v6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="10" cy="36" r="2" fill="#cb772d"/><circle cx="20" cy="26" r="2" fill="#cb772d"/><circle cx="28" cy="30" r="2" fill="#cb772d"/></svg>,
+                title: "Compounding Growth", body: "Each month builds on the last. Systems optimize continuously. Results compound as data accumulates."
+              },
+              {
+                icon: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><circle cx="14" cy="22" r="6" stroke="#cb772d" strokeWidth="2"/><circle cx="30" cy="14" r="6" stroke="#cb772d" strokeWidth="2"/><circle cx="30" cy="30" r="6" stroke="#cb772d" strokeWidth="2"/><path d="M20 22h4M24 17l-4 3M24 27l-4-3" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/></svg>,
+                title: "Aligned Teams", body: "Marketing, sales, and ops finally working from the same data, toward the same goals, with clear accountability."
+              },
+              {
+                icon: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><path d="M22 36V22M22 22l-5 5M22 22l5 5" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 28c-4-2-7-6-7-10a15 15 0 0130 0c0 4-3 8-7 10" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/><path d="M17 32c-2-1-4-3-5-5M27 32c2-1 4-3 5-5" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+                title: "Scalable Infrastructure", body: "Revenue systems built to handle 2X, 5X, 10X volume — without rebuilding from scratch every time you grow."
+              },
             ].map(({ icon, title, body }) => (
               <div key={title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "32px 28px", borderLeft: "3px solid #cb772d" }}>
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{icon}</div>
+                <div style={{ marginBottom: 16 }}>{icon}</div>
                 <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 18, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 10 }}>{title}</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.75)" }}>{body}</p>
               </div>
