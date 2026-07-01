@@ -111,7 +111,7 @@ export default function ServicesPage() {
               }}
               >
                 {/* Number */}
-                <div style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 40, fontWeight: 700, color: "rgba(203,119,45,0.3)", lineHeight: 1, flexShrink: 0 }}>{number}</div>
+                <div style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 56, fontWeight: 700, color: "#cb772d", lineHeight: 1, flexShrink: 0, textShadow: "0 0 20px rgba(203,119,45,0.4)" }}>{number}</div>
 
                 {/* Content */}
                 <div>
