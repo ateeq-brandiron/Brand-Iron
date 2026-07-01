@@ -3,6 +3,21 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import CircuitOverlay from "@/components/CircuitOverlay";
 
+function useInView(threshold = 0.15) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setInView(true); obs.disconnect(); }
+    }, { threshold });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return { ref, inView };
+}
+
 const TESTIMONIALS = [
   {
     name: "Britt Douglas",
@@ -344,6 +359,14 @@ function PitchDeckPopup({ onClose }: { onClose: () => void }) {
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
+  const problemView = useInView(0.1);
+  const engineView = useInView(0.1);
+  const processView = useInView(0.1);
+  const servicesView = useInView(0.1);
+  const compareView = useInView(0.1);
+  const outcomesView = useInView(0.1);
+  const testimonialsView = useInView();
+  const ctaView = useInView(0.1);
   const popupShown = useRef(false);
 
   useEffect(() => {
@@ -380,7 +403,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.55)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
-          <h1 style={{
+          <h1 className="hero-h1-anim" style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 700,
             fontSize: "clamp(44px, 6vw, 72px)",
@@ -396,12 +419,12 @@ export default function Home() {
           </h1>
 
           {/* Body copy */}
-          <p style={{ fontSize: 20, lineHeight: 1.7, color: "rgba(255,255,255,0.95)", maxWidth: 600, marginBottom: 16 }}>
+          <p className="hero-body-anim" style={{ fontSize: 20, lineHeight: 1.7, color: "rgba(255,255,255,0.95)", maxWidth: 600, marginBottom: 16 }}>
             We build systems that align strategy with execution, connect marketing and sales, and combine AI with expert human craft — designed to scale performance and drive results.
           </p>
 
           {/* Orange stats line — not bold */}
-          <p style={{
+          <p className="hero-stats-anim" style={{
             fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 17, fontWeight: 400,
             letterSpacing: "0.04em", color: "#cb772d", marginBottom: 40,
           }}>
@@ -409,7 +432,7 @@ export default function Home() {
           </p>
 
           {/* Buttons */}
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <div className="hero-btns-anim" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <Link href="/contact" className="hero-btn-primary">
               3X Your Pipeline
             </Link>
@@ -435,12 +458,12 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", textAlign: "center" }}>
           {/* Full-width headline — centered, tight letter-spacing, one line */}
-          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 32 }}>
+          <h1 ref={problemView.ref} className={`section-heading reveal${problemView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 32 }}>
             The Problem Isn&apos;t Your Marketing. It&apos;s Your System.
           </h1>
 
           {/* Centered subtext — 20px matching hero body */}
-          <p style={{
+          <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{
             fontSize: 20, lineHeight: 1.75, color: "#444",
             maxWidth: 720, margin: "0 auto 64px", textAlign: "center",
           }}>
@@ -450,7 +473,7 @@ export default function Home() {
           </p>
 
           {/* 4 cards — 15% bigger padding & icons */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
+          <div className="reveal-group" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
             {[
               {
                 icon: (
@@ -497,7 +520,7 @@ export default function Home() {
                 body: "Teams operating in separate worlds with different goals and no shared accountability.",
               },
             ].map(({ icon, title, body }) => (
-              <div key={title} className="problem-card" style={{
+              <div key={title} className={`problem-card reveal${problemView.inView ? ' visible' : ''}`} style={{
                 background: "rgba(255,255,255,0.93)",
                 borderRadius: 10,
                 borderLeft: "4px solid #cb772d",
@@ -530,12 +553,12 @@ export default function Home() {
       <section style={{ background: "#FFFFFF", padding: "120px 40px 130px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
           {/* Headline — filled navy, not stroke */}
-          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 28 }}>
+          <h1 ref={engineView.ref} className={`section-heading reveal${engineView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 28 }}>
             The AI Growth Engine
           </h1>
 
           {/* Subtext */}
-          <p style={{
+          <p className={`reveal${engineView.inView ? ' visible' : ''}`} style={{
             fontSize: 19, lineHeight: 1.75, color: "#444",
             maxWidth: 680, margin: "0 auto 40px",
           }}>
@@ -543,7 +566,7 @@ export default function Home() {
           </p>
 
           {/* Quote block */}
-          <div style={{
+          <div className={`reveal${engineView.inView ? ' visible' : ''}`} style={{
             display: "flex", alignItems: "stretch", gap: 0,
             maxWidth: 680, margin: "0 auto 72px", textAlign: "left",
             background: "#F9F8F6", borderRadius: 8,
@@ -624,9 +647,9 @@ export default function Home() {
           return (
             <div style={{ maxWidth: 1200, margin: "0 auto" }}>
               {/* Row 1: boxes + arrows — all same height, perfectly centered */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div className="reveal-group" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {items.map(({ label, icon }, i) => (
-                  <div key={label} style={{ display: "flex", alignItems: "center" }}>
+                  <div key={label} className={`reveal${engineView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center" }}>
                     <div className="engine-icon-box" style={{
                       width: 120, height: 120, borderRadius: 16,
                       border: "2.5px solid #0F1B2D",
@@ -680,11 +703,11 @@ export default function Home() {
         <CircuitOverlay />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
-          <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
+          <h1 ref={processView.ref} className={`section-heading reveal${processView.inView ? ' visible' : ''}`} style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             AI Alone Isn&apos;t The Advantage.
           </h1>
 
-          <p style={{
+          <p className={`reveal${processView.inView ? ' visible' : ''}`} style={{
             fontSize: 20, lineHeight: 1.7, color: "rgba(255,255,255,0.85)",
             textAlign: "center", maxWidth: 640, margin: "0 auto 100px",
           }}>
@@ -707,7 +730,7 @@ export default function Home() {
                 { n: "04", title: "Drive Pipeline", body: "Activate campaigns that generate pipeline." },
                 { n: "05", title: "Scale Results", body: "Track, optimize, and expand." },
               ].map(({ n, title, body }) => (
-                <div key={n} className="process-step" style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
+                <div key={n} className={`process-step reveal${processView.inView ? ' visible' : ''}`} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, transitionDelay: `${parseInt(n) * 0.1}s` }}>
                   <div className="process-circle" style={{
                     width: 132, height: 132, borderRadius: "50%",
                     background: "#0F1B2D", border: "3px solid #cb772d",
@@ -741,10 +764,10 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
           {/* Headline */}
-          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
+          <h1 ref={servicesView.ref} className={`section-heading reveal${servicesView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 20 }}>
             What We Build
           </h1>
-          <p style={{
+          <p className={`reveal${servicesView.inView ? ' visible' : ''}`} style={{
             fontSize: 18, lineHeight: 1.7, color: "#555",
             textAlign: "center", maxWidth: 620, margin: "0 auto 64px",
           }}>
@@ -752,7 +775,7 @@ export default function Home() {
           </p>
 
           {/* 6 cards — 3 columns */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+          <div className="reveal-group" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
             {[
               {
                 icon: (
@@ -830,7 +853,7 @@ export default function Home() {
                 href: "/demand-generation",
               },
             ].map(({ icon, title, body, href }) => (
-              <div key={title} className="service-card" style={{
+              <div key={title} className={`service-card reveal${servicesView.inView ? ' visible' : ''}`} style={{
                 background: "#FFFFFF",
                 borderRadius: 16, padding: "48px 40px 40px",
                 boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
@@ -884,7 +907,7 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           {/* Stroke headline */}
-          <h1 className="section-heading" style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
+          <h1 ref={compareView.ref} className={`section-heading reveal${compareView.inView ? ' visible' : ''}`} style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 28 }}>
             Most Agencies Focus On One Piece Of The Puzzle.
           </h1>
           <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", textAlign: "center", marginBottom: 64 }}>
@@ -895,7 +918,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginBottom: 24 }}>
 
             {/* Left — Typical Agency */}
-            <div className="compare-card" style={{
+            <div className={`compare-card slide-left${compareView.inView ? ' visible' : ''}`} style={{
               background: "#0F1B2D",
               border: "1.5px solid #cb772d",
               borderRadius: 12, padding: "52px 44px",
@@ -923,7 +946,7 @@ export default function Home() {
             </div>
 
             {/* Right — Brand Iron (texture shows through) */}
-            <div className="compare-card" style={{
+            <div className={`compare-card slide-right${compareView.inView ? ' visible' : ''}`} style={{
               background: "rgba(180,100,20,0.18)",
               border: "1.5px solid #cb772d",
               borderRadius: 12, padding: "52px 44px",
@@ -997,10 +1020,10 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
           {/* Heading — dark navy on light bg */}
-          <h1 className="section-heading" style={{ color: "#0F1B2D", marginBottom: 20 }}>
+          <h1 ref={outcomesView.ref} className={`section-heading reveal${outcomesView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 20 }}>
             What You Get
           </h1>
-          <p style={{
+          <p className={`reveal${outcomesView.inView ? ' visible' : ''}`} style={{
             fontFamily: "'Montserrat', Helvetica, Arial, sans-serif",
             fontSize: 18, lineHeight: 1.7, color: "#555",
             textAlign: "center", maxWidth: 600, margin: "0 auto 56px",
@@ -1022,7 +1045,7 @@ export default function Home() {
                 { num: "100%", label: "Visibility",         pct: 100 },
               ].map(({ num, label, pct }) => (
                 <div key={num} className="stat-block">
-                  <div style={{
+                  <div className={`reveal scale-in${outcomesView.inView ? ' visible' : ''}`} style={{
                     fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
                     fontSize: 90, fontWeight: 400,
                     color: "#cb772d", lineHeight: 1, marginBottom: 8,
@@ -1030,7 +1053,7 @@ export default function Home() {
                   <div style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: 16, fontWeight: 700, color: "#FFFFFF", marginBottom: 20, letterSpacing: "0.04em", textTransform: "uppercase" }}>{label}</div>
                   <div style={{ height: 8, background: "rgba(255,255,255,0.12)", borderRadius: 4, overflow: "hidden" }}>
                     <div className="progress-bar" style={{
-                      height: "100%", width: `${pct}%`,
+                      height: "100%", width: outcomesView.inView ? `${pct}%` : '0%', transition: "width 1.4s cubic-bezier(0.22,1,0.36,1)",
                       background: "linear-gradient(to right, #1c3652, #506794, #a5621e, #cb772d, #e8a44a)",
                       borderRadius: 4,
                       backgroundSize: "200% 100%",
@@ -1047,7 +1070,7 @@ export default function Home() {
           </div>
 
           {/* White feature cards on warm field bg */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40 }}>
+          <div className="reveal-group" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40 }}>
             {[
               {
                 icon: (
@@ -1091,7 +1114,7 @@ export default function Home() {
                 body: "Infrastructure built to handle increasing volume without breaking or requiring constant fixes.",
               },
             ].map(({ icon, title, body }) => (
-              <div key={title} className="feature-card" style={{
+              <div key={title} className={`feature-card reveal${outcomesView.inView ? ' visible' : ''}`} style={{
                 background: "rgba(255,255,255,0.92)",
                 borderLeft: "4px solid #cb772d",
                 borderRadius: 12, padding: "40px 40px",
@@ -1116,7 +1139,9 @@ export default function Home() {
 
 
       {/* ── TESTIMONIALS ───────────────────────────────────── */}
-      <TestimonialsSection />
+      <div ref={testimonialsView.ref} className={`reveal${testimonialsView.inView ? ' visible' : ''}`}>
+        <TestimonialsSection />
+      </div>
 
       {/* ── FINAL CTA + FORM (section 8) ───────────────────── */}
       <section style={{
@@ -1136,7 +1161,7 @@ export default function Home() {
           </div>
 
           {/* Filled white headline — 3 lines */}
-          <h1 style={{
+          <h1 ref={ctaView.ref} className={`reveal${ctaView.inView ? ' visible' : ''}`} style={{
             fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
             fontWeight: 900,
             fontSize: "clamp(28px, 4vw, 58px)",
@@ -1153,7 +1178,7 @@ export default function Home() {
           </h1>
 
           {/* White form card */}
-          <div style={{
+          <div className={`reveal scale-in${ctaView.inView ? ' visible' : ''}`} style={{
             background: "#FFFFFF", borderRadius: 16,
             padding: "56px 64px",
             maxWidth: 860, margin: "0 auto",

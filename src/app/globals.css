@@ -521,3 +521,236 @@ section p, main p, article p {
 .dark-section p {
   color: rgba(255, 255, 255, 0.85);
 }
+
+/* ══════════════════════════════════════════════════════════
+   MICRO-INTERACTIONS & SCROLL ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes progressFill {
+  from { width: 0%; }
+}
+@keyframes copperPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(203,119,45,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(203,119,45,0.18); }
+}
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Scroll-reveal base state ──────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+              transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for child groups */
+.reveal-group > *:nth-child(1) { transition-delay: 0s; }
+.reveal-group > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-group > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal-group > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal-group > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal-group > *:nth-child(6) { transition-delay: 0.40s; }
+
+/* ── Hero entrance animations ──────────────────────────── */
+.hero-h1-anim {
+  animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+}
+.hero-body-anim {
+  animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s both;
+}
+.hero-stats-anim {
+  animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.42s both;
+}
+.hero-btns-anim {
+  animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.54s both;
+}
+
+/* ── Scroll progress bar animate on visible ────────────── */
+.progress-bar-animate {
+  width: 0%;
+  transition: width 1.4s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ── Copper glow on process circles (already hover, now also pulse on reveal) */
+.circle-revealed {
+  animation: copperPulse 2.4s ease-in-out 0.8s 2;
+}
+
+/* ── Floating icon animation (subtle, used on stat icons) ── */
+.icon-float {
+  animation: float 4s ease-in-out infinite;
+}
+.icon-float:nth-child(2) { animation-delay: 0.6s; }
+.icon-float:nth-child(3) { animation-delay: 1.2s; }
+
+/* ── Slide from sides (comparison cards) ──────────────── */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.slide-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s,
+              transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s;
+}
+.slide-left.visible, .slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Scale in (stats, logo) ────────────────────────────── */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+              transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Copper underline link hover (nav-style) ───────────── */
+.copper-link {
+  position: relative;
+  display: inline-block;
+}
+.copper-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0%; height: 2px;
+  background: #cb772d;
+  transition: width 0.3s ease;
+}
+.copper-link:hover::after { width: 100%; }
+
+/* ══════════════════════════════════════════════════════════
+   MICRO-INTERACTIONS & SCROLL ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes copperPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(203,119,45,0); }
+  50%       { box-shadow: 0 0 0 10px rgba(203,119,45,0.18); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Hero entrance stagger */
+.hero-h1-anim   { animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+.hero-body-anim { animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.30s both; }
+.hero-stats-anim{ animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.44s both; }
+.hero-btns-anim { animation: heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.58s both; }
+
+/* Scroll-reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+              transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Scale-in variant */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+              transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.scale-in.visible { opacity: 1; transform: scale(1); }
+
+/* Slide from sides */
+.slide-left {
+  opacity: 0; transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.slide-right {
+  opacity: 0; transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s,
+              transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s;
+}
+.slide-left.visible, .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Stagger delays */
+.stagger-1 { transition-delay: 0.00s !important; }
+.stagger-2 { transition-delay: 0.09s !important; }
+.stagger-3 { transition-delay: 0.18s !important; }
+.stagger-4 { transition-delay: 0.27s !important; }
+.stagger-5 { transition-delay: 0.36s !important; }
+.stagger-6 { transition-delay: 0.45s !important; }
+
+/* Progress bar scroll animation */
+.progress-animated {
+  transition: width 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s;
+}
+
+/* Copper glow pulse on process circles after reveal */
+.circle-pulse { animation: copperPulse 2.2s ease-in-out 0.6s 2; }
+
+/* Copper underline link */
+.copper-link { position: relative; display: inline-block; }
+.copper-link::after {
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 0%; height: 2px; background: #cb772d;
+  transition: width 0.3s ease;
+}
+.copper-link:hover::after { width: 100%; }
