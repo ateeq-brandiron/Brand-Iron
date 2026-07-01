@@ -473,8 +473,9 @@ export default function Home() {
           </p>
 
           {/* 4 cards — accordion hover: hovered expands, siblings shrink */}
-          <div className="problem-accordion reveal-group">
-            {[
+          {(() => {
+            const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+            const problemCards = [
               {
                 icon: (
                   <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
@@ -519,14 +520,56 @@ export default function Home() {
                 title: "Unpredictable Pipeline",
                 body: "Teams operating in separate worlds with different goals and no shared accountability.",
               },
-            ].map(({ icon, title, body }) => (
-              <div key={title} className={`problem-card reveal${problemView.inView ? ' visible' : ''}`}>
-                <div className="problem-card-icon">{icon}</div>
-                <h3 className="problem-card-title">{title}</h3>
-                <p className="problem-card-body">{body}</p>
+            ];
+            return (
+              <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
+                {problemCards.map(({ icon, title, body }, i) => {
+                  const isHovered = hoveredCard === i;
+                  const isShrunk = hoveredCard !== null && !isHovered;
+                  return (
+                    <div
+                      key={title}
+                      className={`reveal${problemView.inView ? ' visible' : ''}`}
+                      onMouseEnter={() => setHoveredCard(i)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                      style={{
+                        flex: isHovered ? "2 1 0" : isShrunk ? "0.6 1 0" : "1 1 0",
+                        background: isHovered ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.93)",
+                        borderRadius: 10,
+                        borderLeft: "4px solid #cb772d",
+                        padding: "48px 28px 52px",
+                        boxShadow: isHovered
+                          ? "0 8px 48px rgba(203,119,45,0.22), 0 2px 20px rgba(0,0,0,0.10)"
+                          : "0 2px 20px rgba(0,0,0,0.07)",
+                        overflow: "hidden",
+                        transition: "flex 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, background 0.3s ease",
+                        cursor: "default",
+                      }}
+                    >
+                      <div style={{
+                        marginBottom: 26,
+                        transform: isHovered ? "scale(1.12)" : "scale(1)",
+                        transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1)",
+                      }}>{icon}</div>
+                      <h3 style={{
+                        fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+                        fontSize: 22, fontWeight: 400,
+                        textTransform: "uppercase", letterSpacing: "0.08em",
+                        color: isHovered ? "#cb772d" : "#0F1B2D",
+                        marginBottom: 18, lineHeight: 1.3,
+                        transition: "color 0.25s ease",
+                      }}>{title}</h3>
+                      <p style={{
+                        fontSize: 17, lineHeight: 1.75,
+                        color: isHovered ? "#333" : "#555",
+                        transition: "color 0.25s ease",
+                      }}>{body}</p>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </div>
 
         <style>{`
