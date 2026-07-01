@@ -245,7 +245,7 @@ function ServiceCarousel() {
                 color: "transparent", WebkitTextStroke: "2px #FFFFFF",
                 lineHeight: 1.0, marginBottom: 24,
               }}>{s.title}</h3>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 40 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 40 }}>
                 {s.description}
               </p>
               <Link href={s.href} className="hero-btn-primary" style={{ fontSize: 13, padding: "12px 28px" }}>
@@ -438,7 +438,7 @@ export default function Home() {
           }}>
             Forging Brands.<br />Driving Revenue.
           </h1>
-          <p className="hero-body-anim" style={{ fontSize: 19, lineHeight: 1.8, color: "rgba(255,255,255,0.9)", maxWidth: 620, marginBottom: 40 }}>
+          <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.9)", maxWidth: 620, marginBottom: 40 }}>
             We are Brand Iron — a revenue-focused marketing firm that combines human craft with AI-powered systems to build brands that get found, get trusted, and generate consistent revenue.
           </p>
           <div className="hero-btns-anim" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 0 }}>
@@ -518,7 +518,7 @@ export default function Home() {
 
       {/* ── S3: WHY MODERN GROWTH BREAKS DOWN ─────────────── */}
       <section style={{
-        position: "relative", overflow: "hidden", padding: "120px 40px 140px",
+        position: "relative", overflow: "hidden", padding: "120px 40px 120px",
         backgroundImage: "url('/images/techy sagebrush.png')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
@@ -532,7 +532,7 @@ export default function Home() {
           <h2 ref={problemView.ref} className={`section-heading reveal${problemView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 24 }}>
             Why Modern Growth Breaks Down
           </h2>
-          <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ fontSize: 18, lineHeight: 1.75, color: "#444", maxWidth: 680, margin: "0 auto 64px" }}>
+          <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#444", maxWidth: 680, margin: "0 auto 64px" }}>
             You&apos;re running campaigns. You&apos;re using AI tools. You&apos;re creating content. But growth has stalled. The problem isn&apos;t your effort — it&apos;s that nothing is connected.
           </p>
 
@@ -670,7 +670,7 @@ export default function Home() {
           <h2 className={`section-heading reveal${frameworkView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 20 }}>
             Our Integrated Growth Framework
           </h2>
-          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontSize: 18, lineHeight: 1.75, color: "#555", maxWidth: 640, margin: "0 auto 72px" }}>
+          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#555", maxWidth: 640, margin: "0 auto 72px" }}>
             Every service we deliver is part of one connected system. Brand fuels visibility. Visibility drives trust. Trust creates pipeline. Pipeline generates revenue.
           </p>
 
@@ -726,7 +726,7 @@ export default function Home() {
             <h2 className={`section-heading reveal${servicesView.inView ? ' visible' : ''}`} style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 20 }}>
               Seven Services. One System.
             </h2>
-            <p className={`reveal${servicesView.inView ? ' visible' : ''}`} style={{ fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.7)", maxWidth: 560, margin: "0 auto" }}>
+            <p className={`reveal${servicesView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.7)", maxWidth: 560, margin: "0 auto" }}>
               Everything we do is designed to connect — so every investment you make builds on the last.
             </p>
           </div>
@@ -752,7 +752,7 @@ export default function Home() {
             <h2 className={`section-heading reveal${processView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 20 }}>
               How We Work
             </h2>
-            <p className={`reveal${processView.inView ? ' visible' : ''}`} style={{ fontSize: 18, lineHeight: 1.75, color: "#555", maxWidth: 560, margin: "0 auto" }}>
+            <p className={`reveal${processView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#555", maxWidth: 560, margin: "0 auto" }}>
               From strategy to execution — a clear process designed to get you results fast, and build something that lasts.
             </p>
           </div>
@@ -812,7 +812,7 @@ export default function Home() {
                     <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 28, fontWeight: 400, color: isHovered ? "#FFFFFF" : "#cb772d" }}>{step}</span>
                   </div>
                   <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 22, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: isHovered ? "#cb772d" : "#0F1B2D", marginBottom: 16, transition: "color 0.3s" }}>{title}</h3>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.7, color: isHovered ? "rgba(255,255,255,0.75)" : "#555", transition: "color 0.3s" }}>{body}</p>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: isHovered ? "rgba(255,255,255,0.75)" : "#555", transition: "color 0.3s" }}>{body}</p>
                 </div>
               );
             })}
@@ -831,7 +831,7 @@ export default function Home() {
             <h2 className={`section-heading reveal${resultsView.inView ? ' visible' : ''}`} style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 20 }}>
               Results That Matter
             </h2>
-            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.65)", maxWidth: 580, margin: "0 auto" }}>
+            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, margin: "0 auto" }}>
               We don&apos;t measure success in clicks and impressions. We measure it in pipeline, revenue, and growth you can point to.
             </p>
           </div>
@@ -1064,7 +1064,6 @@ export default function Home() {
         backgroundSize: "cover", backgroundPosition: "center 30%",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.88)" }} />
-        <CircuitOverlay />
         <div ref={ctaView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
 
           <div className={`reveal${ctaView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 48 }}>
