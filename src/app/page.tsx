@@ -673,10 +673,10 @@ export default function Home() {
       {/* ── 5-STEP PROCESS (section 4) ─────────────────────── */}
       <section id="process" style={{
         position: "relative", overflow: "hidden", padding: "160px 40px 180px",
-        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
-        backgroundSize: "cover", backgroundPosition: "center top",
+        backgroundImage: "url('/images/bg-horse.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center 30%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.20)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(8,16,36,0.72)" }} />
         <CircuitOverlay />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
 
@@ -876,8 +876,8 @@ export default function Home() {
       {/* ── MOST AGENCIES + COMPARISON + TAGLINE (section 6) ── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "140px 40px 100px",
-        backgroundImage: "url('/images/bg-barn.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center",
+        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
+        backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(12,22,42,0.80)" }} />
         <CircuitOverlay />
