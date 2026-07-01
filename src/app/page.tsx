@@ -733,10 +733,9 @@ export default function Home() {
       {/* ── WHAT WE BUILD (section 5) ──────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 20px",
-        backgroundImage: "url('/images/techy sagebrush.png')",
+        backgroundImage: "url('/images/bg-haybales.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 40%",
       }}>
-        {/* Light warm overlay — rope texture clearly visible */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,235,218,0.60)" }} />
         <CircuitOverlay />
 
@@ -877,8 +876,8 @@ export default function Home() {
       {/* ── MOST AGENCIES + COMPARISON + TAGLINE (section 6) ── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "140px 40px 100px",
-        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
-        backgroundSize: "cover", backgroundPosition: "center top",
+        backgroundImage: "url('/images/bg-barn.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(12,22,42,0.80)" }} />
         <CircuitOverlay />
@@ -989,10 +988,9 @@ export default function Home() {
       {/* ── WHAT YOU GET (section 7) ───────────────────────── */}
       <section id="outcomes" style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 100px",
-        backgroundImage: "url('/images/techy sagebrush.png')",
-        backgroundSize: "cover", backgroundPosition: "center 20%",
+        backgroundImage: "url('/images/bg-fence.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        {/* Light warm overlay — shows golden field */}
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,225,0.82)" }} />
         <CircuitOverlay />
 
@@ -1123,8 +1121,8 @@ export default function Home() {
       {/* ── FINAL CTA + FORM (section 8) ───────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 140px",
-        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
-        backgroundSize: "cover", backgroundPosition: "center top",
+        backgroundImage: "url('/images/bg-wood.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
         <CircuitOverlay />
