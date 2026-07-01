@@ -343,7 +343,6 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [hoveredProcess, setHoveredProcess] = useState<number | null>(null);
-  const heroView = useInView(0.1);
   const buyerView = useInView(0.1);
   const problemView = useInView(0.1);
   const diffView = useInView(0.1);
@@ -459,23 +458,38 @@ export default function Home() {
       {/* ── S2: BUYING JOURNEY ────────────────────────────── */}
       <section style={{ background: "#FFFFFF", padding: "120px 40px 120px", borderBottom: "1px solid #F0ECE8" }}>
         <div ref={buyerView.ref} style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 72 }}>
-            <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
-              The New Buyer Reality
-            </p>
-            <h2 className={`section-heading reveal${buyerView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 24 }}>
-              The Modern Buyer Journey Has Changed.
-            </h2>
-            <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontSize: 18, lineHeight: 1.75, color: "#555", maxWidth: 680, margin: "0 auto" }}>
-              67% of the buyer journey is complete before they ever talk to sales. Your brand needs to show up, build trust, and create conviction — before they ever reach out.
-            </p>
+
+          {/* 2-col intro: image left, copy right */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center", marginBottom: 96 }}>
+            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src="/section2-home.png"
+                alt="Brand Iron — Building Brands That Drive Revenue"
+                style={{ width: "100%", maxWidth: 480, height: "auto", borderRadius: 16, objectFit: "contain" }}
+              />
+            </div>
+            <div>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
+                The New Buyer Reality
+              </p>
+              <h2 className={`section-heading reveal${buyerView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 24, textAlign: "left" }}>
+                The Modern Buyer Journey Has Changed.
+              </h2>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#555", marginBottom: 32 }}>
+                67% of the buyer journey is complete before they ever talk to sales. Your brand needs to show up, build trust, and create conviction — before they ever reach out.
+              </p>
+              <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ background: "#F9F8F6", borderLeft: "4px solid #cb772d", borderRadius: 8, padding: "20px 24px" }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#333", fontStyle: "italic", margin: 0 }}>
+                  &ldquo;Most brands fail because they&apos;re invisible where buyers look first. We fix that — across AI, search, and every channel that matters.&rdquo;
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Journey timeline */}
           <div style={{ position: "relative" }}>
-            {/* Connecting line */}
-            <div style={{ position: "absolute", top: 44, left: "10%", right: "10%", height: 2, background: "linear-gradient(to right, #cb772d, #0F1B2D)", zIndex: 0 }} />
-            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "flex", justifyContent: "space-between", position: "relative", zIndex: 1, gap: 16 }}>
+            <div style={{ position: "absolute", top: 44, left: "10%", right: "10%", height: 2, background: "linear-gradient(to right, #0F1B2D, #cb772d)", zIndex: 0 }} />
+            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "flex", justifyContent: "space-between", position: "relative", zIndex: 1 }}>
               {[
                 { step: "01", label: "Discover", note: "They search AI tools, Google, and social" },
                 { step: "02", label: "Evaluate", note: "They compare your brand vs. alternatives" },
@@ -486,25 +500,18 @@ export default function Home() {
                 <div key={step} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
                   <div style={{
                     width: 88, height: 88, borderRadius: "50%",
-                    background: i < 3 ? "#0F1B2D" : i === 3 ? "#cb772d" : "#cb772d",
-                    border: `3px solid ${i < 3 ? "#0F1B2D" : "#cb772d"}`,
+                    background: i < 4 ? "#0F1B2D" : "#cb772d",
+                    border: `3px solid ${i < 4 ? "#0F1B2D" : "#cb772d"}`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginBottom: 20, boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
                   }}>
-                    <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontWeight: 400, fontSize: 24, color: i < 3 ? "#cb772d" : "#FFFFFF" }}>{step}</span>
+                    <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontWeight: 400, fontSize: 24, color: i < 4 ? "#cb772d" : "#FFFFFF" }}>{step}</span>
                   </div>
-                  <h4 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: "#0F1B2D", marginBottom: 8, textAlign: "center" }}>{label}</h4>
+                  <h4 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 15, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: i === 4 ? "#cb772d" : "#0F1B2D", marginBottom: 8, textAlign: "center" }}>{label}</h4>
                   <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.6, color: "#777", textAlign: "center", maxWidth: 160 }}>{note}</p>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Callout */}
-          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ background: "#F9F8F6", borderLeft: "4px solid #cb772d", borderRadius: 8, padding: "24px 32px", marginTop: 56, maxWidth: 780, margin: "56px auto 0" }}>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.75, color: "#333", fontStyle: "italic" }}>
-              &ldquo;Most brands fail because they&apos;re invisible where buyers look first. We fix that — across AI, search, and every channel that matters.&rdquo;
-            </p>
           </div>
         </div>
       </section>
@@ -732,10 +739,10 @@ export default function Home() {
       {/* ── S7: HOW WE WORK ──────────────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/techy sagebrush.png')",
-        backgroundSize: "cover", backgroundPosition: "center",
+        backgroundImage: "url('/images/bg-haybales.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center 40%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.60)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,222,0.75)" }} />
         <CircuitOverlay />
         <div ref={processView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 80 }}>
@@ -882,10 +889,10 @@ export default function Home() {
       {/* ── S10: INSIGHTS & PERSPECTIVES ─────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/bg-haybales.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center 40%",
+        backgroundImage: "url('/images/bg-fence.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(245,235,218,0.72)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,225,0.78)" }} />
         <CircuitOverlay />
         <div ref={insightsView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
@@ -896,7 +903,7 @@ export default function Home() {
               <h2 className={`section-heading reveal${insightsView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 24, textAlign: "left" }}>
                 Fresh Thinking From The Frontier
               </h2>
-              <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontSize: 17, lineHeight: 1.8, color: "#555", marginBottom: 40 }}>
+              <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#555", marginBottom: 40 }}>
                 We share what we&apos;re seeing, testing, and learning — from AI visibility and brand strategy to capital raise tactics and revenue system design. Practical insights from the work we do every day.
               </p>
               <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -935,8 +942,8 @@ export default function Home() {
       </section>
 
       {/* ── S11: STRATEGIC GROWTH PARTNER ────────────────── */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 100px", backgroundImage: "url('/images/bg-fence.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,228,0.88)" }} />
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-wood.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(248,242,232,0.90)" }} />
         <div ref={partnerView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
@@ -1053,8 +1060,8 @@ export default function Home() {
       {/* ── S12: FINAL CTA ────────────────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "140px 40px 140px",
-        backgroundImage: "url('/images/bg-wood.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center",
+        backgroundImage: "url('/images/hero-saddle.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center 30%",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.88)" }} />
         <CircuitOverlay />
