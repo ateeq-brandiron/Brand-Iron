@@ -9,13 +9,16 @@ export default function Footer() {
 
           {/* Logo + tagline + social */}
           <div>
-            {/* Stacked logo */}
             <Link href="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: 24 }}>
               <img src="/logo.png" alt="Brand Iron Marketing" style={{ height: 72, width: "auto" }} />
             </Link>
 
-            <p style={{ fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.70)", maxWidth: 300, marginBottom: 32 }}>
-              We drive measurable revenue generation through customized AI systems, elevated by expert human craft, and integrated performance strategies across GTM, branding, and sales.
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.70)", maxWidth: 300, marginBottom: 12 }}>
+              We build brands that get found, get trusted, and generate consistent revenue — through human craft, AI-powered systems, and integrated growth strategy.
+            </p>
+
+            <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "#cb772d", marginBottom: 32 }}>
+              Human Crafted. AI Powered. Revenue Driven.
             </p>
 
             {/* Social icons */}
@@ -31,10 +34,10 @@ export default function Footer() {
                   ),
                 },
                 {
-                  label: "Twitter",
+                  label: "X / Twitter",
                   href: "#",
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                       <path d="M4 4l16 16M4 20L20 4" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
                     </svg>
                   ),
@@ -71,11 +74,13 @@ export default function Footer() {
             <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 16, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 22 }}>Services</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
               {[
-                ["AI Strategy", "/ai-strategy"],
-                ["Automation & Agents", "/ai-execution"],
-                ["CRM Systems", "/crm-revops"],
-                ["Data & Dashboards", "/data-revenue-visibility"],
-                ["Revenue Integration", "/revenue-engine"],
+                ["Brand Strategy", "/services/brand-strategy"],
+                ["AI Visibility", "/services/ai-visibility"],
+                ["Go-To-Market", "/services/gtm"],
+                ["Capital Raise", "/services/capital-raise"],
+                ["Revenue Engineering", "/services/revenue-engineering"],
+                ["Outbound Growth", "/services/outbound-growth"],
+                ["Website Development", "/services/website-development"],
               ].map(([label, href]) => (
                 <Link key={href} href={href} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#FFFFFF")}
@@ -91,9 +96,10 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
               {[
                 ["About", "/about"],
-                ["Results", "/transformation-stories"],
-                ["Testimonials", "/transformation-stories"],
-                ["Blog", "/insights"],
+                ["Industries", "/industries"],
+                ["Case Studies", "/case-studies"],
+                ["Pricing", "/pricing"],
+                ["Blog", "/blog"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <Link key={label} href={href} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}
@@ -109,11 +115,11 @@ export default function Footer() {
             <p style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontWeight: 400, fontSize: 16, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 22 }}>Resources</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
               {[
-                ["Case Studies", "/transformation-stories"],
-                ["Process", "/#process"],
-                ["BrandStorm™", "/contact"],
-                ["GTM Strategy", "/gtm-sales-systems"],
-                ["Documentation", "/insights"],
+                ["Resources Hub", "/resources"],
+                ["AI Visibility Audit", "/ai-visibility-audit"],
+                ["Capital Raise Audit", "/capital-raise-audit"],
+                ["GTM Audit", "/gtm-audit"],
+                ["Client Portal", "/client-portal"],
               ].map(([label, href]) => (
                 <Link key={label} href={href} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#FFFFFF")}
@@ -121,38 +127,55 @@ export default function Footer() {
                 >{label}</Link>
               ))}
             </div>
+
+            {/* CTA callout */}
+            <div style={{ marginTop: 32, padding: "20px", background: "rgba(203,119,45,0.1)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 10 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#cb772d", marginBottom: 8 }}>
+                Ready to grow?
+              </p>
+              <Link href="/contact" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 600, color: "#FFFFFF", textDecoration: "none" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#cb772d")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#FFFFFF")}
+              >
+                Book a Discovery Call →
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Orange divider */}
-        <div style={{ height: 1, background: "#cb772d", marginBottom: 28 }} />
+        <div style={{ height: 1, background: "rgba(203,119,45,0.4)", marginBottom: 28 }} />
 
         {/* Bottom bar */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, paddingBottom: 32 }}>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.60)" }}>© {new Date().getFullYear()} Brand Iron. All rights reserved.</p>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>
+            © {new Date().getFullYear()} Brand Iron Marketing. All rights reserved.
+          </p>
           <div style={{ display: "flex", gap: 24 }}>
-            <Link href="/privacy" style={{ fontSize: 13, color: "rgba(255,255,255,0.60)", textDecoration: "none" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#FFFFFF")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.60)")}
-            >Privacy Policy</Link>
-            <Link href="/terms" style={{ fontSize: 13, color: "rgba(255,255,255,0.60)", textDecoration: "none" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#FFFFFF")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.60)")}
-            >Terms of service</Link>
+            {[
+              ["Privacy Policy", "/privacy"],
+              ["Terms of Service", "/terms"],
+              ["Sitemap", "/sitemap.xml"],
+            ].map(([label, href]) => (
+              <Link key={label} href={href} style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", textDecoration: "none" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+              >{label}</Link>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Orange accent bar at bottom edge */}
-      <div style={{ height: 5, background: "linear-gradient(to right, #8B5E24, #cb772d, #8B5E24)" }} />
+      {/* Copper accent bar */}
+      <div style={{ height: 4, background: "linear-gradient(to right, #8B5E24, #cb772d, #e8a44a, #cb772d, #8B5E24)" }} />
 
       <style>{`
         @media (max-width: 900px) {
-          footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; }
-          footer > div > div:first-child > div:first-child { grid-column: 1 / -1; }
+          footer > div > div:first-of-type { grid-template-columns: 1fr 1fr !important; }
+          footer > div > div:first-of-type > div:first-child { grid-column: 1 / -1; }
         }
         @media (max-width: 500px) {
-          footer > div > div:first-child { grid-template-columns: 1fr !important; }
+          footer > div > div:first-of-type { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </footer>
