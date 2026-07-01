@@ -368,17 +368,15 @@ export default function Home() {
         position: "relative", minHeight: "100vh", display: "flex", alignItems: "center",
         overflow: "hidden",
       }}>
-        {/* Hero background */}
-        <div style={{
-          position: "absolute", inset: 0,
-          backgroundImage: "url('/images/hero-saddle.jpg')",
-          backgroundSize: "cover", backgroundPosition: "center 40%",
-        }} />
-        {/* Light overlay — only 20% dark so image shows clearly */}
-        <div style={{
-          position: "absolute", inset: 0,
-          background: "rgba(28,54,100,0.52)",
-        }} />
+        {/* Hero background video */}
+        <video
+          autoPlay muted loop playsInline
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+        >
+          <source src="/images/hero_gif.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay */}
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.55)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 100px", width: "100%" }}>
           <h1 style={{
