@@ -84,7 +84,7 @@ export default function TransformationStoriesPage() {
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center 30%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.55)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,40,0.30)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px" }}>
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Real Results. Real Impact.</p>
           <h1 style={{

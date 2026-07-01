@@ -86,7 +86,7 @@ export default function ContactPage() {
         backgroundImage: "url('/images/bg-fence.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.78)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,20,35,0.38)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "140px 24px 80px", textAlign: "center" }}>
           <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Get In Touch</p>
           <h1 style={{
