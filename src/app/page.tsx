@@ -548,8 +548,10 @@ export default function Home() {
                     >
                       <div style={{
                         marginBottom: 26,
+                        display: "flex",
+                        justifyContent: isHovered ? "center" : "flex-start",
                         transform: isHovered ? "scale(1.12)" : "scale(1)",
-                        transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1)",
+                        transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1), justify-content 0s",
                       }}>{icon}</div>
                       <h3 style={{
                         fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
@@ -557,11 +559,13 @@ export default function Home() {
                         textTransform: "uppercase", letterSpacing: "0.08em",
                         color: isHovered ? "#cb772d" : "#0F1B2D",
                         marginBottom: 18, lineHeight: 1.3,
+                        textAlign: isHovered ? "center" : "left",
                         transition: "color 0.25s ease",
                       }}>{title}</h3>
                       <p style={{
                         fontSize: 17, lineHeight: 1.75,
                         color: isHovered ? "#333" : "#555",
+                        textAlign: isHovered ? "center" : "left",
                         transition: "color 0.25s ease",
                       }}>{body}</p>
                     </div>
