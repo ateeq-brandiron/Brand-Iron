@@ -525,73 +525,58 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", padding: "140px 40px 80px", width: "100%" }}>
 
-          {/* 2-col hero layout */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: 64, alignItems: "flex-start" }}>
-
-            {/* Left — headline + primary body + CTAs + TrustBar */}
-            <div>
-              <h1 className="hero-h1-anim" style={{
-                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
-                fontWeight: 700, fontSize: "clamp(44px, 5.5vw, 80px)",
-                textTransform: "uppercase", letterSpacing: "0.03em", lineHeight: 1.0,
-                color: "transparent", WebkitTextStroke: "2px #FFFFFF",
-                marginBottom: 28,
-              }}>
-                Forging Brands.<br />Driving Revenue.
-              </h1>
-              <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.88)", maxWidth: 560, marginBottom: 14 }}>
-                Modern buyers don&apos;t discover, evaluate, and choose companies the way they used to.
-              </p>
-              <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", maxWidth: 560, marginBottom: 36 }}>
-                Brand Iron helps organizations become <strong style={{ color: "#FFFFFF" }}>discoverable, trusted, and chosen</strong> by combining brand strategy, AI visibility, go-to-market execution, and revenue engineering into one connected growth system.
-              </p>
-              <div className="hero-btns-anim" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 0 }}>
-                <Link href="/contact" className="hero-btn-primary">
-                  Book a Strategy Session
-                </Link>
-                <Link href="/services" className="hero-btn-outline">
-                  Explore Our Services
-                </Link>
-              </div>
-            </div>
-
-            {/* Right — supporting copy glass card */}
-            <div className="hero-body-anim" style={{
-              background: "rgba(255,255,255,0.06)",
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              borderRadius: 16,
-              padding: "36px 32px",
-              marginTop: 8,
-              position: "relative",
-              overflow: "hidden",
+          {/* Full-width centered hero content */}
+          <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
+            <h1 className="hero-h1-anim" style={{
+              fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
+              fontWeight: 700, fontSize: "clamp(44px, 5.5vw, 80px)",
+              textTransform: "uppercase", letterSpacing: "0.03em", lineHeight: 1.0,
+              color: "transparent", WebkitTextStroke: "2px #FFFFFF",
+              marginBottom: 28,
             }}>
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.85, color: "rgba(255,255,255,0.72)", marginBottom: 20 }}>
+              Forging Brands.<br />Driving Revenue.
+            </h1>
+            <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.88)", marginBottom: 14 }}>
+              Modern buyers don&apos;t discover, evaluate, and choose companies the way they used to.
+            </p>
+            <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", marginBottom: 36 }}>
+              Brand Iron helps organizations become <strong style={{ color: "#FFFFFF" }}>discoverable, trusted, and chosen</strong> by combining brand strategy, AI visibility, go-to-market execution, and revenue engineering into one connected growth system.
+            </p>
+
+            {/* Former card content — inline between body and CTAs */}
+            <div className="hero-body-anim" style={{ marginBottom: 36 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.65)", marginBottom: 20 }}>
                 Too many organizations treat branding, marketing, sales, and technology as separate initiatives. The result is fragmented execution, inconsistent messaging, and growth that&apos;s difficult to predict.
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
-                <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, transparent, rgba(203,119,45,0.6))" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
+                <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, transparent, rgba(203,119,45,0.5))" }} />
                 <p style={{
                   fontFamily: "'Burford Rustic Black', sans-serif",
-                  fontSize: 16, fontWeight: 400,
+                  fontSize: 15, fontWeight: 400,
                   textTransform: "uppercase", letterSpacing: "0.12em",
                   color: "#cb772d", margin: 0, whiteSpace: "nowrap",
                   textShadow: "0 0 24px rgba(203,119,45,0.55)",
                 }}>
                   We Take a Different Approach.
                 </p>
-                <div style={{ flex: 1, height: 1, background: "linear-gradient(to left, transparent, rgba(203,119,45,0.6))" }} />
+                <div style={{ flex: 1, height: 1, background: "linear-gradient(to left, transparent, rgba(203,119,45,0.5))" }} />
               </div>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.85, color: "rgba(255,255,255,0.85)", margin: 0 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.80)" }}>
                 Brand Iron aligns strategy, visibility, demand generation, automation, and revenue operations into a unified system that helps businesses compete more effectively, adapt to changing buyer behavior, and build sustainable growth.
               </p>
             </div>
 
+            <div className="hero-btns-anim" style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+              <Link href="/contact" className="hero-btn-primary">
+                Book a Strategy Session
+              </Link>
+              <Link href="/services" className="hero-btn-outline">
+                Explore Our Services
+              </Link>
+            </div>
           </div>
 
-          {/* Trust bar — full width, centered below 2-col grid */}
+          {/* Trust bar — full width below */}
           <TrustBar />
         </div>
       </section>
