@@ -348,7 +348,6 @@ function PitchDeckPopup({ onClose }: { onClose: () => void }) {
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [hoveredProcess, setHoveredProcess] = useState<number | null>(null);
   const buyerView = useInView(0.1);
   const problemView = useInView(0.1);
@@ -511,7 +510,8 @@ export default function Home() {
           </div>
 
           {/* Closing brand statement */}
-          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ background: "#0F1B2D", borderRadius: 12, padding: "40px 48px", marginBottom: 80 }}>
+          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 12, padding: "40px 48px", marginBottom: 80, overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 16, lineHeight: 1.3 }}>
               Modern growth isn&apos;t built on isolated marketing tactics.
             </h3>
@@ -599,38 +599,38 @@ export default function Home() {
             The result is slower growth, missed opportunities, and increasing costs to acquire and retain customers.
           </p>
 
-          {/* 5 accordion cards */}
-          <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
-            {problemCards.map(({ icon, title, body }, i) => {
-              const isHovered = hoveredCard === i;
-              const isShrunk = hoveredCard !== null && !isHovered;
-              return (
-                <div
-                  key={title}
-                  className={`reveal${problemView.inView ? ' visible' : ''}`}
-                  onMouseEnter={() => setHoveredCard(i)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  style={{
-                    flex: isHovered ? "2 1 0" : isShrunk ? "0.6 1 0" : "1 1 0",
-                    background: isHovered ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.93)",
-                    borderRadius: 10, borderLeft: "4px solid #cb772d",
-                    padding: "48px 28px 52px",
-                    boxShadow: isHovered ? "0 8px 48px rgba(203,119,45,0.22), 0 2px 20px rgba(0,0,0,0.10)" : "0 2px 20px rgba(0,0,0,0.07)",
-                    overflow: "hidden",
-                    transition: "flex 0.45s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, background 0.3s ease",
-                    cursor: "default",
-                  }}
-                >
-                  <div style={{ marginBottom: 26, display: "flex", justifyContent: isHovered ? "center" : "flex-start", transform: isHovered ? "scale(1.12)" : "scale(1)", transition: "transform 0.35s cubic-bezier(0.22,1,0.36,1)" }}>{icon}</div>
-                  <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 22, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: isHovered ? "#cb772d" : "#0F1B2D", marginBottom: 18, lineHeight: 1.3, textAlign: isHovered ? "center" : "left", transition: "color 0.25s ease" }}>{title}</h3>
-                  <p style={{ fontSize: 16, lineHeight: 1.75, color: isHovered ? "#333" : "#555", textAlign: isHovered ? "center" : "left", transition: "color 0.25s ease" }}>{body}</p>
-                </div>
-              );
-            })}
+          {/* 5 problem cards */}
+          <div style={{ display: "flex", gap: 20, alignItems: "stretch" }}>
+            {problemCards.map(({ icon, title, body }, i) => (
+              <div
+                key={title}
+                className={`reveal${problemView.inView ? ' visible' : ''}`}
+                style={{
+                  flex: "1 1 0",
+                  background: "rgba(255,255,255,0.95)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  borderRadius: 12,
+                  borderTop: "3px solid #cb772d",
+                  padding: "40px 24px 44px",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                  transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                  cursor: "default",
+                  transitionDelay: `${i * 0.07}s`,
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(203,119,45,0.22), 0 4px 20px rgba(0,0,0,0.1)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+              >
+                <div style={{ marginBottom: 24, display: "flex", justifyContent: "flex-start" }}>{icon}</div>
+                <h3 style={{ fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif", fontSize: 18, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.07em", color: "#0F1B2D", marginBottom: 14, lineHeight: 1.3 }}>{title}</h3>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "#555" }}>{body}</p>
+              </div>
+            ))}
           </div>
 
           {/* The Cost of Disconnected Growth */}
-          <div className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ marginTop: 64, background: "#0F1B2D", borderRadius: 16, padding: "48px 56px" }}>
+          <div className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ position: "relative", marginTop: 64, background: "#0F1B2D", borderRadius: 16, padding: "48px 56px", overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 24px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.3 }}>
               The Cost of Disconnected Growth
             </h3>
@@ -653,7 +653,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", marginTop: 24, fontStyle: "italic" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.7)", marginTop: 24, fontStyle: "italic" }}>
               These aren&apos;t isolated problems — they&apos;re symptoms of disconnected systems.
             </p>
           </div>
@@ -768,7 +768,8 @@ export default function Home() {
           </div>
 
           {/* What Makes Brand Iron Different */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ marginTop: 56, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", marginTop: 56, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28, overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, transparent, rgba(203,119,45,0.6), transparent)" }} />
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>What Makes Brand Iron Different</p>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
               We don&apos;t deliver disconnected marketing services. We engineer connected growth systems.
@@ -813,7 +814,8 @@ export default function Home() {
           </div>
 
           {/* Our Commitment */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, padding: "48px 56px", marginBottom: 28, overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Commitment</p>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 8 }}>
               Every recommendation we make is guided by one question:
@@ -894,7 +896,7 @@ export default function Home() {
             ].map(({ label, desc, color }) => (
               <div key={label} style={{ background: color, borderRadius: 10, padding: "24px 20px" }}>
                 <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 10 }}>{label}</div>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", margin: 0 }}>{desc}</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: "rgba(255,255,255,0.82)", margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -959,7 +961,7 @@ export default function Home() {
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
               Whether you&apos;re refining your brand, expanding your market presence, improving revenue operations, or preparing for investment, Brand Iron helps ensure every initiative contributes to measurable business outcomes.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.45)", fontStyle: "italic" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", fontStyle: "italic" }}>
               While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into execution — and execution into measurable growth.
             </p>
           </div>
@@ -1134,7 +1136,7 @@ export default function Home() {
               <div key={num} style={{ padding: "52px 40px", textAlign: "center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
                 <div className={`reveal scale-in${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 72, fontWeight: 400, color: "#cb772d", lineHeight: 1, marginBottom: 8 }}>{num}</div>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 8 }}>{label}</div>
-                <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)" }}>{note}</div>
+                <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.62)" }}>{note}</div>
               </div>
             ))}
           </div>
@@ -1160,7 +1162,7 @@ export default function Home() {
               >
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#cb772d", marginBottom: 20 }} />
                 <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.35 }}>{title}</h3>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.55)" }}>{body}</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.72)" }}>{body}</p>
               </div>
             ))}
           </div>
@@ -1198,7 +1200,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.45)", fontStyle: "italic", marginTop: 16 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", fontStyle: "italic", marginTop: 16 }}>
                 These are the outcomes that strengthen organizations — not just marketing departments.
               </p>
             </div>
@@ -1393,9 +1395,11 @@ export default function Home() {
 
           {/* Our Promise box */}
           <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{
-            background: "#0F1B2D", borderRadius: 16, padding: "56px 64px",
+            position: "relative", background: "#0F1B2D", borderRadius: 16, padding: "56px 64px",
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center",
+            overflow: "hidden",
           }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <div>
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
                 Our Promise
@@ -1489,7 +1493,7 @@ export default function Home() {
             <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontWeight: 400, fontSize: "clamp(22px, 3vw, 32px)", textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 16 }}>
               Forging Brands. Driving Revenue.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", maxWidth: 680, margin: "0 auto" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.72)", maxWidth: 680, margin: "0 auto" }}>
               Helping organizations become discoverable, trusted, and chosen through strategic positioning, AI visibility, revenue engineering, and connected growth systems.
             </p>
           </div>

@@ -138,7 +138,7 @@ export default function AIVisibilityPage() {
           </p>
 
           {/* Pull quote */}
-          <div className="hero-body-anim" style={{ borderLeft: "3px solid #cb772d", paddingLeft: 24, marginBottom: 48, maxWidth: 600 }}>
+          <div className="hero-body-anim" style={{ borderLeft: "3px solid #cb772d", paddingLeft: 24, marginBottom: 48, maxWidth: 600, background: "rgba(203,119,45,0.07)", padding: "20px 24px", borderRadius: "0 8px 8px 0" }}>
             <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(16px, 2vw, 22px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#cb772d", lineHeight: 1.4, margin: 0 }}>
               &ldquo;The brands that earn visibility today become the brands AI recommends tomorrow.&rdquo;
             </p>
@@ -181,7 +181,7 @@ export default function AIVisibilityPage() {
           </div>
 
           {/* The Modern Buying Journey */}
-          <div className={`reveal${s2View.inView ? ' visible' : ''}`} style={{ background: "#F9F8F6", borderRadius: 16, padding: "56px 64px", marginBottom: 64 }}>
+          <div className={`reveal${s2View.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#F9F8F6", borderRadius: 16, padding: "56px 64px", marginBottom: 64, overflow: "hidden", borderTop: "3px solid #cb772d" }}>
             <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(20px, 2.5vw, 30px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#0F1B2D", marginBottom: 16, textAlign: "center" }}>
               Today&apos;s buyers don&apos;t follow a straight path to purchase.
             </h3>
@@ -252,7 +252,8 @@ export default function AIVisibilityPage() {
           </div>
 
           {/* Why This Matters */}
-          <div className={`reveal${s2View.inView ? ' visible' : ''}`} style={{ background: "#0F1B2D", borderRadius: 16, padding: "56px 64px" }}>
+          <div className={`reveal${s2View.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 16, padding: "56px 64px", overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 24, textAlign: "center" }}>
               Why This Matters for Your Business
             </h3>
@@ -310,13 +311,20 @@ export default function AIVisibilityPage() {
             ].map(({ label, sub, num }, i) => (
               <div key={label} style={{ display: "flex", alignItems: "center" }}>
                 <div style={{
+                  position: "relative",
                   background: i === 3 ? "#cb772d" : "#0F1B2D",
                   borderRadius: 12, padding: "32px 24px", textAlign: "center", minWidth: 180, maxWidth: 200,
-                  boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
-                }}>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: i === 3 ? "rgba(255,255,255,0.7)" : "#cb772d", marginBottom: 12 }}>{num}</p>
+                  boxShadow: i === 3 ? "0 8px 32px rgba(203,119,45,0.35)" : "0 4px 24px rgba(0,0,0,0.12)",
+                  overflow: "hidden",
+                  transition: "transform 0.25s, box-shadow 0.25s",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = i === 3 ? "0 16px 40px rgba(203,119,45,0.45)" : "0 12px 36px rgba(0,0,0,0.2)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = i === 3 ? "0 8px 32px rgba(203,119,45,0.35)" : "0 4px 24px rgba(0,0,0,0.12)"; }}
+                >
+                  {i === 3 && <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "rgba(255,255,255,0.4)" }} />}
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: i === 3 ? "rgba(255,255,255,0.8)" : "#cb772d", marginBottom: 12 }}>{num}</p>
                   <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 18, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.2 }}>{label}</p>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", margin: 0 }}>{sub}</p>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", margin: 0 }}>{sub}</p>
                 </div>
                 {i < 3 && (
                   <div style={{ padding: "0 6px" }}>
@@ -405,16 +413,24 @@ export default function AIVisibilityPage() {
               },
             ].map(({ num, title, lines, color }, i) => (
               <div key={num} className={`reveal${s4View.inView ? ' visible' : ''}`} style={{
+                position: "relative",
                 background: color,
                 borderRadius: 12, padding: "40px 28px",
                 border: i === 3 ? "none" : "1px solid rgba(255,255,255,0.08)",
-              }}>
+                boxShadow: i === 3 ? "0 8px 40px rgba(203,119,45,0.3)" : "0 4px 20px rgba(0,0,0,0.15)",
+                transition: "transform 0.25s, box-shadow 0.25s",
+                overflow: "hidden",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = i === 3 ? "0 16px 48px rgba(203,119,45,0.45)" : "0 16px 40px rgba(0,0,0,0.25)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = i === 3 ? "0 8px 40px rgba(203,119,45,0.3)" : "0 4px 20px rgba(0,0,0,0.15)"; }}
+              >
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: i === 3 ? "rgba(255,255,255,0.35)" : "linear-gradient(to right, transparent, rgba(203,119,45,0.7), transparent)" }} />
                 <div style={{ width: 52, height: 52, borderRadius: "50%", background: i === 3 ? "rgba(255,255,255,0.2)" : "rgba(203,119,45,0.15)", border: `1px solid ${i === 3 ? "rgba(255,255,255,0.3)" : "rgba(203,119,45,0.3)"}`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                   <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 22, fontWeight: 400, color: i === 3 ? "#FFFFFF" : "#cb772d" }}>{num}</span>
                 </div>
                 <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 22, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 16, lineHeight: 1.2 }}>{title}</h3>
                 {lines.map((line, j) => (
-                  <p key={j} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: i === 3 ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.65)", marginBottom: j < lines.length - 1 ? 10 : 0 }}>{line}</p>
+                  <p key={j} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: i === 3 ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.78)", marginBottom: j < lines.length - 1 ? 10 : 0 }}>{line}</p>
                 ))}
               </div>
             ))}
@@ -451,15 +467,20 @@ export default function AIVisibilityPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginBottom: 56 }}>
             {tiers.map((tier, i) => (
               <div key={tier.number} className={`reveal${s5View.inView ? ' visible' : ''}`} style={{
+                position: "relative",
                 background: i === 3 ? "#0F1B2D" : "#F9F8F6",
                 borderRadius: 12, padding: "36px 28px",
-                border: i === 3 ? "none" : "1px solid #EEEBE7",
+                border: i === 3 ? "1px solid rgba(203,119,45,0.3)" : "1px solid #EEEBE7",
                 display: "flex", flexDirection: "column",
                 transition: "transform 0.25s, box-shadow 0.25s",
+                transitionDelay: `${i * 0.07}s`,
+                overflow: "hidden",
+                boxShadow: i === 3 ? "0 8px 32px rgba(203,119,45,0.15)" : "0 2px 12px rgba(0,0,0,0.04)",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(0,0,0,0.12)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = i === 3 ? "0 20px 56px rgba(203,119,45,0.25)" : "0 16px 48px rgba(0,0,0,0.12)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = i === 3 ? "0 8px 32px rgba(203,119,45,0.15)" : "0 2px 12px rgba(0,0,0,0.04)"; }}
               >
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: i === 3 ? "#cb772d" : "linear-gradient(to right, transparent, rgba(203,119,45,0.4), transparent)" }} />
                 <div style={{ width: 60, height: 60, borderRadius: 12, background: "rgba(203,119,45,0.12)", border: "1px solid rgba(203,119,45,0.25)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                   {tier.icon}
                 </div>
@@ -570,7 +591,12 @@ export default function AIVisibilityPage() {
                 <div key={tier} style={{
                   background: "#F9F8F6", borderRadius: 12, padding: "36px 32px",
                   borderLeft: "4px solid #cb772d",
-                }}>
+                  transition: "box-shadow 0.25s, transform 0.25s",
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 12px 40px rgba(203,119,45,0.15)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-3px)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.05)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+                >
                   <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#cb772d", marginBottom: 8 }}>
                     Choose {tier} if…
                   </p>
