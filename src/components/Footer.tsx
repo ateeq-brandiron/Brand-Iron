@@ -114,12 +114,7 @@ export default function Footer() {
             {/* Left: Brand info + address + social */}
             <div>
               <Link href="/" style={{ display: "inline-block", marginBottom: 28, textDecoration: "none" }}>
-                <img src="/logo-white.svg" alt="Brand Iron" style={{ height: 56, width: "auto" }}
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).src = "/logo.png";
-                    (e.currentTarget as HTMLImageElement).style.height = "52px";
-                  }}
-                />
+                <img src="/logo.png" alt="Brand Iron Marketing" style={{ height: 56, width: "auto" }} />
               </Link>
 
               <div style={{ marginBottom: 28 }}>
