@@ -517,7 +517,7 @@ export default function Home() {
 
       {/* ── S1: HERO ──────────────────────────────────────── */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <video autoPlay muted loop playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}>
+        <video autoPlay muted loop playsInline poster="/images/bg-hero-lake.png" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}>
           <source src="/images/hero_gif.mp4" type="video/mp4" />
         </video>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.55)" }} />
@@ -979,8 +979,8 @@ export default function Home() {
       </section>
 
       {/* ── S4: BRAND IRON DIFFERENCE ─────────────────────── */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/horse mane circuit lines_1.png')", backgroundSize: "cover", backgroundPosition: "center top" }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.92)" }} />
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-peaks.png')", backgroundSize: "cover", backgroundPosition: "center 40%" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.60)" }} />
         <div ref={diffView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
 
           {/* ── Intro: 2-col — headline left, copy right ── */}
@@ -1169,7 +1169,8 @@ export default function Home() {
       </section>
 
       {/* ── S5: GROWTH FRAMEWORK ──────────────────────────── */}
-      <section style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #F6F3EF 100%)", padding: "120px 40px 120px", position: "relative", overflow: "hidden" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-saddle-rope.png')", backgroundSize: "cover", backgroundPosition: "center 30%" }}>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(246,243,239,0.88) 100%)" }} />
         {/* Subtle diagonal grid overlay */}
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%, rgba(203,119,45,0.04) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(15,27,45,0.04) 0%, transparent 50%)", pointerEvents: "none" }} />
         <div ref={frameworkView.ref} style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
@@ -1289,8 +1290,8 @@ export default function Home() {
       {/* ── S6: CORE SERVICES CAROUSEL ────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/bg-horse.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center 30%",
+        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
+        backgroundSize: "cover", backgroundPosition: "center top",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(8,16,36,0.88)" }} />
         <CircuitOverlay />
@@ -1348,10 +1349,10 @@ export default function Home() {
       {/* ── S7: HOW WE WORK ──────────────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/bg-haybales.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center 40%",
+        backgroundImage: "url('/images/bg-outcomes.png')",
+        backgroundSize: "cover", backgroundPosition: "center 50%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,222,0.75)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,222,0.55)" }} />
         <CircuitOverlay />
         <div ref={processView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 80 }}>
@@ -1485,7 +1486,7 @@ export default function Home() {
       </section>
 
       {/* ── S8: RESULTS THAT MATTER ───────────────────────── */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-barn.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-hero-lake.png')", backgroundSize: "cover", backgroundPosition: "center 60%" }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(8,15,32,0.90)" }} />
         <div ref={resultsView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
@@ -1689,7 +1690,7 @@ export default function Home() {
       </section>
 
       {/* ── S11: STRATEGIC GROWTH PARTNER ────────────────── */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-wood.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-logs.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(248,242,232,0.90)" }} />
         <div ref={partnerView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
