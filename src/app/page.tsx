@@ -1488,7 +1488,7 @@ export default function Home() {
               <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", marginBottom: 32 }}>
                 Whether you&apos;re refining your strategy or preparing for your next stage of growth, our goal is to provide ideas you can apply, not just content to consume.
               </p>
-              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ background: "#F0EBE4", borderRadius: 12, padding: "28px 28px", marginBottom: 24 }}>
+              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ background: "#F0EBE4", borderRadius: 12, padding: "28px 28px", marginBottom: 24, borderLeft: "3px solid #cb772d" }}>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#cb772d", marginBottom: 12 }}>Why We Share What We Learn</p>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#555", marginBottom: 8 }}>
                   Knowledge is most valuable when it&apos;s shared. We believe better-informed leaders make better business decisions.
@@ -1552,7 +1552,8 @@ export default function Home() {
           </div>
 
           {/* We Build Alongside Your Team */}
-          <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ background: "#0F1B2D", borderRadius: 16, padding: "48px 56px", marginBottom: 64 }}>
+          <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 16, padding: "48px 56px", marginBottom: 64, overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>We Build Alongside Your Team</p>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
               Whether you&apos;re launching a new offering, repositioning your brand, improving visibility, scaling demand generation, strengthening revenue operations, or preparing for investment, we work as an extension of your leadership team.
@@ -1615,14 +1616,15 @@ export default function Home() {
               },
             ].map(({ icon, title, body }) => (
               <div key={title} className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{
-                background: "rgba(255,255,255,0.88)", borderRadius: 12, padding: "40px 28px",
-                textAlign: "center",
+                position: "relative", background: "rgba(255,255,255,0.88)", borderRadius: 12, padding: "40px 28px",
+                textAlign: "center", overflow: "hidden",
                 transition: "background 0.25s, transform 0.25s, box-shadow 0.25s",
                 boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
               }}
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.98)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 12px 40px rgba(0,0,0,0.12)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.88)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.06)"; }}
               >
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, #cb772d, rgba(203,119,45,0.2))" }} />
                 <div style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>{icon}</div>
                 <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 14 }}>{title}</h3>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "#666" }}>{body}</p>
