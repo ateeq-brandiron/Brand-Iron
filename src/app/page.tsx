@@ -1645,7 +1645,8 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,225,0.78)" }} />
         <CircuitOverlay />
         <div ref={insightsView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start", marginBottom: 48 }}>
+            {/* LEFT: intro text + article cards */}
             <div>
               <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
                 Insights & Perspectives
@@ -1662,7 +1663,32 @@ export default function Home() {
               <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", marginBottom: 32 }}>
                 Whether you&apos;re refining your strategy or preparing for your next stage of growth, our goal is to provide ideas you can apply, not just content to consume.
               </p>
-              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ background: "#F0EBE4", borderRadius: 12, padding: "28px 28px", marginBottom: 24, borderLeft: "3px solid #cb772d" }}>
+              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                {[
+                  { tag: "AI Visibility", title: "Why Your Brand Isn't Showing Up in AI Search — And How To Fix It" },
+                  { tag: "Brand Strategy", title: "The Difference Between a Brand and a Logo (And Why It Costs You Revenue)" },
+                  { tag: "Revenue Engineering", title: "How To Build a Revenue System That Actually Scales" },
+                ].map(({ tag, title }) => (
+                  <Link key={title} href="/blog" style={{ textDecoration: "none" }}>
+                    <div style={{
+                      background: "rgba(255,255,255,0.88)",
+                      borderRadius: 10, padding: "24px 28px",
+                      borderLeft: "3px solid #cb772d",
+                      transition: "box-shadow 0.2s, transform 0.2s",
+                    }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.12)"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(4px)"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(0)"; }}
+                    >
+                      <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#cb772d" }}>{tag}</span>
+                      <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.04em", color: "#0F1B2D", marginTop: 8, lineHeight: 1.35 }}>{title}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* RIGHT: Why We Share callout */}
+            <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ background: "#F0EBE4", borderRadius: 12, padding: "36px 32px", borderLeft: "3px solid #cb772d" }}>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#cb772d", marginBottom: 12 }}>Why We Share What We Learn</p>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#555", marginBottom: 8 }}>
                   Knowledge is most valuable when it&apos;s shared. We believe better-informed leaders make better business decisions.
@@ -1671,39 +1697,20 @@ export default function Home() {
                   That&apos;s why we continuously publish insights drawn from real-world experience, market research, emerging technologies, and the challenges organizations face as buyer behavior continues to evolve. Our goal isn&apos;t simply to keep up with change — it&apos;s to help our clients stay ahead of it.
                 </p>
               </div>
-              <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "#666", marginBottom: 20 }}>
-                Browse articles, guides, and practical resources designed to help you navigate today&apos;s evolving growth landscape.
-              </p>
-              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                <Link href="/blog" className="hero-btn-primary" style={{ fontSize: 13, padding: "12px 28px" }}>
-                  View All Insights →
-                </Link>
-                <Link href="/resources" className="hero-btn-outline" style={{ fontSize: 13, padding: "12px 28px" }}>
-                  Browse Resources
-                </Link>
-              </div>
             </div>
-            <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              {[
-                { tag: "AI Visibility", title: "Why Your Brand Isn't Showing Up in AI Search — And How To Fix It" },
-                { tag: "Brand Strategy", title: "The Difference Between a Brand and a Logo (And Why It Costs You Revenue)" },
-                { tag: "Revenue Engineering", title: "How To Build a Revenue System That Actually Scales" },
-              ].map(({ tag, title }) => (
-                <Link key={title} href="/blog" style={{ textDecoration: "none" }}>
-                  <div style={{
-                    background: "rgba(255,255,255,0.88)",
-                    borderRadius: 10, padding: "24px 28px",
-                    borderLeft: "3px solid #cb772d",
-                    transition: "box-shadow 0.2s, transform 0.2s",
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.12)"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(4px)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(0)"; }}
-                  >
-                    <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#cb772d" }}>{tag}</span>
-                    <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.04em", color: "#0F1B2D", marginTop: 8, lineHeight: 1.35 }}>{title}</p>
-                  </div>
-                </Link>
-              ))}
+          </div>
+          {/* Centered last line + CTAs */}
+          <div style={{ textAlign: "center" }}>
+            <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "#666", marginBottom: 24 }}>
+              Browse articles, guides, and practical resources designed to help you navigate today&apos;s evolving growth landscape.
+            </p>
+            <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+              <Link href="/blog" className="hero-btn-primary" style={{ fontSize: 13, padding: "12px 28px" }}>
+                View All Insights →
+              </Link>
+              <Link href="/resources" className="hero-btn-outline" style={{ fontSize: 13, padding: "12px 28px" }}>
+                Browse Resources
+              </Link>
             </div>
           </div>
         </div>
