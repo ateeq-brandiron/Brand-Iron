@@ -858,172 +858,189 @@ export default function Home() {
       <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/horse mane circuit lines_1.png')", backgroundSize: "cover", backgroundPosition: "center top" }}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.92)" }} />
         <div ref={diffView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <h2 className={`section-heading reveal${diffView.inView ? ' visible' : ''}`} style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 20 }}>
-              Human Crafted. AI Powered. Revenue Driven.
-            </h2>
-            <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", maxWidth: 680, margin: "0 auto 16px" }}>
-              Technology is transforming how businesses grow, but technology alone has never been a strategy.
-            </p>
-            <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 680, margin: "0 auto 16px" }}>
-              AI can accelerate research, uncover insights, automate repetitive tasks, and improve execution. But it can&apos;t replace strategic thinking, market experience, creative judgment, or the human understanding required to build brands that buyers genuinely trust.
-            </p>
-            <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 680, margin: "0 auto" }}>
-              At Brand Iron, we believe the strongest growth comes from combining <strong style={{ color: "#FFFFFF" }}>human expertise with AI-assisted intelligence</strong>. Because sustainable growth isn&apos;t automated. It&apos;s engineered.
-            </p>
-          </div>
 
-          {/* Philosophy cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
-            {[
-              {
-                number: "01",
-                title: "Human Intelligence First",
-                body: "Technology amplifies expertise, it doesn't replace it. We use AI to move faster and uncover opportunities. We rely on experienced strategists to ask better questions, make smarter decisions, and build growth systems that create lasting business value.",
-                icon: (
-                  <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                    <circle cx="16" cy="16" r="10" stroke="#cb772d" strokeWidth="2"/>
-                    <path d="M24 24l7 7" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/>
-                    <path d="M13 13l6 6M19 13l-6 6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                ),
-              },
-              {
-                number: "02",
-                title: "Strategy Before Tactics",
-                body: "Execution only creates value when it's guided by clear strategic direction. We don't believe in chasing trends or relying on one-size-fits-all playbooks. Every engagement begins with understanding your business, not forcing it into a predefined process.",
-                icon: (
-                  <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                    <path d="M18 4l3.6 7.6 8.4 1.1-6.1 5.9 1.5 8.3L18 23l-7.4 3.9 1.5-8.3-6.1-5.9 8.4-1.1z" stroke="#cb772d" strokeWidth="2" strokeLinejoin="round"/>
-                  </svg>
-                ),
-              },
-              {
-                number: "03",
-                title: "Connected Systems",
-                body: "Brand, marketing, sales, technology, and operations perform better when they work together, not in isolation. When every part of your business works together, growth becomes more predictable, more efficient, and easier to scale.",
-                icon: (
-                  <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                    <circle cx="10" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/>
-                    <circle cx="26" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/>
-                    <path d="M15 18h6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                ),
-              },
-              {
-                number: "04",
-                title: "Outcomes Over Activity",
-                body: "Success isn't measured by how much marketing you produce. It's measured by stronger positioning, better opportunities, and sustainable revenue growth.",
-                icon: (
-                  <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                    <rect x="4" y="22" width="7" height="10" rx="1" stroke="#cb772d" strokeWidth="2"/>
-                    <rect x="14" y="14" width="7" height="18" rx="1" stroke="#cb772d" strokeWidth="2"/>
-                    <rect x="24" y="6" width="7" height="26" rx="1" stroke="#cb772d" strokeWidth="2"/>
-                    <path d="M6 18l10-8 10-6" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-              },
-            ].map(({ number, title, body, icon }) => (
-              <div key={number} className={`reveal${diffView.inView ? ' visible' : ''}`} style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 12, padding: "40px 40px",
-                display: "flex", gap: 24, alignItems: "flex-start",
-                transition: "background 0.25s, border-color 0.25s",
-              }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(203,119,45,0.08)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(203,119,45,0.3)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.08)"; }}
-              >
-                <div style={{ width: 60, height: 60, borderRadius: 12, background: "rgba(203,119,45,0.1)", border: "1px solid rgba(203,119,45,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  {icon}
-                </div>
-                <div>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 10 }}>
-                    {number}
-                  </p>
-                  <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 18, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.35 }}>{title}</h3>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.65)" }}>{body}</p>
-                </div>
+          {/* ── Intro: 2-col — headline left, copy right ── */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "flex-start", marginBottom: 72 }}>
+            <div>
+              <h2 className={`section-heading reveal${diffView.inView ? ' visible' : ''}`} style={{ color: "transparent", WebkitTextStroke: "2px #FFFFFF", marginBottom: 32, textAlign: "left" }}>
+                Human Crafted. AI Powered. Revenue Driven.
+              </h2>
+              {/* "It's engineered." punchline */}
+              <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ borderLeft: "3px solid #cb772d", paddingLeft: 20 }}>
+                <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(16px, 1.8vw, 22px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "rgba(255,255,255,0.6)", lineHeight: 1.4, margin: 0 }}>
+                  Because sustainable growth isn&apos;t automated.
+                </p>
+                <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(20px, 2.4vw, 32px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#cb772d", lineHeight: 1.2, margin: "4px 0 0" }}>
+                  It&apos;s engineered.
+                </p>
               </div>
-            ))}
+            </div>
+            <div>
+              <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.85, color: "rgba(255,255,255,0.85)", marginBottom: 16, fontWeight: 500 }}>
+                Technology is transforming how businesses grow, but technology alone has never been a strategy.
+              </p>
+              <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", marginBottom: 16 }}>
+                AI can accelerate research, uncover insights, automate repetitive tasks, and improve execution. But it can&apos;t replace strategic thinking, market experience, creative judgment, or the human understanding required to build brands that buyers genuinely trust.
+              </p>
+              <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.75)", marginBottom: 16 }}>
+                At Brand Iron, we believe the strongest growth comes from combining <strong style={{ color: "#FFFFFF" }}>human expertise with AI-assisted intelligence</strong>.
+              </p>
+              <p className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", margin: 0 }}>
+                We use AI to move faster and uncover opportunities. We rely on experienced strategists to ask better questions, make smarter decisions, and build growth systems that create lasting business value.
+              </p>
+            </div>
           </div>
 
-          {/* What Makes Brand Iron Different */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", marginTop: 56, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28, overflow: "hidden" }}>
+          {/* ── What Makes Brand Iron Different — 2-col ── */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, overflow: "hidden", marginBottom: 28 }}>
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, transparent, rgba(203,119,45,0.6), transparent)" }} />
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>What Makes Brand Iron Different</p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
-              We don&apos;t deliver disconnected marketing services. We engineer connected growth systems.
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+              <div style={{ padding: "48px 48px", borderRight: "1px solid rgba(255,255,255,0.06)" }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>What Makes Brand Iron Different</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 16, fontWeight: 600 }}>
+                  We don&apos;t deliver disconnected marketing services. We engineer connected growth systems.
+                </p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.85, color: "rgba(255,255,255,0.65)", margin: 0 }}>
+                  Instead of treating branding, marketing, sales, technology, and operations as separate initiatives, we bring them together into one unified strategy — so every investment contributes to measurable business outcomes.
+                </p>
+              </div>
+              <div style={{ padding: "48px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 20 }}>
+                  {[
+                    "That means your messaging supports your positioning.",
+                    "Your visibility supports your demand generation.",
+                    "Your website supports your sales process.",
+                    "Your technology supports your team.",
+                    "And your data supports better decisions.",
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                      <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(203,119,45,0.15)", border: "1px solid rgba(203,119,45,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 1 }}>
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2L6.5 2" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </div>
+                      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.72)", margin: 0 }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", fontStyle: "italic", margin: 0 }}>
+                  When every part of your business works together, growth becomes more predictable, more efficient, and easier to scale.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Our Philosophy — stacked lines + supporting copy ── */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>Our Philosophy</p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 24, fontWeight: 500 }}>
+              Great brands aren&apos;t built through isolated tactics.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
-              Instead of treating branding, marketing, sales, technology, and operations as separate initiatives, we bring them together into one unified strategy — so every investment contributes to measurable business outcomes.
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 40px", marginBottom: 12 }}>
+            {/* Stacked philosophy lines */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 28 }}>
               {[
-                "That means your messaging supports your positioning.",
-                "Your visibility supports your demand generation.",
-                "Your website supports your sales process.",
-                "Your technology supports your team.",
-                "And your data supports better decisions.",
-              ].map(item => (
-                <div key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#cb772d", flexShrink: 0, marginTop: 8 }} />
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", margin: 0 }}>{item}</p>
+                "They're forged through deliberate strategy.",
+                "Built on trust.",
+                "Strengthened by visibility.",
+                "Accelerated through execution.",
+                "Measured by business outcomes.",
+              ].map((line, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.18)", borderRadius: 24, padding: "8px 16px" }}>
+                  <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#cb772d", flexShrink: 0 }} />
+                  <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.8)", fontWeight: 500 }}>{line}</span>
                 </div>
               ))}
             </div>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
-              When every part of your business works together, growth becomes more predictable, more efficient, and easier to scale.
-            </p>
-          </div>
-
-          {/* Our Philosophy */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Philosophy</p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
-              Great brands aren&apos;t built through isolated tactics.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.9, color: "rgba(255,255,255,0.6)", marginBottom: 16 }}>
-              They&apos;re forged through deliberate strategy. Built on trust. Strengthened by visibility. Accelerated through execution. Measured by business outcomes.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
               We don&apos;t believe in chasing trends or relying on one-size-fits-all playbooks.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.65)", margin: 0 }}>
               Every organization faces unique market dynamics, customer expectations, competitive pressures, and growth objectives. That&apos;s why every engagement begins with understanding your business — not forcing your business into a predefined process.
             </p>
           </div>
 
-          {/* Our Commitment */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, padding: "48px 56px", marginBottom: 28, overflow: "hidden" }}>
+          {/* ── Our Commitment — 2-col ── */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, overflow: "hidden", marginBottom: 28 }}>
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Commitment</p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 8 }}>
-              Every recommendation we make is guided by one question:
-            </p>
-            <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#cb772d", marginBottom: 16, lineHeight: 1.3 }}>
-              Will this create measurable value for the business?
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
-              If the answer is no, we don&apos;t recommend it.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
-              We&apos;re not interested in adding complexity, selling unnecessary services, or maximizing activity for the sake of appearances.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>
-              Our focus is simple: Build strategies that move businesses forward.
-            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+              <div style={{ padding: "48px 48px", borderRight: "1px solid rgba(203,119,45,0.15)" }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Commitment</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 16 }}>
+                  Every recommendation we make is guided by one question:
+                </p>
+                <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 28px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#cb772d", lineHeight: 1.25, margin: 0 }}>
+                  Will this create measurable value for the business?
+                </p>
+              </div>
+              <div style={{ padding: "48px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.72)", marginBottom: 14 }}>
+                  If the answer is no, we don&apos;t recommend it.
+                </p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(255,255,255,0.65)", marginBottom: 14 }}>
+                  We&apos;re not interested in adding complexity, selling unnecessary services, or maximizing activity for the sake of appearances.
+                </p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", fontWeight: 600, margin: 0 }}>
+                  Our focus is simple: Build strategies that move businesses forward.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* S4 closing statement */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ textAlign: "center", padding: "0 40px" }}>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 680, margin: "0 auto 8px" }}>
+          {/* ── Philosophy Highlights — 4 horizontal cards ── */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20, marginBottom: 56 }}>
+            {[
+              {
+                number: "01", title: "Human Intelligence First",
+                body: "Technology amplifies expertise, it doesn't replace it.",
+                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="16" cy="16" r="10" stroke="#cb772d" strokeWidth="2"/><path d="M24 24l7 7" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/><path d="M13 13l6 6M19 13l-6 6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/></svg>),
+              },
+              {
+                number: "02", title: "Strategy Before Tactics",
+                body: "Execution only creates value when it's guided by clear strategic direction.",
+                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4l3.6 7.6 8.4 1.1-6.1 5.9 1.5 8.3L18 23l-7.4 3.9 1.5-8.3-6.1-5.9 8.4-1.1z" stroke="#cb772d" strokeWidth="2" strokeLinejoin="round"/></svg>),
+              },
+              {
+                number: "03", title: "Connected Systems",
+                body: "Brand, marketing, sales, technology, and operations perform better when they work together, not in isolation.",
+                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="10" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/><circle cx="26" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/><path d="M15 18h6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/></svg>),
+              },
+              {
+                number: "04", title: "Outcomes Over Activity",
+                body: "Success isn't measured by how much marketing you produce. It's measured by stronger positioning, better opportunities, and sustainable revenue growth.",
+                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="22" width="7" height="10" rx="1" stroke="#cb772d" strokeWidth="2"/><rect x="14" y="14" width="7" height="18" rx="1" stroke="#cb772d" strokeWidth="2"/><rect x="24" y="6" width="7" height="26" rx="1" stroke="#cb772d" strokeWidth="2"/><path d="M6 18l10-8 10-6" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>),
+              },
+            ].map(({ number, title, body, icon }, i) => (
+              <div key={number} className={`reveal${diffView.inView ? ' visible' : ''}`} style={{
+                position: "relative",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 12, padding: "32px 28px",
+                transition: "background 0.25s, border-color 0.25s, transform 0.25s",
+                transitionDelay: `${i * 0.08}s`,
+                overflow: "hidden",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(203,119,45,0.1)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(203,119,45,0.35)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+              >
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, #cb772d, transparent)" }} />
+                <div style={{ width: 48, height: 48, borderRadius: 10, background: "rgba(203,119,45,0.1)", border: "1px solid rgba(203,119,45,0.2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+                  {icon}
+                </div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", color: "#cb772d", marginBottom: 8 }}>{number}</p>
+                <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.3 }}>{title}</h3>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.75, color: "rgba(255,255,255,0.65)", margin: 0 }}>{body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Closing brand statement ── */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ textAlign: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: "48px 64px" }}>
+            <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 16, lineHeight: 1.3 }}>
               Modern growth requires more than marketing.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 680, margin: "0 auto" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.72)", maxWidth: 680, margin: "0 auto" }}>
               It requires a partner who understands how brand strategy, discoverability, demand generation, technology, and revenue operations work together to create competitive advantage. That&apos;s the role Brand Iron was built to play.
             </p>
           </div>
+
         </div>
       </section>
 
