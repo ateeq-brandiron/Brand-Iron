@@ -540,13 +540,13 @@ export default function Home() {
               <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.85, color: "rgba(255,255,255,0.88)", marginBottom: 14 }}>
                 Modern buyers don&apos;t discover, evaluate, and choose companies the way they used to.
               </p>
-              <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.85, color: "rgba(255,255,255,0.82)", marginBottom: 36 }}>
+              <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.85, color: "rgba(255,255,255,0.82)", marginBottom: 14 }}>
                 Brand Iron helps organizations become <strong style={{ color: "#FFFFFF" }}>discoverable, trusted, and chosen</strong> by combining brand strategy, AI visibility, go-to-market execution, and revenue engineering into one connected growth system.
               </p>
 
               {/* Former card content — inline between body and CTAs */}
               <div className="hero-body-anim" style={{ marginBottom: 40 }}>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.62)", marginBottom: 22 }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.62)", marginBottom: 14 }}>
                   Too many organizations treat branding, marketing, sales, and technology as separate initiatives. The result is fragmented execution, inconsistent messaging, and growth that&apos;s difficult to predict.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 22 }}>
