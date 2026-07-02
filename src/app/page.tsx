@@ -491,11 +491,18 @@ export default function Home() {
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.85, color: "rgba(255,255,255,0.72)", marginBottom: 20 }}>
                 Too many organizations treat branding, marketing, sales, and technology as separate initiatives. The result is fragmented execution, inconsistent messaging, and growth that&apos;s difficult to predict.
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 32, height: 1, background: "#cb772d", flexShrink: 0 }} />
-                <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#cb772d", margin: 0 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
+                <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, transparent, rgba(203,119,45,0.6))" }} />
+                <p style={{
+                  fontFamily: "'Burford Rustic Black', sans-serif",
+                  fontSize: 16, fontWeight: 400,
+                  textTransform: "uppercase", letterSpacing: "0.12em",
+                  color: "#cb772d", margin: 0, whiteSpace: "nowrap",
+                  textShadow: "0 0 24px rgba(203,119,45,0.55)",
+                }}>
                   We Take a Different Approach.
                 </p>
+                <div style={{ flex: 1, height: 1, background: "linear-gradient(to left, transparent, rgba(203,119,45,0.6))" }} />
               </div>
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.85, color: "rgba(255,255,255,0.85)", margin: 0 }}>
                 Brand Iron aligns strategy, visibility, demand generation, automation, and revenue operations into a unified system that helps businesses compete more effectively, adapt to changing buyer behavior, and build sustainable growth.
