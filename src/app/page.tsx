@@ -1496,10 +1496,13 @@ export default function Home() {
               Results That Matter
             </p>
             <h2 className={`section-heading reveal${resultsView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 20 }}>
-              What You Get
+              Measure What Matters
             </h2>
-            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#3a3a3a", maxWidth: 600, margin: "0 auto" }}>
-              Real outcomes that transform how your business operates and grows.
+            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#3a3a3a", maxWidth: 640, margin: "0 auto 10px" }}>
+              Growth isn&apos;t measured by how many campaigns you launch, how much content you publish, or how many reports you generate.
+            </p>
+            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 640, margin: "0 auto" }}>
+              Every recommendation we make is designed to contribute to meaningful business outcomes — not simply increase marketing activity.
             </p>
           </div>
 
@@ -1516,8 +1519,35 @@ export default function Home() {
                   <div className={`reveal scale-in stagger-${i + 1}${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 72, fontWeight: 400, color: "#cb772d", lineHeight: 1, marginBottom: 6 }}>{num}</div>
                   <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#FFFFFF", marginBottom: 6 }}>{label}</div>
                   {/* Progress bar */}
-                  <div style={{ height: 4, background: "rgba(255,255,255,0.10)", borderRadius: 2, margin: "14px auto 10px", maxWidth: 160, overflow: "hidden" }}>
-                    <div style={{ height: "100%", width: resultsView.inView ? `${pct}%` : "0%", background: "linear-gradient(to right, #cb772d, #e8a44a)", borderRadius: 2, transition: "width 1.2s ease 0.4s" }} />
+                  <div style={{ height: 5, background: "rgba(255,255,255,0.08)", borderRadius: 3, margin: "16px auto 10px", maxWidth: 180, overflow: "hidden", position: "relative" }}>
+                    <div style={{
+                      height: "100%",
+                      width: resultsView.inView ? `${pct}%` : "0%",
+                      background: "linear-gradient(90deg, #8B5E24, #cb772d, #e8a44a)",
+                      borderRadius: 3,
+                      transition: "width 1.4s cubic-bezier(0.22,1,0.36,1) 0.5s",
+                      position: "relative",
+                      overflow: "hidden",
+                      boxShadow: "0 0 10px rgba(203,119,45,0.55), 0 0 24px rgba(203,119,45,0.25)",
+                    }}>
+                      {/* Shimmer sweep */}
+                      <div style={{
+                        position: "absolute", inset: 0,
+                        background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%)",
+                        backgroundSize: "200% 100%",
+                        animation: resultsView.inView ? "shimmer 2s ease-in-out 1.8s infinite" : "none",
+                      }} />
+                    </div>
+                    {/* Glowing end-cap dot */}
+                    <div style={{
+                      position: "absolute", top: "50%", transform: "translateY(-50%)",
+                      left: resultsView.inView ? `calc(${pct}% - 5px)` : "0%",
+                      width: 10, height: 10, borderRadius: "50%",
+                      background: "#e8a44a",
+                      boxShadow: "0 0 8px #cb772d, 0 0 16px rgba(203,119,45,0.7)",
+                      transition: "left 1.4s cubic-bezier(0.22,1,0.36,1) 0.5s",
+                      opacity: resultsView.inView ? 1 : 0,
+                    }} />
                   </div>
                   <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.50)", fontStyle: "italic" }}>{note}</div>
                 </div>

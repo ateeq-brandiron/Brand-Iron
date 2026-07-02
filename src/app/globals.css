@@ -599,6 +599,10 @@ section p, main p, article p {
 @keyframes progressFill {
   from { width: 0%; }
 }
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 @keyframes copperPulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(203,119,45,0); }
   50%       { box-shadow: 0 0 0 8px rgba(203,119,45,0.18); }
