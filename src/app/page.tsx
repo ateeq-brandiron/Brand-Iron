@@ -622,9 +622,6 @@ export default function Home() {
 
             {/* Right — headline + copy */}
             <div>
-              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
-                The Modern Buying Journey
-              </p>
               <h2 className={`section-heading reveal${buyerView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 24, textAlign: "left" }}>
                 The Buying Journey Has Changed. Has Your Business?
               </h2>
