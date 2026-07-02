@@ -645,17 +645,16 @@ export default function Home() {
 
           {/* Closing brand statement — Pattern 2: full-bleed scenic banner */}
           <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{
-            position: "relative", overflow: "hidden", borderRadius: 14,
+            position: "relative", overflow: "hidden",
+            marginLeft: "calc(-50vw + 50%)", marginRight: "calc(-50vw + 50%)",
             marginBottom: 80,
             backgroundImage: "url('/images/bg-peaks.png')",
             backgroundSize: "cover", backgroundPosition: "center 35%",
             minHeight: 260,
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
-            {/* border frame inset */}
-            <div style={{ position: "absolute", inset: 12, border: "1px solid rgba(255,255,255,0.18)", borderRadius: 6, zIndex: 1, pointerEvents: "none" }} />
-            {/* light dark gradient so text reads */}
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(8,14,32,0.52) 0%, rgba(8,14,32,0.62) 100%)" }} />
+            {/* light overlay — enough for readability but not too dark */}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(8,14,32,0.28) 0%, rgba(8,14,32,0.38) 100%)" }} />
             <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "56px 80px", maxWidth: 900, margin: "0 auto" }}>
               <h3 style={{
                 fontFamily: "'Burford Rustic Black', sans-serif",
