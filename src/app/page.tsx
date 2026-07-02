@@ -290,8 +290,13 @@ function ServiceCarousel() {
         </div>
       </div>
 
-      {/* Controls row: prev arrow — dots — next arrow — service names strip */}
-      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+      {/* Controls row: counter — prev arrow — dots — next arrow */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginBottom: 28 }}>
+        {/* Counter */}
+        <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "0.1em", minWidth: 52 }}>
+          {s.number} <span style={{ color: "rgba(255,255,255,0.18)" }}>/</span> 07
+        </span>
+
         {/* Prev */}
         <button
           onClick={prev}
@@ -305,7 +310,7 @@ function ServiceCarousel() {
         {/* Dots */}
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           {services.map((_, i) => (
-            <button key={i} onClick={() => goTo(i)} style={{ width: i === activeIdx ? 28 : 8, height: 8, borderRadius: 4, background: i === activeIdx ? "#cb772d" : "rgba(255,255,255,0.25)", border: "none", cursor: "pointer", padding: 0, transition: "all 0.3s ease" }} />
+            <button key={i} onClick={() => goTo(i)} style={{ width: i === activeIdx ? 28 : 8, height: 8, borderRadius: 4, background: i === activeIdx ? "#cb772d" : "rgba(255,255,255,0.22)", border: "none", cursor: "pointer", padding: 0, transition: "all 0.3s ease" }} />
           ))}
         </div>
 
@@ -318,26 +323,27 @@ function ServiceCarousel() {
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
+      </div>
 
-        {/* Service name pills — click to jump */}
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginLeft: 8 }}>
-          {services.map((sv, i) => (
-            <button key={sv.number} onClick={() => goTo(i)} style={{
-              background: "none", border: "none", cursor: "pointer", padding: "4px 0",
-              fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 600,
-              letterSpacing: "0.08em", textTransform: "uppercase",
-              color: i === activeIdx ? "#cb772d" : "rgba(255,255,255,0.3)",
-              borderBottom: i === activeIdx ? "1.5px solid #cb772d" : "1.5px solid transparent",
-              transition: "color 0.2s, border-color 0.2s",
-              whiteSpace: "nowrap",
-            }}
-            onMouseEnter={e => { if (i !== activeIdx) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.65)"; }}
-            onMouseLeave={e => { if (i !== activeIdx) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.3)"; }}
-            >
-              {sv.title}
-            </button>
-          ))}
-        </div>
+      {/* Service name navigation strip — full width, one per column */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+        {services.map((sv, i) => (
+          <button key={sv.number} onClick={() => goTo(i)} style={{
+            background: "none", border: "none", borderTop: i === activeIdx ? "2px solid #cb772d" : "2px solid transparent",
+            marginTop: -1,
+            cursor: "pointer", padding: "18px 8px 14px",
+            fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700,
+            letterSpacing: "0.1em", textTransform: "uppercase",
+            color: i === activeIdx ? "#cb772d" : "rgba(255,255,255,0.3)",
+            transition: "color 0.2s, border-color 0.2s",
+            textAlign: "center", lineHeight: 1.4,
+          }}
+          onMouseEnter={e => { if (i !== activeIdx) { (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.65)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.2)"; } }}
+          onMouseLeave={e => { if (i !== activeIdx) { (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.3)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "transparent"; } }}
+          >
+            {sv.title}
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -1295,17 +1301,34 @@ export default function Home() {
             <ServiceCarousel />
           </div>
 
-          {/* S6 Closing brand statement */}
-          <div className={`reveal${servicesView.inView ? ' visible' : ''}`} style={{ marginTop: 64, textAlign: "center", maxWidth: 800, margin: "64px auto 0" }}>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
-              Every solution is designed to stand on its own — but the greatest impact comes when they&apos;re connected through a unified strategy.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
-              Whether you&apos;re refining your brand, expanding your market presence, improving revenue operations, or preparing for investment, Brand Iron helps ensure every initiative contributes to measurable business outcomes.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", fontStyle: "italic" }}>
-              While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into execution — and execution into measurable growth.
-            </p>
+          {/* S6 Closing brand statement — distinct visual block */}
+          <div className={`reveal${servicesView.inView ? ' visible' : ''}`} style={{ marginTop: 64 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 24, marginBottom: 40 }}>
+              <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.08)" }} />
+              <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", whiteSpace: "nowrap" }}>The Bigger Picture</span>
+              <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.08)" }} />
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+              {[
+                {
+                  heading: "Designed to Connect",
+                  body: "Every solution is designed to stand on its own — but the greatest impact comes when they're connected through a unified strategy.",
+                },
+                {
+                  heading: "Adapts to Your Goals",
+                  body: "Whether you're refining your brand, expanding your market presence, improving revenue operations, or preparing for investment, Brand Iron helps ensure every initiative contributes to measurable business outcomes.",
+                },
+                {
+                  heading: "Strategy Into Growth",
+                  body: "While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into execution — and execution into measurable growth.",
+                },
+              ].map(({ heading, body }) => (
+                <div key={heading} style={{ padding: "28px 28px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12 }}>
+                  <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#cb772d", marginBottom: 12, lineHeight: 1.3 }}>{heading}</p>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", margin: 0 }}>{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
