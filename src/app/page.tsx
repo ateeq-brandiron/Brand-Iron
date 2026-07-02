@@ -676,25 +676,38 @@ export default function Home() {
           </div>
 
           {/* Journey stage intro */}
-          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ textAlign: "center", marginBottom: 48 }}>
-            {/* Progress rail */}
-            <div style={{ display: "inline-flex", alignItems: "center", background: "#F3F0EC", borderRadius: 40, padding: "6px 8px", marginBottom: 20, gap: 0 }}>
+          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ textAlign: "center", marginBottom: 56 }}>
+            {/* Step indicator */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 0, marginBottom: 28 }}>
               {["Discover", "Evaluate", "Trust", "Engage", "Choose"].map((s, i) => (
                 <div key={s} style={{ display: "flex", alignItems: "center" }}>
-                  <div style={{
-                    padding: "8px 18px", borderRadius: 32,
-                    background: i === 4 ? "#0F1B2D" : "transparent",
-                    fontFamily: "'Burford Rustic Black', sans-serif",
-                    fontSize: 12, fontWeight: 400, textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    color: i === 4 ? "#cb772d" : i < 2 ? "#888" : "#555",
-                    whiteSpace: "nowrap",
-                  }}>{s}</div>
-                  {i < 4 && <span style={{ color: "rgba(203,119,45,0.35)", fontSize: 14, padding: "0 2px" }}>›</span>}
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+                    <div style={{
+                      width: 36, height: 36, borderRadius: "50%",
+                      background: i === 4 ? "#cb772d" : "transparent",
+                      border: i === 4 ? "none" : `2px solid ${i < 3 ? "rgba(203,119,45,0.4)" : "#cb772d"}`,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      flexShrink: 0,
+                    }}>
+                      <span style={{
+                        fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700,
+                        color: i === 4 ? "#FFFFFF" : i < 3 ? "#aaa" : "#cb772d",
+                      }}>{String(i + 1).padStart(2, "0")}</span>
+                    </div>
+                    <span style={{
+                      fontFamily: "'Burford Rustic Black', sans-serif",
+                      fontSize: 11, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.12em",
+                      color: i === 4 ? "#cb772d" : i < 3 ? "#aaa" : "#555",
+                      whiteSpace: "nowrap",
+                    }}>{s}</span>
+                  </div>
+                  {i < 4 && (
+                    <div style={{ width: 60, height: 1, background: i < 3 ? "rgba(203,119,45,0.2)" : "rgba(203,119,45,0.5)", margin: "0 0 22px", flexShrink: 0 }} />
+                  )}
                 </div>
               ))}
             </div>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "#777", maxWidth: 640, margin: "0 auto", fontStyle: "italic" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#666", maxWidth: 600, margin: "0 auto" }}>
               Each stage represents a critical moment where your brand can either build confidence or lose the opportunity to a competitor.
             </p>
           </div>
