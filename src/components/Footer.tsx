@@ -64,23 +64,22 @@ export default function Footer() {
 
       {/* Split background: leather left / scenic right */}
       <div style={{ position: "absolute", inset: 0, display: "flex" }}>
-        {/* Left half — leather texture */}
+        {/* Left half — leather from footer logo image */}
         <div style={{
           width: "38%",
-          backgroundImage: "url('/images/bg-logs.jpg')",
+          backgroundImage: "url('/images/bi-footer-logo.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "sepia(0.5) saturate(1.2) brightness(0.55)",
         }} />
-        {/* Right half — scenic mountain */}
+        {/* Right half — misty forest mountain */}
         <div style={{
           flex: 1,
-          backgroundImage: "url('/images/bg-peaks.png')",
+          backgroundImage: "url('/images/bg-forest-mist.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center 40%",
+          backgroundPosition: "center 30%",
         }}>
           {/* dark overlay on scenic side */}
-          <div style={{ position: "absolute", top: 0, bottom: 0, left: "38%", right: 0, background: "rgba(8,18,38,0.72)" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, left: "38%", right: 0, background: "rgba(8,18,38,0.65)" }} />
         </div>
       </div>
 
@@ -99,7 +98,7 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="Brand Iron Marketing"
-              style={{ height: 100, width: "auto", filter: "brightness(0.85) sepia(0.3)" }}
+              style={{ height: 110, width: "auto", filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.5))" }}
             />
           </Link>
         </div>
