@@ -523,31 +523,36 @@ export default function Home() {
           {/* 2-col intro: B icon left, copy right */}
           <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 80, alignItems: "center", marginBottom: 80 }}>
 
-            {/* Left — B icon with decorative treatment */}
-            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
-              {/* Decorative navy background circle */}
-              <div style={{
-                position: "absolute",
-                width: 360, height: 360, borderRadius: "50%",
-                background: "radial-gradient(circle at 40% 40%, #1c3254, #0F1B2D)",
-                boxShadow: "0 24px 80px rgba(15,27,45,0.18)",
-              }} />
-              {/* Copper ring accent */}
-              <div style={{
-                position: "absolute",
-                width: 380, height: 380, borderRadius: "50%",
-                border: "1px solid rgba(203,119,45,0.25)",
-              }} />
-              <div style={{
-                position: "absolute",
-                width: 408, height: 408, borderRadius: "50%",
-                border: "1px dashed rgba(203,119,45,0.1)",
-              }} />
+            {/* Left — B icon: full-height navy panel */}
+            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{
+              position: "relative",
+              background: "#0F1B2D",
+              borderRadius: 16,
+              minHeight: 480,
+              display: "flex", flexDirection: "column",
+              alignItems: "center", justifyContent: "center",
+              overflow: "hidden",
+              padding: "48px 32px",
+            }}>
+              {/* Copper top accent */}
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
+              {/* Subtle copper glow behind icon */}
+              <div style={{ position: "absolute", width: 280, height: 280, borderRadius: "50%", background: "radial-gradient(circle, rgba(203,119,45,0.08) 0%, transparent 70%)" }} />
               <img
                 src="/section2-home.png"
                 alt="Brand Iron — Building Brands That Drive Revenue"
-                style={{ position: "relative", zIndex: 1, width: 300, height: "auto", objectFit: "contain", filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.18))" }}
+                style={{ position: "relative", zIndex: 1, width: 260, height: "auto", objectFit: "contain" }}
               />
+              {/* Bottom tagline */}
+              <p style={{
+                position: "absolute", bottom: 28,
+                fontFamily: "'Burford Rustic Black', sans-serif",
+                fontSize: 12, fontWeight: 400, textTransform: "uppercase",
+                letterSpacing: "0.22em", color: "rgba(203,119,45,0.7)",
+                margin: 0, textAlign: "center",
+              }}>
+                Forging Brands. Driving Revenue.
+              </p>
             </div>
 
             {/* Right — headline + copy */}
