@@ -35,9 +35,9 @@ export default function Navbar() {
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-      background: scrolled ? "rgba(13,26,46,0.97)" : "transparent",
-      backdropFilter: scrolled ? "blur(16px)" : "none",
-      borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none",
+      background: "rgba(13,26,46,0.97)",
+      backdropFilter: "blur(16px)",
+      borderBottom: "1px solid rgba(255,255,255,0.08)",
       transition: "background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
