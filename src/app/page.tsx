@@ -800,11 +800,10 @@ export default function Home() {
       {/* ── S3: WHY MODERN GROWTH BREAKS DOWN ─────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/techy sagebrush.png')",
+        backgroundImage: "url('/images/bg-logs.jpg')",
         backgroundSize: "cover", backgroundPosition: "center",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(240,235,228,0.72)" }} />
-        <CircuitOverlay />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(235,228,218,0.82)" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto" }}>
 
@@ -857,68 +856,53 @@ export default function Home() {
             {/* Row 1 — 3 cards */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 20 }}>
               {problemCards.slice(0, 3).map(({ icon, title, body }, i) => (
-                <div
-                  key={title}
-                  className={`reveal${problemView.inView ? ' visible' : ''}`}
-                  style={{
-                    position: "relative",
-                    background: "rgba(255,255,255,0.96)",
-                    backdropFilter: "blur(12px)",
-                    WebkitBackdropFilter: "blur(12px)",
-                    borderRadius: 12,
-                    padding: "36px 28px 40px",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                    transitionDelay: `${i * 0.08}s`,
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(203,119,45,0.2), 0 4px 20px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.07)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+                <div key={title} className={`reveal stagger-${i + 1}${problemView.inView ? ' visible' : ''}`} style={{
+                  display: "flex", alignItems: "flex-start", gap: 18,
+                  background: "rgba(255,255,255,0.90)",
+                  backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)",
+                  borderLeft: "3px solid #cb772d",
+                  borderRadius: "0 12px 12px 0",
+                  padding: "28px 24px",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
+                  transition: "transform 0.25s, box-shadow 0.25s",
+                }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLDivElement; el.style.transform = "translateY(-5px)"; el.style.boxShadow = "0 16px 40px rgba(203,119,45,0.18)"; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLDivElement; el.style.transform = "translateY(0)"; el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.07)"; }}
                 >
-                  <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, #cb772d, rgba(203,119,45,0.3))" }} />
-                  {/* Icon in navy box */}
-                  <div style={{ width: 56, height: 56, borderRadius: 10, background: "#0F1B2D", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(203,119,45,0.10)", border: "1.5px solid rgba(203,119,45,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
                     {icon}
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.18em", color: "#cb772d" }}>0{i + 1}</span>
-                    <div style={{ flex: 1, height: 1, background: "rgba(203,119,45,0.2)" }} />
+                  <div>
+                    <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 8, lineHeight: 1.35 }}>{title}</h3>
+                    <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.75, color: "#555", margin: 0 }}>{body}</p>
                   </div>
-                  <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.07em", color: "#0F1B2D", marginBottom: 12, lineHeight: 1.3 }}>{title}</h3>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "#555", margin: 0 }}>{body}</p>
                 </div>
               ))}
             </div>
             {/* Row 2 — 2 cards centered */}
             <div style={{ display: "flex", gap: 20, justifyContent: "center" }}>
               {problemCards.slice(3, 5).map(({ icon, title, body }, i) => (
-                <div
-                  key={title}
-                  className={`reveal${problemView.inView ? ' visible' : ''}`}
-                  style={{
-                    position: "relative",
-                    background: "rgba(255,255,255,0.96)",
-                    backdropFilter: "blur(12px)",
-                    WebkitBackdropFilter: "blur(12px)",
-                    borderRadius: 12,
-                    padding: "36px 28px 40px",
-                    width: "calc(33.33% - 7px)",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                    transitionDelay: `${(i + 3) * 0.08}s`,
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(203,119,45,0.2), 0 4px 20px rgba(0,0,0,0.08)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.07)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+                <div key={title} className={`reveal stagger-${i + 1}${problemView.inView ? ' visible' : ''}`} style={{
+                  display: "flex", alignItems: "flex-start", gap: 18,
+                  background: "rgba(255,255,255,0.90)",
+                  backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)",
+                  borderLeft: "3px solid #cb772d",
+                  borderRadius: "0 12px 12px 0",
+                  padding: "28px 24px",
+                  width: "calc(33.33% - 7px)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
+                  transition: "transform 0.25s, box-shadow 0.25s",
+                }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLDivElement; el.style.transform = "translateY(-5px)"; el.style.boxShadow = "0 16px 40px rgba(203,119,45,0.18)"; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLDivElement; el.style.transform = "translateY(0)"; el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.07)"; }}
                 >
-                  <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, #cb772d, rgba(203,119,45,0.3))" }} />
-                  <div style={{ width: 56, height: 56, borderRadius: 10, background: "#0F1B2D", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(203,119,45,0.10)", border: "1.5px solid rgba(203,119,45,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
                     {icon}
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.18em", color: "#cb772d" }}>0{i + 4}</span>
-                    <div style={{ flex: 1, height: 1, background: "rgba(203,119,45,0.2)" }} />
+                  <div>
+                    <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 8, lineHeight: 1.35 }}>{title}</h3>
+                    <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.75, color: "#555", margin: 0 }}>{body}</p>
                   </div>
-                  <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.07em", color: "#0F1B2D", marginBottom: 12, lineHeight: 1.3 }}>{title}</h3>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "#555", margin: 0 }}>{body}</p>
                 </div>
               ))}
             </div>
@@ -1349,10 +1333,10 @@ export default function Home() {
       {/* ── S7: HOW WE WORK ──────────────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/bg-outcomes.png')",
-        backgroundSize: "cover", backgroundPosition: "center 50%",
+        backgroundImage: "url('/images/bg-horse.jpg')",
+        backgroundSize: "cover", backgroundPosition: "center 30%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(245,238,222,0.55)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.88)" }} />
         <CircuitOverlay />
         <div ref={processView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 80 }}>
