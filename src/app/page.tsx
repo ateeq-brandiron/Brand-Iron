@@ -154,6 +154,8 @@ function TrustBar() {
 
 function ServiceCarousel() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [fading, setFading] = useState(false);
+
   const services = [
     {
       number: "01",
@@ -213,71 +215,130 @@ function ServiceCarousel() {
     },
   ];
 
+  const goTo = (idx: number) => {
+    if (idx === activeIdx) return;
+    setFading(true);
+    setTimeout(() => { setActiveIdx(idx); setFading(false); }, 220);
+  };
+  const prev = () => goTo((activeIdx - 1 + services.length) % services.length);
+  const next = () => goTo((activeIdx + 1) % services.length);
+  const s = services[activeIdx];
+
   return (
     <div>
-      {/* Tab row */}
-      <div style={{ display: "flex", gap: 0, overflowX: "auto", borderBottom: "1px solid rgba(255,255,255,0.1)", marginBottom: 48 }}>
-        {services.map((s, i) => (
-          <button
-            key={s.number}
-            onClick={() => setActiveIdx(i)}
-            style={{
-              background: "none", border: "none", cursor: "pointer",
-              padding: "16px 24px",
-              fontFamily: "'Montserrat', sans-serif", fontWeight: 600, fontSize: 12,
-              letterSpacing: "0.1em", textTransform: "uppercase",
-              color: activeIdx === i ? "#cb772d" : "rgba(255,255,255,0.5)",
-              borderBottom: activeIdx === i ? "2px solid #cb772d" : "2px solid transparent",
-              whiteSpace: "nowrap",
-              transition: "color 0.2s",
-            }}
-          >
-            {s.number} {s.title}
-          </button>
-        ))}
-      </div>
+      {/* Main card */}
+      <div style={{
+        position: "relative",
+        background: "rgba(255,255,255,0.05)",
+        border: "1px solid rgba(255,255,255,0.1)",
+        borderRadius: 20,
+        overflow: "hidden",
+        marginBottom: 32,
+      }}>
+        {/* Copper gradient top */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
 
-      {/* Active card */}
-      {(() => {
-        const s = services[activeIdx];
-        return (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
-            <div>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
-                Service {s.number}
-              </p>
-              <h3 style={{
-                fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
-                fontWeight: 700, fontSize: "clamp(28px, 3vw, 44px)",
-                textTransform: "uppercase", letterSpacing: "0.04em",
-                color: "transparent", WebkitTextStroke: "2px #FFFFFF",
-                lineHeight: 1.0, marginBottom: 16,
-              }}>{s.subtitle}</h3>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 40 }}>
-                {s.description}
-              </p>
-              <Link href={s.href} className="hero-btn-primary" style={{ fontSize: 13, padding: "12px 28px" }}>
-                Learn More →
-              </Link>
-            </div>
-            <div>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: 20 }}>
-                What&apos;s Included
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {s.deliverables.map((d, i) => (
-                  <div key={d} style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    <div style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(203,119,45,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, color: "#cb772d" }}>0{i + 1}</span>
-                    </div>
-                    <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 500, color: "rgba(255,255,255,0.8)" }}>{d}</span>
-                  </div>
-                ))}
+        <div style={{
+          display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0,
+          opacity: fading ? 0 : 1,
+          transform: fading ? "translateY(8px)" : "translateY(0)",
+          transition: "opacity 0.22s ease, transform 0.22s ease",
+        }}>
+          {/* Left — service info */}
+          <div style={{ padding: "56px 56px 56px", borderRight: "1px solid rgba(255,255,255,0.07)" }}>
+            {/* Service counter + title */}
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+              <div style={{ width: 44, height: 44, borderRadius: "50%", background: "rgba(203,119,45,0.15)", border: "1px solid rgba(203,119,45,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, color: "#cb772d" }}>{s.number}</span>
               </div>
+              <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>
+                {s.title}
+              </span>
+            </div>
+            <h3 style={{
+              fontFamily: "'Burford Rustic Black', sans-serif",
+              fontSize: "clamp(24px, 2.4vw, 38px)",
+              fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.04em",
+              color: "transparent", WebkitTextStroke: "2px #FFFFFF",
+              lineHeight: 1.05, marginBottom: 24,
+            }}>{s.subtitle}</h3>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,0.7)", marginBottom: 40 }}>
+              {s.description}
+            </p>
+            <Link href={s.href} className="hero-btn-primary" style={{ fontSize: 13, padding: "12px 28px" }}>
+              Learn More →
+            </Link>
+          </div>
+
+          {/* Right — deliverables */}
+          <div style={{ padding: "56px 56px 56px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 28 }}>
+              What&apos;s Included
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {s.deliverables.map((d, i) => (
+                <div key={d} style={{ display: "flex", alignItems: "center", gap: 16, padding: "14px 18px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 10, transition: "background 0.2s, border-color 0.2s" }}
+                  onMouseEnter={e => { const el = e.currentTarget as HTMLDivElement; el.style.background = "rgba(203,119,45,0.1)"; el.style.borderColor = "rgba(203,119,45,0.25)"; }}
+                  onMouseLeave={e => { const el = e.currentTarget as HTMLDivElement; el.style.background = "rgba(255,255,255,0.04)"; el.style.borderColor = "rgba(255,255,255,0.07)"; }}
+                >
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#cb772d", flexShrink: 0 }} />
+                  <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, fontWeight: 500, color: "rgba(255,255,255,0.82)" }}>{d}</span>
+                </div>
+              ))}
             </div>
           </div>
-        );
-      })()}
+        </div>
+      </div>
+
+      {/* Controls row: prev arrow — dots — next arrow — service names strip */}
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        {/* Prev */}
+        <button
+          onClick={prev}
+          style={{ width: 48, height: 48, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.25)", background: "transparent", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "border-color 0.2s, background 0.2s" }}
+          onMouseEnter={e => { const el = e.currentTarget as HTMLButtonElement; el.style.borderColor = "#cb772d"; el.style.background = "rgba(203,119,45,0.12)"; }}
+          onMouseLeave={e => { const el = e.currentTarget as HTMLButtonElement; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.background = "transparent"; }}
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9l5-5" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+
+        {/* Dots */}
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          {services.map((_, i) => (
+            <button key={i} onClick={() => goTo(i)} style={{ width: i === activeIdx ? 28 : 8, height: 8, borderRadius: 4, background: i === activeIdx ? "#cb772d" : "rgba(255,255,255,0.25)", border: "none", cursor: "pointer", padding: 0, transition: "all 0.3s ease" }} />
+          ))}
+        </div>
+
+        {/* Next */}
+        <button
+          onClick={next}
+          style={{ width: 48, height: 48, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.25)", background: "transparent", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "border-color 0.2s, background 0.2s" }}
+          onMouseEnter={e => { const el = e.currentTarget as HTMLButtonElement; el.style.borderColor = "#cb772d"; el.style.background = "rgba(203,119,45,0.12)"; }}
+          onMouseLeave={e => { const el = e.currentTarget as HTMLButtonElement; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.background = "transparent"; }}
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+
+        {/* Service name pills — click to jump */}
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginLeft: 8 }}>
+          {services.map((sv, i) => (
+            <button key={sv.number} onClick={() => goTo(i)} style={{
+              background: "none", border: "none", cursor: "pointer", padding: "4px 0",
+              fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 600,
+              letterSpacing: "0.08em", textTransform: "uppercase",
+              color: i === activeIdx ? "#cb772d" : "rgba(255,255,255,0.3)",
+              borderBottom: i === activeIdx ? "1.5px solid #cb772d" : "1.5px solid transparent",
+              transition: "color 0.2s, border-color 0.2s",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={e => { if (i !== activeIdx) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.65)"; }}
+            onMouseLeave={e => { if (i !== activeIdx) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.3)"; }}
+            >
+              {sv.title}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
