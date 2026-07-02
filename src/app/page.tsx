@@ -126,11 +126,11 @@ function TrustBar() {
   const investors = useCountUp(150, 2000, started);
 
   return (
-    <div ref={ref} style={{ marginTop: 56 }}>
-      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", maxWidth: 560, marginBottom: 24 }}>
+    <div ref={ref} style={{ marginTop: 64, textAlign: "center" }}>
+      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", marginBottom: 24 }}>
         Trusted by founders, executives, and growth-focused organizations to strengthen brands, improve discoverability, and build scalable revenue systems.
       </p>
-      <div style={{ display: "flex", gap: 0, flexWrap: "wrap", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+      <div style={{ display: "flex", justifyContent: "center", borderTop: "1px solid rgba(255,255,255,0.1)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
         {[
           { value: `${brands}+`, label: "Brands Supported" },
           { value: `${investors}K+`, label: "Investor Network" },
@@ -138,9 +138,10 @@ function TrustBar() {
           { value: "Brand Strategy • GTM", label: "Revenue Engineering" },
         ].map(({ value, label }, i) => (
           <div key={label} style={{
-            padding: "20px 32px",
+            padding: "20px 40px",
             borderRight: i < 3 ? "1px solid rgba(255,255,255,0.1)" : "none",
             textAlign: "center",
+            flex: "0 0 auto",
           }}>
             <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 22, fontWeight: 700, color: "#cb772d", lineHeight: 1 }}>{value}</div>
             <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: 6 }}>{label}</div>
@@ -472,7 +473,6 @@ export default function Home() {
                   Explore Our Services
                 </Link>
               </div>
-              <TrustBar />
             </div>
 
             {/* Right — supporting copy glass card */}
@@ -488,9 +488,6 @@ export default function Home() {
               overflow: "hidden",
             }}>
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>
-                A Different Approach
-              </p>
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.85, color: "rgba(255,255,255,0.72)", marginBottom: 20 }}>
                 Too many organizations treat branding, marketing, sales, and technology as separate initiatives. The result is fragmented execution, inconsistent messaging, and growth that&apos;s difficult to predict.
               </p>
@@ -506,6 +503,9 @@ export default function Home() {
             </div>
 
           </div>
+
+          {/* Trust bar — full width, centered below 2-col grid */}
+          <TrustBar />
         </div>
       </section>
 
