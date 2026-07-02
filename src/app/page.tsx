@@ -523,36 +523,34 @@ export default function Home() {
           {/* 2-col intro: B icon left, copy right */}
           <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 80, alignItems: "center", marginBottom: 80 }}>
 
-            {/* Left — B icon: full-height navy panel */}
+            {/* Left — B icon displayed naturally (landscape shows through B shape) */}
             <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{
               position: "relative",
-              background: "#0F1B2D",
-              borderRadius: 16,
-              minHeight: 480,
-              display: "flex", flexDirection: "column",
-              alignItems: "center", justifyContent: "center",
-              overflow: "hidden",
-              padding: "48px 32px",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              minHeight: 460,
             }}>
-              {/* Copper top accent */}
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
-              {/* Subtle copper glow behind icon */}
-              <div style={{ position: "absolute", width: 280, height: 280, borderRadius: "50%", background: "radial-gradient(circle, rgba(203,119,45,0.08) 0%, transparent 70%)" }} />
+              {/* Faint outer ring — references current site's circle treatment */}
+              <div style={{
+                position: "absolute",
+                width: 420, height: 420, borderRadius: "50%",
+                border: "1px solid rgba(15,27,45,0.08)",
+              }} />
+              <div style={{
+                position: "absolute",
+                width: 460, height: 460, borderRadius: "50%",
+                border: "1px dashed rgba(203,119,45,0.12)",
+              }} />
+              {/* Very subtle warm fill so the B landscape pops */}
+              <div style={{
+                position: "absolute",
+                width: 400, height: 400, borderRadius: "50%",
+                background: "radial-gradient(circle at 50% 50%, rgba(248,244,238,0.9) 60%, transparent 100%)",
+              }} />
               <img
                 src="/section2-home.png"
                 alt="Brand Iron — Building Brands That Drive Revenue"
-                style={{ position: "relative", zIndex: 1, width: 260, height: "auto", objectFit: "contain" }}
+                style={{ position: "relative", zIndex: 1, width: 380, height: "auto", objectFit: "contain", filter: "drop-shadow(0 12px 40px rgba(15,27,45,0.15))" }}
               />
-              {/* Bottom tagline */}
-              <p style={{
-                position: "absolute", bottom: 28,
-                fontFamily: "'Burford Rustic Black', sans-serif",
-                fontSize: 12, fontWeight: 400, textTransform: "uppercase",
-                letterSpacing: "0.22em", color: "rgba(203,119,45,0.7)",
-                margin: 0, textAlign: "center",
-              }}>
-                Forging Brands. Driving Revenue.
-              </p>
             </div>
 
             {/* Right — headline + copy */}
@@ -573,9 +571,8 @@ export default function Home() {
                 By the time someone reaches out, they&apos;ve often already narrowed their shortlist.
               </p>
               {/* Impact callout */}
-              <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 10, padding: "20px 24px 20px 28px", overflow: "hidden" }}>
-                <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 4, background: "#cb772d", borderRadius: "4px 0 0 4px" }} />
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.9)", margin: 0, fontWeight: 500 }}>
+              <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ background: "#F9F6F1", borderLeft: "4px solid #cb772d", borderRadius: "0 8px 8px 0", padding: "20px 24px" }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#333", margin: 0, fontWeight: 500 }}>
                   If your organization isn&apos;t visible, credible, and consistent throughout that journey, you&apos;re likely being overlooked before the conversation even begins.
                 </p>
               </div>
