@@ -531,12 +531,27 @@ export default function Home() {
             <div style={{ position: "absolute", top: 44, left: "10%", right: "10%", height: 2, background: "linear-gradient(to right, #0F1B2D, #cb772d)", zIndex: 0 }} />
             <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "flex", justifyContent: "space-between", position: "relative", zIndex: 1 }}>
               {[
-                { step: "01", label: "Discover", note: "Buyers begin by searching for answers, not vendors." },
-                { step: "02", label: "Evaluate", note: "Once discovered, buyers compare their options." },
-                { step: "03", label: "Trust", note: "Trust is earned long before the first meeting." },
-                { step: "04", label: "Engage", note: "When buyers are ready, the experience should feel effortless." },
-                { step: "05", label: "Choose", note: "Winning isn't about being the loudest voice in the market." },
-              ].map(({ step, label, note }, i) => (
+                {
+                  step: "01", label: "Discover",
+                  lines: ["Buyers begin by searching for answers, not vendors.", "Whether they're using search engines, AI assistants, industry publications, social platforms, or peer communities, your business needs to be present where discovery starts.", "If buyers can't find you, your growth never begins."],
+                },
+                {
+                  step: "02", label: "Evaluate",
+                  lines: ["Once discovered, buyers compare their options.", "They assess your expertise, messaging, services, reputation, website, and how clearly you communicate the value you bring.", "Every interaction either reinforces confidence or creates doubt."],
+                },
+                {
+                  step: "03", label: "Trust",
+                  lines: ["Trust is earned long before the first meeting.", "Thought leadership, customer success stories, reviews, strategic content, and a consistent brand presence all shape buying decisions.", "Organizations that invest in authority become the ones buyers remember, and recommend."],
+                },
+                {
+                  step: "04", label: "Engage",
+                  lines: ["When buyers are ready to take the next step, the experience should feel effortless.", "Clear messaging, intuitive websites, effective outreach, and connected customer journeys help transform interest into meaningful conversations."],
+                },
+                {
+                  step: "05", label: "Choose",
+                  lines: ["Winning new business isn't about being the loudest voice in the market.", "It's about becoming the most discoverable, credible, and trusted choice when buyers are ready to decide."],
+                },
+              ].map(({ step, label, lines }, i) => (
                 <div key={step} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
                   <div style={{
                     width: 88, height: 88, borderRadius: "50%",
@@ -548,7 +563,9 @@ export default function Home() {
                     <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontWeight: 400, fontSize: 24, color: i < 4 ? "#cb772d" : "#FFFFFF" }}>{step}</span>
                   </div>
                   <h4 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 15, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: i === 4 ? "#cb772d" : "#0F1B2D", marginBottom: 8, textAlign: "center" }}>{label}</h4>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.6, color: "#777", textAlign: "center", maxWidth: 160 }}>{note}</p>
+                  {lines.map((line, li) => (
+                    <p key={li} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: li === 0 ? "#555" : "#888", textAlign: "center", maxWidth: 172, marginBottom: li < lines.length - 1 ? 6 : 0 }}>{line}</p>
+                  ))}
                 </div>
               ))}
             </div>
@@ -575,8 +592,11 @@ export default function Home() {
           <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#444", maxWidth: 680, margin: "0 auto 12px" }}>
             They have an <strong>alignment problem</strong>.
           </p>
-          <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 680, margin: "0 auto 64px" }}>
+          <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 680, margin: "0 auto 12px" }}>
             Brand strategy, marketing, sales, technology, and operations often evolve independently, each with its own goals, tools, and priorities. While every team works hard, the customer experiences a disconnected journey.
+          </p>
+          <p className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 680, margin: "0 auto 64px" }}>
+            The result is slower growth, missed opportunities, and increasing costs to acquire and retain customers.
           </p>
 
           {/* 5 accordion cards */}
@@ -609,13 +629,45 @@ export default function Home() {
             })}
           </div>
 
+          {/* The Cost of Disconnected Growth */}
+          <div className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ marginTop: 64, background: "#0F1B2D", borderRadius: 16, padding: "48px 56px" }}>
+            <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 24px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.3 }}>
+              The Cost of Disconnected Growth
+            </h3>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 24 }}>
+              When strategy, execution, and technology aren&apos;t aligned, organizations often experience:
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 40px" }}>
+              {[
+                "Inconsistent brand positioning across channels",
+                "Lower visibility in search and AI-driven discovery",
+                "Reduced buyer confidence and trust",
+                "Higher customer acquisition costs",
+                "Inefficient marketing and sales efforts",
+                "Missed revenue opportunities",
+                "Limited visibility into what's actually driving growth",
+              ].map(item => (
+                <div key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#cb772d", flexShrink: 0, marginTop: 8 }} />
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.7)", margin: 0 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", marginTop: 24, fontStyle: "italic" }}>
+              These aren&apos;t isolated problems — they&apos;re symptoms of disconnected systems.
+            </p>
+          </div>
+
           {/* Closing brand statement */}
-          <div className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ marginTop: 64, textAlign: "center" }}>
+          <div className={`reveal${problemView.inView ? ' visible' : ''}`} style={{ marginTop: 48, textAlign: "center" }}>
             <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#0F1B2D", marginBottom: 16, lineHeight: 1.3 }}>
               Growth shouldn&apos;t depend on disconnected tactics. It should be built on connected strategy.
             </h3>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 720, margin: "0 auto" }}>
-              The organizations that consistently outperform their competitors don&apos;t simply market more, they align every part of their business around how modern buyers discover, evaluate, and choose. That&apos;s where Brand Iron comes in.
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 760, margin: "0 auto 12px" }}>
+              The organizations that consistently outperform their competitors don&apos;t simply market more — they align every part of their business around how modern buyers discover, evaluate, and choose. That&apos;s where Brand Iron comes in.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 760, margin: "0 auto" }}>
+              We help organizations replace fragmented initiatives with a unified growth system that connects brand strategy, AI visibility, go-to-market execution, revenue engineering, outbound growth, and digital experiences into one measurable strategy.
             </p>
           </div>
         </div>
@@ -715,10 +767,78 @@ export default function Home() {
             ))}
           </div>
 
+          {/* What Makes Brand Iron Different */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ marginTop: 56, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>What Makes Brand Iron Different</p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
+              We don&apos;t deliver disconnected marketing services. We engineer connected growth systems.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+              Instead of treating branding, marketing, sales, technology, and operations as separate initiatives, we bring them together into one unified strategy — so every investment contributes to measurable business outcomes.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 40px", marginBottom: 12 }}>
+              {[
+                "That means your messaging supports your positioning.",
+                "Your visibility supports your demand generation.",
+                "Your website supports your sales process.",
+                "Your technology supports your team.",
+                "And your data supports better decisions.",
+              ].map(item => (
+                <div key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#cb772d", flexShrink: 0, marginTop: 8 }} />
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.65)", margin: 0 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+              When every part of your business works together, growth becomes more predictable, more efficient, and easier to scale.
+            </p>
+          </div>
+
+          {/* Our Philosophy */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Philosophy</p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
+              Great brands aren&apos;t built through isolated tactics.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.9, color: "rgba(255,255,255,0.6)", marginBottom: 16 }}>
+              They&apos;re forged through deliberate strategy. Built on trust. Strengthened by visibility. Accelerated through execution. Measured by business outcomes.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+              We don&apos;t believe in chasing trends or relying on one-size-fits-all playbooks.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+              Every organization faces unique market dynamics, customer expectations, competitive pressures, and growth objectives. That&apos;s why every engagement begins with understanding your business — not forcing your business into a predefined process.
+            </p>
+          </div>
+
+          {/* Our Commitment */}
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Commitment</p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 8 }}>
+              Every recommendation we make is guided by one question:
+            </p>
+            <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#cb772d", marginBottom: 16, lineHeight: 1.3 }}>
+              Will this create measurable value for the business?
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+              If the answer is no, we don&apos;t recommend it.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+              We&apos;re not interested in adding complexity, selling unnecessary services, or maximizing activity for the sake of appearances.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>
+              Our focus is simple: Build strategies that move businesses forward.
+            </p>
+          </div>
+
           {/* S4 closing statement */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ marginTop: 56, textAlign: "center", padding: "0 40px" }}>
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ textAlign: "center", padding: "0 40px" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 680, margin: "0 auto 8px" }}>
+              Modern growth requires more than marketing.
+            </p>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 680, margin: "0 auto" }}>
-              Modern growth requires more than marketing. It requires a partner who understands how brand strategy, discoverability, demand generation, technology, and revenue operations work together to create competitive advantage. That&apos;s the role Brand Iron was built to play.
+              It requires a partner who understands how brand strategy, discoverability, demand generation, technology, and revenue operations work together to create competitive advantage. That&apos;s the role Brand Iron was built to play.
             </p>
           </div>
         </div>
@@ -738,57 +858,71 @@ export default function Home() {
           </p>
 
           {/* 3 core pillars */}
-          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 0, marginBottom: 32 }}>
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 32 }}>
             {[
-              { label: "Brand Strategy", sub: "Build the foundation.", color: "#0F1B2D" },
-              { label: "AI Visibility & Discoverability", sub: "Be found where buyers are looking.", color: "#1c3652" },
-              { label: "Go-to-Market Strategy", sub: "Turn strategy into execution.", color: "#2d4f72" },
-            ].map(({ label, sub, color }, i) => (
-              <div key={label} style={{ display: "flex", alignItems: "center" }}>
-                <div style={{
-                  background: color, borderRadius: 12, padding: "28px 20px",
-                  textAlign: "center", minWidth: 160,
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-                }}>
-                  <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 6 }}>{label}</div>
-                  <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.65)", fontStyle: "italic" }}>{sub}</div>
-                </div>
-                {i < 2 && (
-                  <div style={{ padding: "0 8px" }}>
-                    <svg width="32" height="20" viewBox="0 0 32 20" fill="none">
-                      <path d="M2 10h24M20 4l8 6-8 6" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                )}
+              {
+                label: "Brand Strategy", sub: "Build the foundation.", color: "#0F1B2D",
+                body: "Every successful growth initiative begins with clarity. We help organizations define their market position, differentiate from competitors, and build messaging that resonates with the audiences they want to reach.",
+              },
+              {
+                label: "AI Visibility & Discoverability", sub: "Be found where buyers are looking.", color: "#1c3652",
+                body: "Modern buyers search differently. We help organizations increase their visibility across search engines, AI-powered platforms, industry publications, and digital channels where buying decisions begin.",
+              },
+              {
+                label: "Go-to-Market Strategy", sub: "Turn strategy into execution.", color: "#2d4f72",
+                body: "A great strategy only creates value when it's executed effectively. We develop go-to-market plans that align positioning, messaging, channels, campaigns, and sales efforts to generate predictable commercial momentum.",
+              },
+            ].map(({ label, sub, color, body }) => (
+              <div key={label} style={{ background: color, borderRadius: 12, padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}>
+                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 8 }}>{label}</div>
+                <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: "#cb772d", fontStyle: "italic", fontWeight: 600, marginBottom: 16, letterSpacing: "0.06em" }}>{sub}</div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.65)", margin: 0 }}>{body}</p>
               </div>
             ))}
           </div>
 
           {/* Supporting systems */}
-          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
+          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16, textAlign: "center" }}>
             Supporting Growth Systems
           </p>
-          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, flexWrap: "wrap", marginBottom: 40 }}>
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 40 }}>
             {[
-              { label: "Revenue Engineering", color: "#a5621e" },
-              { label: "Outbound Growth", color: "#b06928" },
-              { label: "Website Development", color: "#ba7030" },
-              { label: "Capital Raise Support", color: "#cb772d" },
-            ].map(({ label, color }) => (
-              <div key={label} style={{ background: color, borderRadius: 8, padding: "14px 18px", textAlign: "center" }}>
-                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF" }}>{label}</div>
+              { label: "Revenue Engineering", desc: "Align marketing, sales, CRM, automation, analytics, and reporting into one measurable revenue system that improves efficiency and supports long-term growth.", color: "#a5621e" },
+              { label: "Outbound Growth", desc: "Accelerate pipeline development through strategic prospecting, LinkedIn outreach, email campaigns, SDR programs, appointment setting, and sales enablement.", color: "#b06928" },
+              { label: "Website Development", desc: "Build digital experiences that don't just look impressive — they're designed for discoverability, conversion, accessibility, and measurable business performance.", color: "#ba7030" },
+              { label: "Capital Raise Support", desc: "Help founders and leadership teams prepare for investment through compelling pitch decks, fundraising strategy, investor outreach, and market-ready storytelling.", color: "#cb772d" },
+            ].map(({ label, desc, color }) => (
+              <div key={label} style={{ background: color, borderRadius: 10, padding: "24px 20px" }}>
+                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 10 }}>{label}</div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
 
           {/* Outcome */}
-          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24 }}>
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, marginBottom: 48 }}>
             {["Discoverable", "Trusted", "Chosen", "Revenue"].map((word, i) => (
               <div key={word} style={{ display: "flex", alignItems: "center", gap: 24 }}>
                 <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 18, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: "#cb772d" }}>{word}</span>
                 {i < 3 && <span style={{ color: "#cb772d", fontSize: 20 }}>•</span>}
               </div>
             ))}
+          </div>
+
+          {/* Closing brand statement */}
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 12 }}>
+              Every engagement is different. Some organizations need stronger positioning. Others need better visibility, smarter revenue systems, or scalable outbound programs.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 12 }}>
+              Whatever the challenge, our framework adapts to your business — not the other way around.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 24 }}>
+              Because sustainable growth isn&apos;t built through disconnected services. It&apos;s built through connected systems working toward a common outcome.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#888", fontStyle: "italic" }}>
+              While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into measurable business outcomes.
+            </p>
           </div>
         </div>
       </section>
@@ -815,6 +949,19 @@ export default function Home() {
           </div>
           <div className={`reveal${servicesView.inView ? ' visible' : ''}`}>
             <ServiceCarousel />
+          </div>
+
+          {/* S6 Closing brand statement */}
+          <div className={`reveal${servicesView.inView ? ' visible' : ''}`} style={{ marginTop: 64, textAlign: "center", maxWidth: 800, margin: "64px auto 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+              Every solution is designed to stand on its own — but the greatest impact comes when they&apos;re connected through a unified strategy.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
+              Whether you&apos;re refining your brand, expanding your market presence, improving revenue operations, or preparing for investment, Brand Iron helps ensure every initiative contributes to measurable business outcomes.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.45)", fontStyle: "italic" }}>
+              While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into execution — and execution into measurable growth.
+            </p>
           </div>
         </div>
       </section>
@@ -846,26 +993,26 @@ export default function Home() {
             <div style={{ position: "absolute", top: 60, left: "12.5%", right: "12.5%", height: 2, background: "linear-gradient(to right, #0F1B2D, #cb772d)", zIndex: 0 }} />
             {[
               {
-                step: "01",
-                title: "Discover",
-                body: "Understand Before You Execute. Before making recommendations, we take the time to understand your business, market, customers, competitors, current performance, and growth objectives.",
+                step: "01", title: "Discover", subtitle: "Understand Before You Execute",
+                body: "Every successful initiative starts with clarity. Before making recommendations, we take the time to understand your business, market, customers, competitors, current performance, and growth objectives. This discovery phase helps uncover opportunities, identify gaps, and establish a strategic foundation for everything that follows.",
+                includes: ["Market Research", "Competitive Analysis", "Brand Assessment", "AI Visibility Assessment", "Revenue Opportunity Analysis", "Customer & Buyer Research", "Growth Workshops"],
               },
               {
-                step: "02",
-                title: "Forge",
-                body: "Create the Strategy That Moves Your Business Forward. Using what we've learned, we develop a strategy tailored to your organization, defining your market position, messaging, go-to-market approach, and growth priorities.",
+                step: "02", title: "Forge", subtitle: "Create the Strategy That Moves Your Business Forward",
+                body: "Insights alone don't create growth. Using what we've learned, we develop a strategy tailored to your organization — defining your market position, messaging, customer journey, go-to-market approach, and growth priorities. Every recommendation is aligned with measurable business outcomes rather than isolated marketing activities.",
+                includes: ["Brand Positioning", "Messaging Framework", "GTM Strategy", "Revenue Roadmap", "Website Strategy", "Content Strategy", "AI Visibility Strategy"],
               },
               {
-                step: "03",
-                title: "Build",
-                body: "Transform Strategy Into Execution. Once the strategy is defined, we build the systems that bring it to life — from improving discoverability and launching campaigns to optimizing websites and enabling sales teams.",
+                step: "03", title: "Build", subtitle: "Transform Strategy Into Execution",
+                body: "Once the strategy is defined, we build the systems that bring it to life. This is where planning becomes implementation — from improving discoverability and launching campaigns to optimizing websites, automating workflows, and enabling sales teams. Every initiative is connected to the broader growth strategy to ensure consistency across the customer journey.",
+                includes: ["Website Development", "AI Visibility Implementation", "SEO & Content", "Marketing Automation", "CRM Optimization", "Outbound Programs", "Revenue Operations", "Campaign Execution"],
               },
               {
-                step: "04",
-                title: "Scale",
-                body: "Measure. Optimize. Improve. Repeat. We continuously measure performance, analyze results, identify new opportunities, and refine strategies to help your organization stay competitive and maintain momentum.",
+                step: "04", title: "Scale", subtitle: "Measure. Optimize. Improve. Repeat.",
+                body: "Growth isn't static. Markets evolve. Technology changes. Buyer expectations shift. We continuously measure performance, analyze results, identify new opportunities, and refine strategies to help your organization stay competitive and maintain momentum. The goal isn't simply to generate results today — it's to build systems that continue delivering value tomorrow.",
+                includes: ["Performance Reporting", "Revenue Attribution", "Conversion Optimization", "AI Visibility Monitoring", "Strategic Reviews", "Continuous Optimization", "Growth Planning"],
               },
-            ].map(({ step, title, body }, i) => {
+            ].map(({ step, title, subtitle, body, includes }, i) => {
               const isHovered = hoveredProcess === i;
               return (
                 <div
@@ -894,11 +1041,63 @@ export default function Home() {
                   }}>
                     <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 28, fontWeight: 400, color: isHovered ? "#FFFFFF" : "#cb772d" }}>{step}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 22, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: isHovered ? "#cb772d" : "#0F1B2D", marginBottom: 16, transition: "color 0.3s" }}>{title}</h3>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: isHovered ? "rgba(255,255,255,0.75)" : "#555", transition: "color 0.3s" }}>{body}</p>
+                  <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 22, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: isHovered ? "#cb772d" : "#0F1B2D", marginBottom: 8, transition: "color 0.3s" }}>{title}</h3>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 600, color: "#cb772d", letterSpacing: "0.06em", marginBottom: 16 }}>{subtitle}</p>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: isHovered ? "rgba(255,255,255,0.75)" : "#555", transition: "color 0.3s", marginBottom: 20, textAlign: "left" }}>{body}</p>
+                  <div style={{ borderTop: `1px solid ${isHovered ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)"}`, paddingTop: 16 }}>
+                    <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: isHovered ? "rgba(255,255,255,0.4)" : "#aaa", marginBottom: 10, textAlign: "left" }}>What this may include</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6, textAlign: "left" }}>
+                      {includes.map(inc => (
+                        <div key={inc} style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                          <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#cb772d", flexShrink: 0 }} />
+                          <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: isHovered ? "rgba(255,255,255,0.6)" : "#666" }}>{inc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               );
             })}
+          </div>
+
+          {/* One Continuous Growth System */}
+          <div className={`reveal${processView.inView ? ' visible' : ''}`} style={{ marginTop: 64, background: "rgba(255,255,255,0.06)", borderRadius: 16, padding: "48px 56px", textAlign: "center" }}>
+            <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 16 }}>
+              One Continuous Growth System
+            </h3>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", maxWidth: 640, margin: "0 auto 24px" }}>
+              Our process isn&apos;t a series of disconnected phases. Each stage informs the next, creating a continuous cycle of learning, execution, and improvement.
+            </p>
+            <div style={{ display: "flex", justifyContent: "center", gap: 12, alignItems: "center", flexWrap: "wrap", marginBottom: 28 }}>
+              {["Discover", "Forge", "Build", "Scale", "Discover Again"].map((s, i) => (
+                <div key={s} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: i === 4 ? "#cb772d" : "#0F1B2D" }}>{s}</span>
+                  {i < 4 && <svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M2 6h13M11 2l5 4-5 4" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                </div>
+              ))}
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+              {[
+                "Every insight strengthens the next strategy.",
+                "Every optimization improves future performance.",
+                "Every success creates new opportunities for growth.",
+              ].map(line => (
+                <p key={line} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "#555", fontStyle: "italic", margin: 0 }}>{line}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* S7 closing */}
+          <div className={`reveal${processView.inView ? ' visible' : ''}`} style={{ marginTop: 48, textAlign: "center", maxWidth: 760, margin: "48px auto 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 12 }}>
+              Growth isn&apos;t a one-time project — it&apos;s an ongoing discipline.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 12 }}>
+              By combining strategic thinking, AI-assisted insights, and continuous optimization, Brand Iron helps organizations adapt to changing markets, strengthen their competitive position, and build systems designed for long-term success.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555" }}>
+              Because sustainable growth isn&apos;t built through isolated campaigns. It&apos;s forged through continuous improvement.
+            </p>
           </div>
         </div>
       </section>
@@ -914,8 +1113,14 @@ export default function Home() {
             <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", maxWidth: 640, margin: "0 auto 12px" }}>
               Growth isn&apos;t measured by how many campaigns you launch, how much content you publish, or how many reports you generate.
             </p>
+            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.60)", maxWidth: 640, margin: "0 auto 12px" }}>
+              It&apos;s measured by stronger market positioning, better customer conversations, improved operational efficiency, and sustainable revenue growth.
+            </p>
+            <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.60)", maxWidth: 640, margin: "0 auto 12px" }}>
+              Every recommendation we make is designed to contribute to meaningful business outcomes — not simply increase marketing activity.
+            </p>
             <p className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.60)", maxWidth: 640, margin: "0 auto" }}>
-              It&apos;s measured by stronger market positioning, better customer conversations, improved operational efficiency, and sustainable revenue growth. Because at the end of the day, executives don&apos;t invest in marketing. They invest in business performance.
+              Because at the end of the day, executives don&apos;t invest in marketing. They invest in business performance.
             </p>
           </div>
 
@@ -941,7 +1146,7 @@ export default function Home() {
               { title: "Stronger Brand Authority", body: "Build trust through strategic positioning, consistent messaging, thought leadership, and a digital presence that reinforces credibility at every stage of the buying journey. Organizations that establish authority become the ones buyers remember, and recommend." },
               { title: "Higher-Quality Demand", body: "Shift from generating more activity to creating better opportunities. By aligning messaging, targeting, and customer journeys, we help organizations attract prospects who are a stronger fit for their business." },
               { title: "Better Conversion Performance", body: "Optimize every stage of the customer journey, from first impression to sales conversation, to reduce friction and improve the effectiveness of your marketing and sales efforts. Small improvements across the journey often create significant business impact." },
-              { title: "Connected Revenue Operations", body: "Bring together marketing, sales, CRM, automation, reporting, and analytics into one connected system that improves visibility, supports better decision-making, and creates operational efficiency." },
+              { title: "Connected Revenue Operations", body: "Bring together marketing, sales, CRM, automation, reporting, and analytics into one connected system that improves visibility, supports better decision-making, and creates operational efficiency. When teams work from the same data, growth becomes easier to manage and scale." },
               { title: "Sustainable Business Growth", body: "Our goal isn't short-term spikes in performance. It's helping organizations build repeatable systems that continue generating value as markets evolve and businesses grow. Because sustainable growth is built through consistency, not quick fixes." },
             ].map(({ title, body }) => (
               <div key={title} className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{
@@ -960,9 +1165,61 @@ export default function Home() {
             ))}
           </div>
 
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.3)", textAlign: "center", fontStyle: "italic", marginTop: 32 }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.3)", textAlign: "center", fontStyle: "italic", marginTop: 32, marginBottom: 56 }}>
             * Representative outcomes based on client implementations. Results vary by business model and execution.
           </p>
+
+          {/* Success Is About More Than Metrics */}
+          <div className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, marginBottom: 48 }}>
+            <div>
+              <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 24px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 16, lineHeight: 1.3 }}>
+                Success Is About More Than Metrics
+              </h3>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
+                Some results can be measured in dashboards. Others are reflected in how your business operates.
+              </p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
+                You may see:
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  "Stronger positioning in competitive markets",
+                  "Increased visibility across search and AI platforms",
+                  "More qualified sales conversations",
+                  "Better alignment between marketing and sales",
+                  "Improved customer confidence and trust",
+                  "Faster decision-making through connected data",
+                  "More efficient processes powered by automation",
+                  "Greater confidence in your long-term growth strategy",
+                ].map(item => (
+                  <div key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#cb772d", flexShrink: 0, marginTop: 7 }} />
+                    <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.65)", margin: 0 }}>{item}</p>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,0.45)", fontStyle: "italic", marginTop: 16 }}>
+                These are the outcomes that strengthen organizations — not just marketing departments.
+              </p>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 24px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 20, lineHeight: 1.3 }}>
+                Performance Is Built Through Alignment
+              </h3>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
+                The strongest businesses don&apos;t succeed because one campaign performs well.
+              </p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
+                They succeed because strategy, messaging, visibility, technology, sales, and operations all work together toward a common objective.
+              </p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>
+                That&apos;s what Brand Iron helps build.
+              </p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>
+                A connected growth system designed to create measurable business value over time.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -991,6 +1248,18 @@ export default function Home() {
               </p>
               <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", marginBottom: 32 }}>
                 Whether you&apos;re refining your strategy or preparing for your next stage of growth, our goal is to provide ideas you can apply, not just content to consume.
+              </p>
+              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ background: "#F0EBE4", borderRadius: 12, padding: "28px 28px", marginBottom: 24 }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#cb772d", marginBottom: 12 }}>Why We Share What We Learn</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#555", marginBottom: 8 }}>
+                  Knowledge is most valuable when it&apos;s shared. We believe better-informed leaders make better business decisions.
+                </p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#555" }}>
+                  That&apos;s why we continuously publish insights drawn from real-world experience, market research, emerging technologies, and the challenges organizations face as buyer behavior continues to evolve. Our goal isn&apos;t simply to keep up with change — it&apos;s to help our clients stay ahead of it.
+                </p>
+              </div>
+              <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "#666", marginBottom: 20 }}>
+                Browse articles, guides, and practical resources designed to help you navigate today&apos;s evolving growth landscape.
               </p>
               <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                 <Link href="/blog" className="hero-btn-primary" style={{ fontSize: 13, padding: "12px 28px" }}>
@@ -1040,6 +1309,20 @@ export default function Home() {
             </p>
             <p className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", maxWidth: 680, margin: "0 auto" }}>
               That&apos;s why organizations need more than a collection of vendors delivering disconnected services. They need a strategic partner who understands how every part of the business contributes to long-term success, and how to bring those pieces together into one cohesive growth strategy.
+            </p>
+          </div>
+
+          {/* We Build Alongside Your Team */}
+          <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ background: "#0F1B2D", borderRadius: 16, padding: "48px 56px", marginBottom: 64 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>We Build Alongside Your Team</p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
+              Whether you&apos;re launching a new offering, repositioning your brand, improving visibility, scaling demand generation, strengthening revenue operations, or preparing for investment, we work as an extension of your leadership team.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+              Our role isn&apos;t simply to execute deliverables. It&apos;s to help you make better strategic decisions, prioritize the right opportunities, and build systems that continue creating value long after individual projects are complete.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+              Because the strongest partnerships are built on shared goals — not transactions.
             </p>
           </div>
 
