@@ -643,21 +643,36 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Closing brand statement */}
-          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 12, padding: "40px 48px", marginBottom: 80, overflow: "hidden" }}>
-            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
-            <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 16, lineHeight: 1.3 }}>
-              Modern growth isn&apos;t built on isolated marketing tactics.
-            </h3>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
-              It&apos;s built by aligning every stage of the buying journey from first discovery to long-term customer relationships.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
-              That&apos;s why Brand Iron brings together brand strategy, AI visibility, go-to-market execution, revenue engineering, outbound growth, and digital experiences into one connected growth system.
-            </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", margin: 0 }}>
-              Because organizations that are <strong style={{ color: "#cb772d" }}>found first, trusted fastest, and aligned internally</strong> don&apos;t just compete, they become the brands buyers choose.
-            </p>
+          {/* Closing brand statement — Pattern 2: full-bleed scenic banner */}
+          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{
+            position: "relative", overflow: "hidden", borderRadius: 14,
+            marginBottom: 80,
+            backgroundImage: "url('/images/bg-peaks.png')",
+            backgroundSize: "cover", backgroundPosition: "center 35%",
+            minHeight: 260,
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
+            {/* border frame inset */}
+            <div style={{ position: "absolute", inset: 12, border: "1px solid rgba(255,255,255,0.18)", borderRadius: 6, zIndex: 1, pointerEvents: "none" }} />
+            {/* light dark gradient so text reads */}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(8,14,32,0.52) 0%, rgba(8,14,32,0.62) 100%)" }} />
+            <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "56px 80px", maxWidth: 900, margin: "0 auto" }}>
+              <h3 style={{
+                fontFamily: "'Burford Rustic Black', sans-serif",
+                fontSize: "clamp(22px, 2.8vw, 40px)", fontWeight: 400,
+                textTransform: "uppercase", letterSpacing: "0.06em",
+                color: "#FFFFFF", marginBottom: 20, lineHeight: 1.15,
+              }}>
+                Modern growth isn&apos;t built on isolated marketing tactics.
+              </h3>
+              <div style={{ width: 48, height: 3, background: "#cb772d", borderRadius: 2, margin: "0 auto 20px" }} />
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", marginBottom: 10 }}>
+                It&apos;s built by aligning every stage of the buying journey — from first discovery to long-term customer relationships.
+              </p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: 0 }}>
+                Because organizations that are <strong style={{ color: "#cb772d" }}>found first, trusted fastest, and aligned internally</strong> don&apos;t just compete — they become the brands buyers choose.
+              </p>
+            </div>
           </div>
 
           {/* Journey stage intro */}
