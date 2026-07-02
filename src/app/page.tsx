@@ -456,10 +456,10 @@ export default function Home() {
   const problemCards = [
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="10" r="6" stroke="#cb772d" strokeWidth="2"/>
-          <path d="M4 28c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M22 16l4-4M24 12h4v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M2 21c0-5 4-9 10-9s10 4 10 9"/>
+          <path d="M17 11l2-2M19 9l2 2"/>
         </svg>
       ),
       title: "Your buyers can't clearly differentiate you.",
@@ -467,10 +467,10 @@ export default function Home() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="13" stroke="#cb772d" strokeWidth="2"/>
-          <path d="M13 12.5c0-1.7 1.3-3 3-3s3 1.3 3 3c0 2-2 2.5-3 4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="16" cy="22.5" r="1.2" fill="#cb772d"/>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+          <path d="M11 8v3l2 2"/>
         </svg>
       ),
       title: "You're difficult to discover where buying decisions begin.",
@@ -478,10 +478,9 @@ export default function Home() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
-          <rect x="3" y="8" width="11" height="8" rx="2" stroke="#cb772d" strokeWidth="2"/>
-          <rect x="18" y="16" width="11" height="8" rx="2" stroke="#cb772d" strokeWidth="2"/>
-          <path d="M14 12h4M16 12v4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 17l4-8 4 5 3-3 4 6"/>
+          <path d="M3 3v18h18"/>
         </svg>
       ),
       title: "Marketing generates activity, but not enough pipeline.",
@@ -489,9 +488,10 @@ export default function Home() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
-          <path d="M4 10l7 8 6-4 11 12" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M24 26h4v-4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="7" width="9" height="6" rx="1.5"/>
+          <rect x="13" y="11" width="9" height="6" rx="1.5"/>
+          <path d="M11 10h2M12 10v4"/>
         </svg>
       ),
       title: "Sales and marketing aren't working from the same playbook.",
@@ -499,10 +499,11 @@ export default function Home() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="4" stroke="#cb772d" strokeWidth="2"/>
-          <path d="M16 4v4M16 24v4M4 16h4M24 16h4" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10"/>
+          <path d="M12 6v6l4 2"/>
+          <path d="M18 2v4h4"/>
+          <path d="M18 2l3 3"/>
         </svg>
       ),
       title: "Technology creates complexity instead of clarity.",
@@ -873,7 +874,7 @@ export default function Home() {
                     {icon}
                   </div>
                   <div>
-                    <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 8, lineHeight: 1.35 }}>{title}</h3>
+                    <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.07em", color: "#1a2e44", marginBottom: 10, lineHeight: 1.3 }}>{title}</h3>
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.75, color: "#555", margin: 0 }}>{body}</p>
                   </div>
                 </div>
@@ -900,7 +901,7 @@ export default function Home() {
                     {icon}
                   </div>
                   <div>
-                    <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 8, lineHeight: 1.35 }}>{title}</h3>
+                    <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.07em", color: "#1a2e44", marginBottom: 10, lineHeight: 1.3 }}>{title}</h3>
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.75, color: "#555", margin: 0 }}>{body}</p>
                   </div>
                 </div>
