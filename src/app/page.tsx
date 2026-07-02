@@ -965,7 +965,7 @@ export default function Home() {
 
       {/* ── S4: BRAND IRON DIFFERENCE ─────────────────────── */}
       <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-peaks.png')", backgroundSize: "cover", backgroundPosition: "center 40%" }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.60)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.30)" }} />
         <div ref={diffView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
 
           {/* ── Intro: 2-col — headline left, copy right ── */}
@@ -1278,7 +1278,7 @@ export default function Home() {
         backgroundImage: "url('/images/horse mane circuit lines_1.png')",
         backgroundSize: "cover", backgroundPosition: "center top",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(8,16,36,0.88)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(8,16,36,0.68)" }} />
         <CircuitOverlay />
         <div ref={servicesView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -1334,9 +1334,9 @@ export default function Home() {
       {/* ── S7: HOW WE WORK ──────────────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        background: "#0D1A2E",
+        background: "#F8F4EF",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 60% 40%, rgba(203,119,45,0.07) 0%, transparent 65%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 60% 40%, rgba(203,119,45,0.06) 0%, transparent 65%)" }} />
         <CircuitOverlay />
         <div ref={processView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 80 }}>
@@ -1357,7 +1357,7 @@ export default function Home() {
           {/* 4 connected process cards */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, position: "relative" }}>
             {/* Connector line */}
-            <div style={{ position: "absolute", top: 60, left: "12.5%", right: "12.5%", height: 2, background: "linear-gradient(to right, #0F1B2D, #cb772d)", zIndex: 0 }} />
+            <div style={{ position: "absolute", top: 60, left: "12.5%", right: "12.5%", height: 2, background: "linear-gradient(to right, rgba(203,119,45,0.3), #cb772d, rgba(203,119,45,0.3))", zIndex: 0 }} />
             {[
               {
                 step: "01", title: "Discover", subtitle: "Understand Before You Execute",
