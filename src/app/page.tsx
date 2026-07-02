@@ -1045,12 +1045,18 @@ export default function Home() {
       </section>
 
       {/* ── S5: GROWTH FRAMEWORK ──────────────────────────── */}
-      <section style={{ background: "#FFFFFF", padding: "120px 40px 120px" }}>
-        <div ref={frameworkView.ref} style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
+      <section style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #F6F3EF 100%)", padding: "120px 40px 120px", position: "relative", overflow: "hidden" }}>
+        {/* Subtle diagonal grid overlay */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%, rgba(203,119,45,0.04) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(15,27,45,0.04) 0%, transparent 50%)", pointerEvents: "none" }} />
+        <div ref={frameworkView.ref} style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+          {/* Overline */}
+          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
+            The Brand Iron Growth Framework
+          </p>
           <h2 className={`section-heading reveal${frameworkView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 20 }}>
             A Connected Framework for Modern Growth
           </h2>
-          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#555", maxWidth: 680, margin: "0 auto 16px" }}>
+          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#4a4a4a", maxWidth: 680, margin: "0 auto 16px" }}>
             Growth doesn&apos;t happen through a single initiative. It happens when every part of your business works together, from how buyers discover your brand to how your team converts opportunities and measures success.
           </p>
           <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", maxWidth: 680, margin: "0 auto 72px" }}>
@@ -1058,71 +1064,100 @@ export default function Home() {
           </p>
 
           {/* 3 core pillars */}
-          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 32 }}>
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 12 }}>
             {[
               {
-                label: "Brand Strategy", sub: "Build the foundation.", color: "#0F1B2D",
+                label: "Brand Strategy", sub: "Build the foundation.", num: "01",
                 body: "Every successful growth initiative begins with clarity. We help organizations define their market position, differentiate from competitors, and build messaging that resonates with the audiences they want to reach.",
+                icon: (<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L26 9v10l-12 6L2 19V9L14 3z" stroke="#cb772d" strokeWidth="1.8" strokeLinejoin="round"/><path d="M14 3v22M2 9l12 6 12-6" stroke="#cb772d" strokeWidth="1.4" strokeLinejoin="round"/></svg>),
               },
               {
-                label: "AI Visibility & Discoverability", sub: "Be found where buyers are looking.", color: "#1c3652",
+                label: "AI Visibility & Discoverability", sub: "Be found where buyers are looking.", num: "02",
                 body: "Modern buyers search differently. We help organizations increase their visibility across search engines, AI-powered platforms, industry publications, and digital channels where buying decisions begin.",
+                icon: (<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="13" cy="13" r="8" stroke="#cb772d" strokeWidth="1.8"/><path d="M19 19l5 5" stroke="#cb772d" strokeWidth="2.2" strokeLinecap="round"/><path d="M10 13h6M13 10v6" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round"/></svg>),
               },
               {
-                label: "Go-to-Market Strategy", sub: "Turn strategy into execution.", color: "#2d4f72",
+                label: "Go-to-Market Strategy", sub: "Turn strategy into execution.", num: "03",
                 body: "A great strategy only creates value when it's executed effectively. We develop go-to-market plans that align positioning, messaging, channels, campaigns, and sales efforts to generate predictable commercial momentum.",
+                icon: (<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 22L12 14l5 5 7-10" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 8h5v5" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>),
               },
-            ].map(({ label, sub, color, body }) => (
-              <div key={label} style={{ background: color, borderRadius: 12, padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}>
-                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 17, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 8 }}>{label}</div>
+            ].map(({ label, sub, num, body, icon }, idx) => (
+              <div key={label}
+                className={`reveal stagger-${idx + 1}${frameworkView.inView ? ' visible' : ''}`}
+                style={{ position: "relative", background: "#0F1B2D", borderRadius: 14, padding: "36px 28px 32px", boxShadow: "0 8px 32px rgba(15,27,45,0.14)", overflow: "hidden", textAlign: "left", transition: "transform 0.25s, box-shadow 0.25s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(15,27,45,0.22)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(15,27,45,0.14)"; }}
+              >
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, #cb772d, rgba(203,119,45,0.3))" }} />
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 10, background: "rgba(203,119,45,0.12)", border: "1px solid rgba(203,119,45,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>{icon}</div>
+                  <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 36, fontWeight: 400, color: "rgba(203,119,45,0.12)", letterSpacing: "0.04em", lineHeight: 1 }}>{num}</span>
+                </div>
+                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 6, lineHeight: 1.3 }}>{label}</div>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: "#cb772d", fontStyle: "italic", fontWeight: 600, marginBottom: 16, letterSpacing: "0.06em" }}>{sub}</div>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.65)", margin: 0 }}>{body}</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.62)", margin: 0 }}>{body}</p>
               </div>
             ))}
           </div>
 
-          {/* Supporting systems */}
-          <p className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16, textAlign: "center" }}>
-            Supporting Growth Systems
-          </p>
-          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 40 }}>
+          {/* Supporting systems label */}
+          <div style={{ display: "flex", alignItems: "center", gap: 20, margin: "48px 0 20px" }}>
+            <div style={{ flex: 1, height: 1, background: "linear-gradient(to right, transparent, rgba(203,119,45,0.3))" }} />
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", margin: 0, whiteSpace: "nowrap" }}>
+              Supporting Growth Systems
+            </p>
+            <div style={{ flex: 1, height: 1, background: "linear-gradient(to left, transparent, rgba(203,119,45,0.3))" }} />
+          </div>
+
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 48 }}>
             {[
-              { label: "Revenue Engineering", desc: "Align marketing, sales, CRM, automation, analytics, and reporting into one measurable revenue system that improves efficiency and supports long-term growth.", color: "#a5621e" },
-              { label: "Outbound Growth", desc: "Accelerate pipeline development through strategic prospecting, LinkedIn outreach, email campaigns, SDR programs, appointment setting, and sales enablement.", color: "#b06928" },
-              { label: "Website Development", desc: "Build digital experiences that don't just look impressive — they're designed for discoverability, conversion, accessibility, and measurable business performance.", color: "#ba7030" },
-              { label: "Capital Raise Support", desc: "Help founders and leadership teams prepare for investment through compelling pitch decks, fundraising strategy, investor outreach, and market-ready storytelling.", color: "#cb772d" },
-            ].map(({ label, desc, color }) => (
-              <div key={label} style={{ background: color, borderRadius: 10, padding: "24px 20px" }}>
-                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 14, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#FFFFFF", marginBottom: 10 }}>{label}</div>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: "rgba(255,255,255,0.82)", margin: 0 }}>{desc}</p>
+              { label: "Revenue Engineering", desc: "Align marketing, sales, CRM, automation, analytics, and reporting into one measurable revenue system that improves efficiency and supports long-term growth.", icon: (<svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="13" width="4" height="7" rx="1" stroke="#cb772d" strokeWidth="1.5"/><rect x="9" y="8" width="4" height="12" rx="1" stroke="#cb772d" strokeWidth="1.5"/><rect x="16" y="3" width="4" height="17" rx="1" stroke="#cb772d" strokeWidth="1.5"/></svg>) },
+              { label: "Outbound Growth", desc: "Accelerate pipeline development through strategic prospecting, LinkedIn outreach, email campaigns, SDR programs, appointment setting, and sales enablement.", icon: (<svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 11h15M13 6l6 5-6 5" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>) },
+              { label: "Website Development", desc: "Build digital experiences that don't just look impressive — they're designed for discoverability, conversion, accessibility, and measurable business performance.", icon: (<svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="#cb772d" strokeWidth="1.5"/><path d="M2 8h18M7 4v4" stroke="#cb772d" strokeWidth="1.3" strokeLinecap="round"/></svg>) },
+              { label: "Capital Raise Support", desc: "Help founders and leadership teams prepare for investment through compelling pitch decks, fundraising strategy, investor outreach, and market-ready storytelling.", icon: (<svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#cb772d" strokeWidth="1.5"/><path d="M11 7v4l3 2" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>) },
+            ].map(({ label, desc, icon }, idx) => (
+              <div key={label}
+                className={`reveal stagger-${idx + 1}${frameworkView.inView ? ' visible' : ''}`}
+                style={{ position: "relative", background: "#FFFFFF", border: "1px solid rgba(15,27,45,0.08)", borderRadius: 12, padding: "24px 20px", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", transition: "transform 0.25s, box-shadow 0.25s, border-color 0.25s", overflow: "hidden" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 28px rgba(15,27,45,0.12)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(203,119,45,0.3)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(15,27,45,0.08)"; }}
+              >
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, #cb772d, rgba(203,119,45,0.2))" }} />
+                <div style={{ width: 40, height: 40, borderRadius: 8, background: "rgba(203,119,45,0.08)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>{icon}</div>
+                <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 10, lineHeight: 1.3 }}>{label}</div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: "#666", margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Outcome */}
-          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, marginBottom: 48 }}>
+          {/* Outcome strip */}
+          <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 12, padding: "28px 40px", display: "flex", alignItems: "center", justifyContent: "center", gap: 0, marginBottom: 56, overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginRight: 32, whiteSpace: "nowrap" }}>The Outcome</p>
             {["Discoverable", "Trusted", "Chosen", "Revenue"].map((word, i) => (
-              <div key={word} style={{ display: "flex", alignItems: "center", gap: 24 }}>
-                <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 18, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: "#cb772d" }}>{word}</span>
-                {i < 3 && <span style={{ color: "#cb772d", fontSize: 20 }}>•</span>}
+              <div key={word} style={{ display: "flex", alignItems: "center" }}>
+                <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(16px, 1.8vw, 22px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: "#cb772d", padding: "0 20px" }}>{word}</span>
+                {i < 3 && <span style={{ color: "rgba(203,119,45,0.35)", fontSize: 18 }}>|</span>}
               </div>
             ))}
           </div>
 
           {/* Closing brand statement */}
           <div className={`reveal${frameworkView.inView ? ' visible' : ''}`} style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 12 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#4a4a4a", marginBottom: 12 }}>
               Every engagement is different. Some organizations need stronger positioning. Others need better visibility, smarter revenue systems, or scalable outbound programs.
             </p>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 12 }}>
               Whatever the challenge, our framework adapts to your business — not the other way around.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 24 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", marginBottom: 28 }}>
               Because sustainable growth isn&apos;t built through disconnected services. It&apos;s built through connected systems working toward a common outcome.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#888", fontStyle: "italic" }}>
-              While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into measurable business outcomes.
-            </p>
+            <div style={{ display: "inline-block", background: "rgba(203,119,45,0.06)", border: "1px solid rgba(203,119,45,0.18)", borderRadius: 10, padding: "16px 28px" }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#555", fontStyle: "italic", margin: 0 }}>
+                While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into measurable business outcomes.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -1261,7 +1296,7 @@ export default function Home() {
           </div>
 
           {/* One Continuous Growth System */}
-          <div className={`reveal${processView.inView ? ' visible' : ''}`} style={{ marginTop: 64, background: "rgba(255,255,255,0.06)", borderRadius: 16, padding: "48px 56px", textAlign: "center" }}>
+          <div className={`reveal${processView.inView ? ' visible' : ''}`} style={{ marginTop: 64, background: "rgba(255,255,255,0.88)", border: "1px solid rgba(15,27,45,0.08)", borderRadius: 16, padding: "48px 56px", textAlign: "center", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
             <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#0F1B2D", marginBottom: 16 }}>
               One Continuous Growth System
             </h3>
@@ -1325,7 +1360,8 @@ export default function Home() {
           </div>
 
           {/* Big stats row */}
-          <div className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2, background: "rgba(255,255,255,0.04)", borderRadius: 12, overflow: "hidden", marginBottom: 48 }}>
+          <div className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, overflow: "hidden", marginBottom: 48 }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             {[
               { num: "3X", label: "Pipeline Growth", note: "Average increase across engagements" },
               { num: "60%", label: "Less Wasted Effort", note: "Through AI automation and systems" },
@@ -1348,19 +1384,21 @@ export default function Home() {
               { title: "Better Conversion Performance", body: "Optimize every stage of the customer journey, from first impression to sales conversation, to reduce friction and improve the effectiveness of your marketing and sales efforts. Small improvements across the journey often create significant business impact." },
               { title: "Connected Revenue Operations", body: "Bring together marketing, sales, CRM, automation, reporting, and analytics into one connected system that improves visibility, supports better decision-making, and creates operational efficiency. When teams work from the same data, growth becomes easier to manage and scale." },
               { title: "Sustainable Business Growth", body: "Our goal isn't short-term spikes in performance. It's helping organizations build repeatable systems that continue generating value as markets evolve and businesses grow. Because sustainable growth is built through consistency, not quick fixes." },
-            ].map(({ title, body }) => (
-              <div key={title} className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{
+            ].map(({ title, body }, idx) => (
+              <div key={title} className={`reveal stagger-${(idx % 3) + 1}${resultsView.inView ? ' visible' : ''}`} style={{
+                position: "relative",
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.07)",
                 borderRadius: 10, padding: "32px 28px",
-                transition: "background 0.25s, border-color 0.25s",
+                overflow: "hidden",
+                transition: "background 0.25s, border-color 0.25s, transform 0.25s",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(203,119,45,0.08)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(203,119,45,0.25)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(203,119,45,0.08)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(203,119,45,0.25)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-3px)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
               >
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#cb772d", marginBottom: 20 }} />
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, #cb772d, rgba(203,119,45,0.2))" }} />
                 <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 12, lineHeight: 1.35 }}>{title}</h3>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.72)" }}>{body}</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(255,255,255,0.72)", margin: 0 }}>{body}</p>
               </div>
             ))}
           </div>
@@ -1402,7 +1440,8 @@ export default function Home() {
                 These are the outcomes that strengthen organizations — not just marketing departments.
               </p>
             </div>
-            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div style={{ position: "relative", background: "rgba(203,119,45,0.07)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden" }}>
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
               <h3 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 24px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 20, lineHeight: 1.3 }}>
                 Performance Is Built Through Alignment
               </h3>
