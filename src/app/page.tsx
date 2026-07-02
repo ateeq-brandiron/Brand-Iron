@@ -1334,10 +1334,9 @@ export default function Home() {
       {/* ── S7: HOW WE WORK ──────────────────────────────── */}
       <section style={{
         position: "relative", overflow: "hidden", padding: "120px 40px 120px",
-        backgroundImage: "url('/images/bg-horse.jpg')",
-        backgroundSize: "cover", backgroundPosition: "center 30%",
+        background: "#0D1A2E",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.88)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 60% 40%, rgba(203,119,45,0.07) 0%, transparent 65%)" }} />
         <CircuitOverlay />
         <div ref={processView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 80 }}>
@@ -1664,30 +1663,8 @@ export default function Home() {
               <p className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", marginBottom: 32 }}>
                 Whether you&apos;re refining your strategy or preparing for your next stage of growth, our goal is to provide ideas you can apply, not just content to consume.
               </p>
-              <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                {[
-                  { tag: "AI Visibility", title: "Why Your Brand Isn't Showing Up in AI Search — And How To Fix It" },
-                  { tag: "Brand Strategy", title: "The Difference Between a Brand and a Logo (And Why It Costs You Revenue)" },
-                  { tag: "Revenue Engineering", title: "How To Build a Revenue System That Actually Scales" },
-                ].map(({ tag, title }) => (
-                  <Link key={title} href="/blog" style={{ textDecoration: "none" }}>
-                    <div style={{
-                      background: "rgba(255,255,255,0.88)",
-                      borderRadius: 10, padding: "24px 28px",
-                      borderLeft: "3px solid #cb772d",
-                      transition: "box-shadow 0.2s, transform 0.2s",
-                    }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.12)"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(4px)"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(0)"; }}
-                    >
-                      <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#cb772d" }}>{tag}</span>
-                      <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.04em", color: "#0F1B2D", marginTop: 8, lineHeight: 1.35 }}>{title}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
             </div>
-            {/* RIGHT: Why We Share callout */}
+            {/* RIGHT: Why We Share callout + article cards */}
             <div className={`reveal${insightsView.inView ? ' visible' : ''}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={{ background: "#F0EBE4", borderRadius: 12, padding: "36px 32px", borderLeft: "3px solid #cb772d" }}>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#cb772d", marginBottom: 12 }}>Why We Share What We Learn</p>
@@ -1698,6 +1675,27 @@ export default function Home() {
                   That&apos;s why we continuously publish insights drawn from real-world experience, market research, emerging technologies, and the challenges organizations face as buyer behavior continues to evolve. Our goal isn&apos;t simply to keep up with change — it&apos;s to help our clients stay ahead of it.
                 </p>
               </div>
+              {/* Article cards below callout */}
+              {[
+                { tag: "AI Visibility", title: "Why Your Brand Isn't Showing Up in AI Search — And How To Fix It" },
+                { tag: "Brand Strategy", title: "The Difference Between a Brand and a Logo (And Why It Costs You Revenue)" },
+                { tag: "Revenue Engineering", title: "How To Build a Revenue System That Actually Scales" },
+              ].map(({ tag, title }) => (
+                <Link key={title} href="/blog" style={{ textDecoration: "none" }}>
+                  <div style={{
+                    background: "rgba(255,255,255,0.88)",
+                    borderRadius: 10, padding: "20px 24px",
+                    borderLeft: "3px solid #cb772d",
+                    transition: "box-shadow 0.2s, transform 0.2s",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.12)"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(4px)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; (e.currentTarget as HTMLDivElement).style.transform = "translateX(0)"; }}
+                  >
+                    <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#cb772d" }}>{tag}</span>
+                    <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 15, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.04em", color: "#0F1B2D", marginTop: 6, lineHeight: 1.35 }}>{title}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
           {/* Centered last line + CTAs */}
