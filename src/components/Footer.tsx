@@ -57,192 +57,194 @@ export default function Footer() {
     },
   ];
 
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <footer style={{ position: "relative", color: "#FFFFFF", overflow: "hidden" }}>
-      {/* Background image */}
-      <div style={{
-        position: "absolute", inset: 0,
-        backgroundImage: "url('/images/bg-fence.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center 40%",
-        backgroundRepeat: "no-repeat",
-      }} />
-      {/* Dark overlay */}
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "linear-gradient(180deg, rgba(10,20,38,0.88) 0%, rgba(10,20,38,0.82) 60%, rgba(10,20,38,0.93) 100%)",
-      }} />
 
-      {/* Copper top accent line */}
-      <div style={{ position: "relative", height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
+      {/* Split background: leather left / scenic right */}
+      <div style={{ position: "absolute", inset: 0, display: "flex" }}>
+        {/* Left half — leather texture */}
+        <div style={{
+          width: "38%",
+          backgroundImage: "url('/images/bg-logs.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "sepia(0.5) saturate(1.2) brightness(0.55)",
+        }} />
+        {/* Right half — scenic mountain */}
+        <div style={{
+          flex: 1,
+          backgroundImage: "url('/images/bg-peaks.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+        }}>
+          {/* dark overlay on scenic side */}
+          <div style={{ position: "absolute", top: 0, bottom: 0, left: "38%", right: 0, background: "rgba(8,18,38,0.72)" }} />
+        </div>
+      </div>
 
-      <div style={{ position: "relative", zIndex: 1 }}>
+      {/* Copper top accent */}
+      <div style={{ position: "relative", zIndex: 2, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
 
-        {/* Top nav row */}
-        <div style={{ borderBottom: "1px solid rgba(255,255,255,0.10)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-            <nav style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "0 8px", padding: "20px 0" }}>
-              {navLinks.map(([label, href], i) => (
-                <span key={label} style={{ display: "flex", alignItems: "center" }}>
-                  <Link href={href} style={{
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontSize: 13,
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.80)",
-                    textDecoration: "none",
-                    padding: "4px 10px",
-                    transition: "color 0.2s",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#cb772d")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.80)")}
-                  >{label}</Link>
-                  {i < navLinks.length - 1 && (
-                    <span style={{ color: "rgba(255,255,255,0.25)", fontSize: 12 }}>|</span>
-                  )}
-                </span>
-              ))}
-            </nav>
-          </div>
+      <div style={{ position: "relative", zIndex: 2, display: "flex", minHeight: 380 }}>
+
+        {/* LEFT PANEL — logo centered on leather */}
+        <div style={{
+          width: "38%", flexShrink: 0,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          padding: "56px 40px",
+        }}>
+          <Link href="/" style={{ textDecoration: "none", display: "block", textAlign: "center" }}>
+            <img
+              src="/logo.png"
+              alt="Brand Iron Marketing"
+              style={{ height: 100, width: "auto", filter: "brightness(0.85) sepia(0.3)" }}
+            />
+          </Link>
         </div>
 
-        {/* Main content: address/social left + newsletter right */}
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "56px 24px 48px" }}>
-          <div className="footer-main-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+        {/* RIGHT PANEL — nav + info + newsletter */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", padding: "40px 48px 40px 56px" }}>
 
-            {/* Left: Brand info + address + social */}
-            <div>
-              <Link href="/" style={{ display: "inline-block", marginBottom: 28, textDecoration: "none" }}>
-                <img src="/logo.png" alt="Brand Iron Marketing" style={{ height: 56, width: "auto" }} />
-              </Link>
+          {/* Nav links row */}
+          <nav style={{ display: "flex", flexWrap: "wrap", gap: "0 6px", marginBottom: 36, borderBottom: "1px solid rgba(255,255,255,0.12)", paddingBottom: 20 }}>
+            {navLinks.map(([label, href], i) => (
+              <span key={label} style={{ display: "flex", alignItems: "center" }}>
+                <Link href={href} style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: 12, fontWeight: 700,
+                  letterSpacing: "0.14em", textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.78)",
+                  textDecoration: "none", padding: "2px 8px",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#cb772d")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.78)")}
+                >{label}</Link>
+                {i < navLinks.length - 1 && (
+                  <span style={{ color: "rgba(255,255,255,0.22)", fontSize: 11 }}>|</span>
+                )}
+              </span>
+            ))}
+          </nav>
 
-              <div style={{ marginBottom: 28 }}>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.9, color: "rgba(255,255,255,0.85)" }}>
-                  Brand Iron
-                </p>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.9, color: "rgba(255,255,255,0.85)" }}>
-                  2590 Welton St. Suite 200,
-                </p>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.9, color: "rgba(255,255,255,0.85)" }}>
-                  Denver, CO 80205
-                </p>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.9, color: "#cb772d", marginTop: 4 }}>
-                  Ph: &nbsp;303-534-1901
-                </p>
-              </div>
+          {/* Address + newsletter row */}
+          <div style={{ display: "flex", gap: 48, alignItems: "flex-start", flex: 1 }}>
 
-              {/* Social icons */}
-              <div style={{ display: "flex", gap: 10 }}>
+            {/* Address + social */}
+            <div style={{ minWidth: 200 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.9, color: "rgba(255,255,255,0.88)" }}>Brand Iron</p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.9, color: "rgba(255,255,255,0.75)" }}>2590 Welton St. Suite 200,</p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.9, color: "rgba(255,255,255,0.75)" }}>Denver, CO 80205</p>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.9, color: "rgba(255,255,255,0.75)", marginBottom: 20 }}>Ph:&nbsp; 303-534-1901</p>
+              <div style={{ display: "flex", gap: 12 }}>
                 {socialLinks.map(({ label, href, icon }) => (
                   <a key={label} href={href} aria-label={label} style={{
-                    width: 40, height: 40, borderRadius: 8,
+                    width: 34, height: 34, borderRadius: "50%",
                     background: "rgba(255,255,255,0.12)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    border: "1px solid rgba(255,255,255,0.18)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     textDecoration: "none", transition: "all 0.2s",
                   }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(203,119,45,0.40)";
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(203,119,45,0.6)";
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.12)";
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.15)";
-                  }}
-                  >
-                    {icon}
-                  </a>
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(203,119,45,0.45)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "#cb772d"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.12)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.18)"; }}
+                  >{icon}</a>
                 ))}
               </div>
             </div>
 
-            {/* Right: Newsletter */}
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            {/* Newsletter */}
+            <div style={{ flex: 1, maxWidth: 360 }}>
               <p style={{
                 fontFamily: "'Burford Rustic Black', sans-serif",
-                fontSize: 28,
-                fontWeight: 400,
-                color: "#FFFFFF",
-                lineHeight: 1.25,
-                marginBottom: 8,
-                letterSpacing: "0.02em",
+                fontSize: 22, fontWeight: 400,
+                color: "#FFFFFF", lineHeight: 1.25, marginBottom: 20,
               }}>
-                Subscribe To Our Newsletter
+                Subscribe To Our<br />Newsletter
               </p>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.60)", marginBottom: 24 }}>
-                Insights, strategies, and growth frameworks — straight to your inbox.
-              </p>
-
-              <form onSubmit={e => { e.preventDefault(); setEmail(""); }} style={{ display: "flex", gap: 0, maxWidth: 420 }}>
+              <form onSubmit={e => { e.preventDefault(); setEmail(""); }} style={{ display: "flex", gap: 0 }}>
                 <input
                   type="email"
                   placeholder="Email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   style={{
-                    flex: 1,
-                    padding: "14px 20px",
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontSize: 14,
+                    flex: 1, padding: "12px 18px",
+                    fontFamily: "'Montserrat', sans-serif", fontSize: 13,
                     background: "rgba(255,255,255,0.10)",
                     border: "1px solid rgba(255,255,255,0.30)",
                     borderRight: "none",
                     borderRadius: "40px 0 0 40px",
-                    color: "#FFFFFF",
-                    outline: "none",
+                    color: "#FFFFFF", outline: "none",
                   }}
                 />
                 <button type="submit" style={{
-                  width: 52, height: 52,
+                  width: 48, height: 48,
                   borderRadius: "0 40px 40px 0",
                   background: "rgba(255,255,255,0.15)",
                   border: "1px solid rgba(255,255,255,0.30)",
                   borderLeft: "none",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  cursor: "pointer",
-                  transition: "background 0.2s",
+                  cursor: "pointer", transition: "background 0.2s",
                 }}
-                onMouseEnter={e => (e.currentTarget.style.background = "rgba(203,119,45,0.50)")}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(203,119,45,0.55)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
                     <path d="M10 8l4 4-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
               </form>
             </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      {/* Copyright bar */}
+      <div style={{ position: "relative", zIndex: 2, borderTop: "1px solid rgba(255,255,255,0.10)" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto", padding: "16px 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.40)" }}>
+            © {new Date().getFullYear()} Brand Iron Marketing. All rights reserved.
+          </p>
+          <div style={{ display: "flex", gap: 20 }}>
+            {[["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"], ["Sitemap", "/sitemap.xml"]].map(([label, href]) => (
+              <Link key={label} href={href} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.40)", textDecoration: "none" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.40)")}
+              >{label}</Link>
+            ))}
           </div>
         </div>
-
-        {/* Divider + copyright */}
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)" }}>
-              © {new Date().getFullYear()} Brand Iron Marketing. All rights reserved.
-            </p>
-            <div style={{ display: "flex", gap: 24 }}>
-              {[["Privacy Policy", "/privacy"], ["Terms of Service", "/terms"], ["Sitemap", "/sitemap.xml"]].map(([label, href]) => (
-                <Link key={label} href={href} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", textDecoration: "none" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.80)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
-                >{label}</Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
       </div>
 
       {/* Copper bottom bar */}
-      <div style={{ position: "relative", height: 4, background: "linear-gradient(to right, #8B5E24, #cb772d, #e8a44a, #cb772d, #8B5E24)" }} />
+      <div style={{ position: "relative", zIndex: 2, height: 4, background: "linear-gradient(to right, #8B5E24, #cb772d, #e8a44a, #cb772d, #8B5E24)" }} />
 
-      <style>{`
-        @media (max-width: 768px) {
-          .footer-main-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-        }
-      `}</style>
+      {/* Scroll to top button */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        style={{
+          position: "absolute", bottom: 28, right: 28, zIndex: 10,
+          width: 48, height: 48, borderRadius: "50%",
+          background: "#cb772d",
+          border: "none", cursor: "pointer",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          boxShadow: "0 4px 16px rgba(203,119,45,0.5)",
+          transition: "background 0.2s, transform 0.2s",
+        }}
+        onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "#b8661f"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-3px)"; }}
+        onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "#cb772d"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; }}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 19V5M5 12l7-7 7 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
     </footer>
   );
 }
