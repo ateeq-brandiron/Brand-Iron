@@ -529,14 +529,14 @@ export default function Home() {
           <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center" }}>
             <h1 className="hero-h1-anim" style={{
               fontFamily: "'Burford Rustic Black', Helvetica, Arial, Lucida, sans-serif",
-              fontWeight: 700, fontSize: "clamp(36px, 5.8vw, 84px)",
+              fontWeight: 700, fontSize: "clamp(28px, 4.0vw, 58px)",
               textTransform: "uppercase", letterSpacing: "0.06em", lineHeight: 1.0,
               color: "transparent", WebkitTextStroke: "2px #FFFFFF",
               marginBottom: 32, whiteSpace: "nowrap",
             }}>
               Forging Brands. Driving Revenue.
             </h1>
-            <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <div style={{ width: "100%" }}>
               <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.85, color: "rgba(255,255,255,0.88)", marginBottom: 14 }}>
                 Modern buyers don&apos;t discover, evaluate, and choose companies the way they used to.
               </p>
@@ -637,7 +637,7 @@ export default function Home() {
               <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "#666", marginBottom: 24 }}>
                 By the time someone reaches out, they&apos;ve often already narrowed their shortlist.
               </p>
-              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", margin: 0 }}>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", margin: 0, fontWeight: 500 }}>
                 If your organization isn&apos;t visible, credible, and consistent throughout that journey, you&apos;re likely being overlooked before the conversation even begins.
               </p>
             </div>
