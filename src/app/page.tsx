@@ -520,30 +520,57 @@ export default function Home() {
       <section style={{ background: "#FFFFFF", padding: "120px 40px 120px", borderBottom: "1px solid #F0ECE8" }}>
         <div ref={buyerView.ref} style={{ maxWidth: 1200, margin: "0 auto" }}>
 
-          {/* 2-col intro: image left, copy right */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center", marginBottom: 96 }}>
-            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "flex", justifyContent: "center" }}>
+          {/* 2-col intro: B icon left, copy right */}
+          <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 80, alignItems: "center", marginBottom: 80 }}>
+
+            {/* Left — B icon with decorative treatment */}
+            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              {/* Decorative navy background circle */}
+              <div style={{
+                position: "absolute",
+                width: 360, height: 360, borderRadius: "50%",
+                background: "radial-gradient(circle at 40% 40%, #1c3254, #0F1B2D)",
+                boxShadow: "0 24px 80px rgba(15,27,45,0.18)",
+              }} />
+              {/* Copper ring accent */}
+              <div style={{
+                position: "absolute",
+                width: 380, height: 380, borderRadius: "50%",
+                border: "1px solid rgba(203,119,45,0.25)",
+              }} />
+              <div style={{
+                position: "absolute",
+                width: 408, height: 408, borderRadius: "50%",
+                border: "1px dashed rgba(203,119,45,0.1)",
+              }} />
               <img
                 src="/section2-home.png"
                 alt="Brand Iron — Building Brands That Drive Revenue"
-                style={{ width: "100%", maxWidth: 480, height: "auto", borderRadius: 16, objectFit: "contain" }}
+                style={{ position: "relative", zIndex: 1, width: 300, height: "auto", objectFit: "contain", filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.18))" }}
               />
             </div>
+
+            {/* Right — headline + copy */}
             <div>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
+                The Modern Buying Journey
+              </p>
               <h2 className={`section-heading reveal${buyerView.inView ? ' visible' : ''}`} style={{ color: "#0F1B2D", marginBottom: 24, textAlign: "left" }}>
                 The Buying Journey Has Changed. Has Your Business?
               </h2>
-              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#555", marginBottom: 16 }}>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.8, color: "#444", marginBottom: 16, fontWeight: 500 }}>
                 The way people discover, evaluate, and choose businesses has fundamentally changed.
               </p>
-              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", marginBottom: 16 }}>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "#666", marginBottom: 16 }}>
                 Today&apos;s buyers don&apos;t wait for a sales call or fill out a contact form as their first step. They research independently, compare options, ask AI-powered tools for recommendations, read reviews, explore LinkedIn, visit company websites, and seek validation from trusted communities, all before they&apos;re ready to engage.
               </p>
-              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#666", marginBottom: 16 }}>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "#666", marginBottom: 24 }}>
                 By the time someone reaches out, they&apos;ve often already narrowed their shortlist.
               </p>
-              <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ background: "#F9F8F6", borderLeft: "4px solid #cb772d", borderRadius: 8, padding: "20px 24px" }}>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#333", margin: 0 }}>
+              {/* Impact callout */}
+              <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 10, padding: "20px 24px 20px 28px", overflow: "hidden" }}>
+                <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 4, background: "#cb772d", borderRadius: "4px 0 0 4px" }} />
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.9)", margin: 0, fontWeight: 500 }}>
                   If your organization isn&apos;t visible, credible, and consistent throughout that journey, you&apos;re likely being overlooked before the conversation even begins.
                 </p>
               </div>
@@ -567,50 +594,83 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Journey timeline */}
-          <div style={{ position: "relative" }}>
-            <div style={{ position: "absolute", top: 44, left: "10%", right: "10%", height: 2, background: "linear-gradient(to right, #0F1B2D, #cb772d)", zIndex: 0 }} />
-            <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "flex", justifyContent: "space-between", position: "relative", zIndex: 1 }}>
-              {[
-                {
-                  step: "01", label: "Discover",
-                  lines: ["Buyers begin by searching for answers, not vendors.", "Whether they're using search engines, AI assistants, industry publications, social platforms, or peer communities, your business needs to be present where discovery starts.", "If buyers can't find you, your growth never begins."],
-                },
-                {
-                  step: "02", label: "Evaluate",
-                  lines: ["Once discovered, buyers compare their options.", "They assess your expertise, messaging, services, reputation, website, and how clearly you communicate the value you bring.", "Every interaction either reinforces confidence or creates doubt."],
-                },
-                {
-                  step: "03", label: "Trust",
-                  lines: ["Trust is earned long before the first meeting.", "Thought leadership, customer success stories, reviews, strategic content, and a consistent brand presence all shape buying decisions.", "Organizations that invest in authority become the ones buyers remember, and recommend."],
-                },
-                {
-                  step: "04", label: "Engage",
-                  lines: ["When buyers are ready to take the next step, the experience should feel effortless.", "Clear messaging, intuitive websites, effective outreach, and connected customer journeys help transform interest into meaningful conversations."],
-                },
-                {
-                  step: "05", label: "Choose",
-                  lines: ["Winning new business isn't about being the loudest voice in the market.", "It's about becoming the most discoverable, credible, and trusted choice when buyers are ready to decide."],
-                },
-              ].map(({ step, label, lines }, i) => (
-                <div key={step} style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1 }}>
-                  <div style={{
-                    width: 88, height: 88, borderRadius: "50%",
-                    background: i < 4 ? "#0F1B2D" : "#cb772d",
-                    border: `3px solid ${i < 4 ? "#0F1B2D" : "#cb772d"}`,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    marginBottom: 20, boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
-                  }}>
-                    <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontWeight: 400, fontSize: 24, color: i < 4 ? "#cb772d" : "#FFFFFF" }}>{step}</span>
-                  </div>
-                  <h4 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 15, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: i === 4 ? "#cb772d" : "#0F1B2D", marginBottom: 8, textAlign: "center" }}>{label}</h4>
-                  {lines.map((line, li) => (
-                    <p key={li} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: li === 0 ? "#555" : "#888", textAlign: "center", maxWidth: 172, marginBottom: li < lines.length - 1 ? 6 : 0 }}>{line}</p>
-                  ))}
+          {/* Journey stage intro */}
+          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ textAlign: "center", marginBottom: 48 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 16 }}>
+              {["Discover", "Evaluate", "Trust", "Engage", "Choose"].map((s, i) => (
+                <div key={s} style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                  <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: i === 4 ? "#cb772d" : "#0F1B2D" }}>{s}</span>
+                  {i < 4 && <svg width="20" height="10" viewBox="0 0 20 10" fill="none"><path d="M2 5h13M11 1.5l4.5 3.5-4.5 3.5" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
                 </div>
               ))}
             </div>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.7, color: "#777", maxWidth: 640, margin: "0 auto", fontStyle: "italic" }}>
+              Each stage represents a critical moment where your brand can either build confidence or lose the opportunity to a competitor.
+            </p>
           </div>
+
+          {/* Journey cards — 5 column cards */}
+          <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
+            {[
+              {
+                step: "01", label: "Discover",
+                lead: "Buyers begin by searching for answers, not vendors.",
+                detail: "Whether they're using search engines, AI assistants, industry publications, social platforms, or peer communities, your business needs to be present where discovery starts.",
+                closing: "If buyers can't find you, your growth never begins.",
+              },
+              {
+                step: "02", label: "Evaluate",
+                lead: "Once discovered, buyers compare their options.",
+                detail: "They assess your expertise, messaging, services, reputation, website, and how clearly you communicate the value you bring.",
+                closing: "Every interaction either reinforces confidence or creates doubt.",
+              },
+              {
+                step: "03", label: "Trust",
+                lead: "Trust is earned long before the first meeting.",
+                detail: "Thought leadership, customer success stories, reviews, strategic content, and a consistent brand presence all shape buying decisions.",
+                closing: "Organizations that invest in authority become the ones buyers remember, and recommend.",
+              },
+              {
+                step: "04", label: "Engage",
+                lead: "When buyers are ready to take the next step, the experience should feel effortless.",
+                detail: "Clear messaging, intuitive websites, effective outreach, and connected customer journeys help transform interest into meaningful conversations.",
+                closing: "",
+              },
+              {
+                step: "05", label: "Choose",
+                lead: "Winning new business isn't about being the loudest voice in the market.",
+                detail: "It's about becoming the most discoverable, credible, and trusted choice when buyers are ready to decide.",
+                closing: "",
+                highlight: true,
+              },
+            ].map(({ step, label, lead, detail, closing, highlight }, i) => (
+              <div key={step} style={{
+                position: "relative",
+                background: highlight ? "#0F1B2D" : "#F9F8F6",
+                borderRadius: 12,
+                borderTop: `3px solid ${highlight ? "#cb772d" : i === 0 ? "#cb772d" : "rgba(15,27,45,0.2)"}`,
+                padding: "28px 20px 32px",
+                display: "flex", flexDirection: "column",
+                transition: "transform 0.25s, box-shadow 0.25s",
+                transitionDelay: `${i * 0.08}s`,
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)"; (e.currentTarget as HTMLDivElement).style.boxShadow = highlight ? "0 16px 40px rgba(203,119,45,0.25)" : "0 12px 36px rgba(0,0,0,0.1)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
+              >
+                {/* Step chip */}
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: highlight ? "#cb772d" : "#0F1B2D", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, color: highlight ? "#fff" : "#cb772d" }}>{step}</span>
+                  </div>
+                  <h4 style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 16, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.1em", color: highlight ? "#cb772d" : "#0F1B2D", margin: 0 }}>{label}</h4>
+                </div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, lineHeight: 1.7, color: highlight ? "rgba(255,255,255,0.9)" : "#444", fontWeight: 600, marginBottom: 10 }}>{lead}</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.7, color: highlight ? "rgba(255,255,255,0.65)" : "#777", marginBottom: closing ? 10 : 0, flexGrow: 1 }}>{detail}</p>
+                {closing && <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, lineHeight: 1.65, color: "#cb772d", fontWeight: 600, marginBottom: 0, marginTop: "auto", paddingTop: 10, borderTop: `1px solid ${highlight ? "rgba(255,255,255,0.1)" : "rgba(203,119,45,0.2)"}` }}>{closing}</p>}
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
