@@ -160,6 +160,7 @@ function ServiceCarousel() {
     {
       number: "01",
       title: "Brand Strategy",
+      icon: "/images/icons/icon-briefcase.svg",
       subtitle: "Build a Brand Buyers Remember and Competitors Can't Replicate",
       description: "Strong brands don't happen by accident. They are built through research, positioning, and deliberate strategic decisions. We help organizations uncover what makes them different, clarify how they communicate value, and create a brand that earns trust before the first conversation.",
       deliverables: ["Market Research", "Competitor Analysis", "Brand Positioning", "Messaging Framework", "Brand Development"],
@@ -168,6 +169,7 @@ function ServiceCarousel() {
     {
       number: "02",
       title: "AI Visibility & Discoverability",
+      icon: "/images/icons/icon-lightbulb.svg",
       subtitle: "Be Found Where Modern Buyers Search",
       description: "Today's buyers don't rely on a single search engine. They ask AI assistants, compare providers, explore industry content, and validate decisions across multiple digital channels. We help organizations strengthen their presence across search, AI platforms, and emerging discovery channels so they're visible when buying decisions begin.",
       deliverables: ["AI Visibility Diagnostic", "SEO & AI Foundation", "AI Authority Growth System", "AI Market Dominance Engine"],
@@ -176,6 +178,7 @@ function ServiceCarousel() {
     {
       number: "03",
       title: "Go-to-Market Strategy",
+      icon: "/images/icons/icon-lightning.svg",
       subtitle: "Turn Strategy into Commercial Momentum",
       description: "A successful go-to-market strategy aligns your market opportunity, messaging, channels, sales efforts, and customer journey. We work alongside leadership teams to develop practical GTM strategies that reduce uncertainty, accelerate execution, and create repeatable growth.",
       deliverables: ["GTM Foundation", "Growth Engine", "Revenue Accelerator"],
@@ -184,6 +187,7 @@ function ServiceCarousel() {
     {
       number: "04",
       title: "Revenue Engineering",
+      icon: "/images/icons/icon-barchart.svg",
       subtitle: "Build the Systems Behind Sustainable Growth",
       description: "Revenue isn't created by one campaign or one department. It results from connected systems that align marketing, sales, technology, automation, and analytics around measurable business outcomes. We help organizations simplify complexity, improve operational efficiency, and build scalable revenue infrastructure.",
       deliverables: ["Marketing Automation", "CRM Optimization", "Revenue Operations", "Funnel Optimization", "Reporting & Attribution"],
@@ -192,6 +196,7 @@ function ServiceCarousel() {
     {
       number: "05",
       title: "Outbound Growth",
+      icon: "/images/icons/icon-trending.svg",
       subtitle: "Create Conversations That Convert Into Opportunities",
       description: "Even the strongest brand needs a proactive pipeline. We design outbound programs that combine research, personalization, and sales enablement to connect your team with the right prospects at the right time. Our approach focuses on quality conversations, not high-volume outreach.",
       deliverables: ["LinkedIn Outreach", "Email Outreach", "SDR Programs", "Appointment Setting", "Sales Enablement"],
@@ -200,6 +205,7 @@ function ServiceCarousel() {
     {
       number: "06",
       title: "Website Development",
+      icon: "/images/icons/icon-chat.svg",
       subtitle: "Build Digital Experiences That Support Growth",
       description: "Your website is often the first place buyers validate their decision. We create websites that combine strategic messaging, user experience, AI visibility, and conversion optimization to turn visitors into qualified opportunities. Beautiful design is only the beginning. Every website is built to perform.",
       deliverables: ["Website Strategy", "UX/UI Planning", "Website Design & Development", "Landing Pages", "Conversion Optimization"],
@@ -208,6 +214,7 @@ function ServiceCarousel() {
     {
       number: "07",
       title: "Capital Raise Support",
+      icon: "/images/icons/icon-gear.svg",
       subtitle: "Help Investors Believe in Your Vision",
       description: "Raising capital requires more than a polished presentation. It requires a compelling narrative supported by credible market positioning, financial storytelling, and strategic outreach. We help founders prepare for meaningful conversations with investors by creating fundraising assets that communicate confidence and opportunity.",
       deliverables: ["Capital Raise Decks", "Investor Database (150K+)", "Investor Outreach Campaigns", "Investor GTM Support"],
@@ -272,6 +279,10 @@ function ServiceCarousel() {
 
           {/* Right — deliverables */}
           <div style={{ padding: "56px 56px 56px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            {/* Brand icon */}
+            <div style={{ width: 72, height: 72, borderRadius: 16, background: "rgba(203,119,45,0.10)", border: "1px solid rgba(203,119,45,0.22)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 28 }}>
+              <img src={s.icon} alt="" style={{ width: 40, height: 40 }} />
+            </div>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 28 }}>
               What&apos;s Included
             </p>
@@ -341,6 +352,7 @@ function ServiceCarousel() {
           onMouseEnter={e => { if (i !== activeIdx) { (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.65)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.2)"; } }}
           onMouseLeave={e => { if (i !== activeIdx) { (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.3)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "transparent"; } }}
           >
+            <img src={sv.icon} alt="" style={{ width: 22, height: 22, marginBottom: 6, opacity: i === activeIdx ? 1 : 0.4, display: "block", margin: "0 auto 6px" }} />
             {sv.title}
           </button>
         ))}
@@ -1102,22 +1114,22 @@ export default function Home() {
               {
                 number: "01", title: "Human Intelligence First",
                 body: "Technology amplifies expertise, it doesn't replace it.",
-                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="16" cy="16" r="10" stroke="#cb772d" strokeWidth="2"/><path d="M24 24l7 7" stroke="#cb772d" strokeWidth="2.5" strokeLinecap="round"/><path d="M13 13l6 6M19 13l-6 6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/></svg>),
+                icon: (<img src="/images/icons/icon-lightbulb.svg" alt="" style={{ width: 36, height: 36 }} />),
               },
               {
                 number: "02", title: "Strategy Before Tactics",
                 body: "Execution only creates value when it's guided by clear strategic direction.",
-                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4l3.6 7.6 8.4 1.1-6.1 5.9 1.5 8.3L18 23l-7.4 3.9 1.5-8.3-6.1-5.9 8.4-1.1z" stroke="#cb772d" strokeWidth="2" strokeLinejoin="round"/></svg>),
+                icon: (<img src="/images/icons/icon-briefcase.svg" alt="" style={{ width: 36, height: 36 }} />),
               },
               {
                 number: "03", title: "Connected Systems",
                 body: "Brand, marketing, sales, technology, and operations perform better when they work together, not in isolation.",
-                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="10" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/><circle cx="26" cy="18" r="5" stroke="#cb772d" strokeWidth="2"/><path d="M15 18h6" stroke="#cb772d" strokeWidth="2" strokeLinecap="round"/></svg>),
+                icon: (<img src="/images/icons/icon-gear.svg" alt="" style={{ width: 36, height: 36 }} />),
               },
               {
                 number: "04", title: "Outcomes Over Activity",
                 body: "Success isn't measured by how much marketing you produce. It's measured by stronger positioning, better opportunities, and sustainable revenue growth.",
-                icon: (<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="22" width="7" height="10" rx="1" stroke="#cb772d" strokeWidth="2"/><rect x="14" y="14" width="7" height="18" rx="1" stroke="#cb772d" strokeWidth="2"/><rect x="24" y="6" width="7" height="26" rx="1" stroke="#cb772d" strokeWidth="2"/><path d="M6 18l10-8 10-6" stroke="#cb772d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>),
+                icon: (<img src="/images/icons/icon-barchart.svg" alt="" style={{ width: 36, height: 36 }} />),
               },
             ].map(({ number, title, body, icon }, i) => (
               <div key={number} className={`reveal${diffView.inView ? ' visible' : ''}`} style={{
@@ -1181,17 +1193,17 @@ export default function Home() {
               {
                 label: "Brand Strategy", sub: "Build the foundation.", num: "01",
                 body: "Every successful growth initiative begins with clarity. We help organizations define their market position, differentiate from competitors, and build messaging that resonates with the audiences they want to reach.",
-                icon: (<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L26 9v10l-12 6L2 19V9L14 3z" stroke="#cb772d" strokeWidth="1.8" strokeLinejoin="round"/><path d="M14 3v22M2 9l12 6 12-6" stroke="#cb772d" strokeWidth="1.4" strokeLinejoin="round"/></svg>),
+                icon: (<img src="/images/icons/icon-briefcase.svg" alt="" style={{ width: 28, height: 28 }} />),
               },
               {
                 label: "AI Visibility & Discoverability", sub: "Be found where buyers are looking.", num: "02",
                 body: "Modern buyers search differently. We help organizations increase their visibility across search engines, AI-powered platforms, industry publications, and digital channels where buying decisions begin.",
-                icon: (<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="13" cy="13" r="8" stroke="#cb772d" strokeWidth="1.8"/><path d="M19 19l5 5" stroke="#cb772d" strokeWidth="2.2" strokeLinecap="round"/><path d="M10 13h6M13 10v6" stroke="#cb772d" strokeWidth="1.6" strokeLinecap="round"/></svg>),
+                icon: (<img src="/images/icons/icon-lightbulb.svg" alt="" style={{ width: 28, height: 28 }} />),
               },
               {
                 label: "Go-to-Market Strategy", sub: "Turn strategy into execution.", num: "03",
                 body: "A great strategy only creates value when it's executed effectively. We develop go-to-market plans that align positioning, messaging, channels, campaigns, and sales efforts to generate predictable commercial momentum.",
-                icon: (<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 22L12 14l5 5 7-10" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 8h5v5" stroke="#cb772d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>),
+                icon: (<img src="/images/icons/icon-trending.svg" alt="" style={{ width: 28, height: 28 }} />),
               },
             ].map(({ label, sub, num, body, icon }, idx) => (
               <div key={label}
