@@ -637,12 +637,9 @@ export default function Home() {
               <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.85, color: "#666", marginBottom: 24 }}>
                 By the time someone reaches out, they&apos;ve often already narrowed their shortlist.
               </p>
-              {/* Impact callout */}
-              <div className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ background: "#F9F6F1", borderLeft: "4px solid #cb772d", borderRadius: "0 8px 8px 0", padding: "20px 24px" }}>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#333", margin: 0, fontWeight: 500 }}>
-                  If your organization isn&apos;t visible, credible, and consistent throughout that journey, you&apos;re likely being overlooked before the conversation even begins.
-                </p>
-              </div>
+              <p className={`reveal${buyerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#555", margin: 0 }}>
+                If your organization isn&apos;t visible, credible, and consistent throughout that journey, you&apos;re likely being overlooked before the conversation even begins.
+              </p>
             </div>
           </div>
 
