@@ -1016,7 +1016,7 @@ export default function Home() {
           </div>
 
           {/* ── Our Philosophy — stacked lines + supporting copy ── */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.22)", borderRadius: 16, padding: "48px 56px", marginBottom: 28 }}>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>Our Philosophy</p>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.9)", marginBottom: 24, fontWeight: 500 }}>
               Great brands aren&apos;t built through isolated tactics.
@@ -1030,7 +1030,7 @@ export default function Home() {
                 "Accelerated through execution.",
                 "Measured by business outcomes.",
               ].map((line, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.18)", borderRadius: 24, padding: "8px 16px" }}>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 24, padding: "8px 16px" }}>
                   <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#cb772d", flexShrink: 0 }} />
                   <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.8)", fontWeight: 500 }}>{line}</span>
                 </div>
@@ -1045,10 +1045,10 @@ export default function Home() {
           </div>
 
           {/* ── Our Commitment — 2-col ── */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(203,119,45,0.08)", border: "1px solid rgba(203,119,45,0.2)", borderRadius: 16, overflow: "hidden", marginBottom: 28 }}>
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.22)", borderRadius: 16, overflow: "hidden", marginBottom: 28 }}>
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
-              <div style={{ padding: "48px 48px", borderRight: "1px solid rgba(203,119,45,0.15)" }}>
+              <div style={{ padding: "48px 48px", borderRight: "1px solid rgba(255,255,255,0.15)" }}>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>Our Commitment</p>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 16 }}>
                   Every recommendation we make is guided by one question:
@@ -1097,15 +1097,15 @@ export default function Home() {
             ].map(({ number, title, body, icon }, i) => (
               <div key={number} className={`reveal${diffView.inView ? ' visible' : ''}`} style={{
                 position: "relative",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.25)",
                 borderRadius: 12, padding: "32px 28px",
                 transition: "background 0.25s, border-color 0.25s, transform 0.25s",
                 transitionDelay: `${i * 0.08}s`,
                 overflow: "hidden",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(203,119,45,0.1)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(203,119,45,0.35)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.22)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.4)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.12)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.25)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}
               >
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(to right, #cb772d, transparent)" }} />
                 <div style={{ width: 48, height: 48, borderRadius: 10, background: "rgba(203,119,45,0.1)", border: "1px solid rgba(203,119,45,0.2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
@@ -1119,7 +1119,7 @@ export default function Home() {
           </div>
 
           {/* ── Closing brand statement ── */}
-          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ textAlign: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: "48px 64px" }}>
+          <div className={`reveal${diffView.inView ? ' visible' : ''}`} style={{ textAlign: "center", background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: 16, padding: "48px 64px" }}>
             <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: "clamp(18px, 2vw, 26px)", fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.06em", color: "#FFFFFF", marginBottom: 16, lineHeight: 1.3 }}>
               Modern growth requires more than marketing.
             </p>
@@ -1299,9 +1299,9 @@ export default function Home() {
                   body: "While every engagement is tailored to your goals, our approach follows a proven methodology that transforms strategy into execution — and execution into measurable growth.",
                 },
               ].map(({ heading, body }) => (
-                <div key={heading} style={{ padding: "28px 28px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12 }}>
+                <div key={heading} style={{ padding: "28px 28px", background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.20)", borderRadius: 12 }}>
                   <p style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 13, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: "#cb772d", marginBottom: 12, lineHeight: 1.3 }}>{heading}</p>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.55)", margin: 0 }}>{body}</p>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.80)", margin: 0 }}>{body}</p>
                 </div>
               ))}
             </div>
@@ -1315,7 +1315,6 @@ export default function Home() {
         background: "#F8F4EF",
       }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 60% 40%, rgba(203,119,45,0.06) 0%, transparent 65%)" }} />
-        <CircuitOverlay />
         <div ref={processView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 80 }}>
             <p className={`reveal${processView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
@@ -1468,57 +1467,30 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Stats card — dark navy centered */}
-          <div className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 18, overflow: "hidden", marginBottom: 56, boxShadow: "0 24px 64px rgba(15,27,45,0.22)" }}>
-            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-              {[
-                { num: "3X",   label: "Pipeline Growth",    note: "Average increase across engagements",   pct: 75 },
-                { num: "60%",  label: "Less Wasted Effort", note: "Through AI automation and systems",     pct: 60 },
-                { num: "100%", label: "Visibility",         note: "Know exactly what's working",           pct: 100 },
-              ].map(({ num, label, note, pct }, i) => (
-                <div key={num} style={{ padding: "52px 40px 44px", textAlign: "center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
-                  <div className={`reveal scale-in stagger-${i + 1}${resultsView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 72, fontWeight: 400, color: "#cb772d", lineHeight: 1, marginBottom: 6 }}>{num}</div>
-                  <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#FFFFFF", marginBottom: 6 }}>{label}</div>
-                  {/* Progress bar */}
-                  <div style={{ height: 5, background: "rgba(255,255,255,0.08)", borderRadius: 3, margin: "16px auto 10px", maxWidth: 180, overflow: "hidden", position: "relative" }}>
-                    <div style={{
-                      height: "100%",
-                      width: resultsView.inView ? `${pct}%` : "0%",
-                      background: "linear-gradient(90deg, #8B5E24, #cb772d, #e8a44a)",
-                      borderRadius: 3,
-                      transition: "width 1.4s cubic-bezier(0.22,1,0.36,1) 0.5s",
-                      position: "relative",
-                      overflow: "hidden",
-                      boxShadow: "0 0 10px rgba(203,119,45,0.55), 0 0 24px rgba(203,119,45,0.25)",
-                    }}>
-                      {/* Shimmer sweep */}
-                      <div style={{
-                        position: "absolute", inset: 0,
-                        background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%)",
-                        backgroundSize: "200% 100%",
-                        animation: resultsView.inView ? "shimmer 2s ease-in-out 1.8s infinite" : "none",
-                      }} />
-                    </div>
-                    {/* Glowing end-cap dot */}
-                    <div style={{
-                      position: "absolute", top: "50%", transform: "translateY(-50%)",
-                      left: resultsView.inView ? `calc(${pct}% - 5px)` : "0%",
-                      width: 10, height: 10, borderRadius: "50%",
-                      background: "#e8a44a",
-                      boxShadow: "0 0 8px #cb772d, 0 0 16px rgba(203,119,45,0.7)",
-                      transition: "left 1.4s cubic-bezier(0.22,1,0.36,1) 0.5s",
-                      opacity: resultsView.inView ? 1 : 0,
-                    }} />
-                  </div>
-                  <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.50)", fontStyle: "italic" }}>{note}</div>
+          {/* Stats card — warm gradient columns */}
+          <div className={`reveal${resultsView.inView ? ' visible' : ''}`} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 56 }}>
+            {[
+              { num: "3X",   label: "Pipeline Growth",    note: "Average increase across engagements",   bg: "linear-gradient(135deg, #F8F4EF 0%, #EDE8DF 100%)" },
+              { num: "60%",  label: "Less Wasted Effort", note: "Through AI automation and systems",     bg: "linear-gradient(135deg, #0F1B2D 0%, #1a2e44 100%)" },
+              { num: "100%", label: "Visibility",         note: "Know exactly what's working",           bg: "linear-gradient(135deg, #cb772d 0%, #8B5E24 100%)" },
+            ].map(({ num, label, note, bg }, i) => {
+              const isDark = i === 1 || i === 2;
+              return (
+                <div key={num} className={`reveal scale-in stagger-${i + 1}${resultsView.inView ? ' visible' : ''}`} style={{
+                  background: bg, borderRadius: 16, padding: "52px 40px 44px", textAlign: "center",
+                  boxShadow: "0 8px 32px rgba(15,27,45,0.12)",
+                }}>
+                  <div style={{ fontFamily: "'Burford Rustic Black', sans-serif", fontSize: 72, fontWeight: 400, color: isDark ? "#FFFFFF" : "#0F1B2D", lineHeight: 1, marginBottom: 8 }}>{num}</div>
+                  <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: isDark ? "rgba(255,255,255,0.85)" : "#0F1B2D", marginBottom: 10 }}>{label}</div>
+                  <div style={{ width: 40, height: 3, background: isDark ? "rgba(255,255,255,0.4)" : "#cb772d", borderRadius: 2, margin: "0 auto 14px" }} />
+                  <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, color: isDark ? "rgba(255,255,255,0.65)" : "#666", fontStyle: "italic" }}>{note}</div>
                 </div>
-              ))}
-            </div>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.30)", textAlign: "center", fontStyle: "italic", padding: "0 40px 20px" }}>
-              * Representative outcomes based on client implementations. Results vary by business model and execution.
-            </p>
+              );
+            })}
           </div>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: "#888", textAlign: "center", fontStyle: "italic", marginBottom: 40 }}>
+            * Representative outcomes based on client implementations. Results vary by business model and execution.
+          </p>
 
           {/* Outcome cards — white, 2-col grid with copper icon + left accent */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20, marginBottom: 56 }}>
@@ -1694,8 +1666,8 @@ export default function Home() {
       </section>
 
       {/* ── S11: STRATEGIC GROWTH PARTNER ────────────────── */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-logs.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(248,242,232,0.90)" }} />
+      <section style={{ position: "relative", overflow: "hidden", padding: "120px 40px 120px", backgroundImage: "url('/images/bg-peaks.png')", backgroundSize: "cover", backgroundPosition: "center 40%" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(248,244,239,0.88)" }} />
         <div ref={partnerView.ref} style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
@@ -1713,16 +1685,15 @@ export default function Home() {
           </div>
 
           {/* We Build Alongside Your Team */}
-          <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "#0F1B2D", borderRadius: 16, padding: "48px 56px", marginBottom: 64, overflow: "hidden" }}>
-            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
+          <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ position: "relative", background: "rgba(255,255,255,0.82)", borderLeft: "4px solid #cb772d", borderRadius: "0 16px 16px 0", padding: "48px 56px", marginBottom: 64, overflow: "hidden", boxShadow: "0 8px 32px rgba(15,27,45,0.10)" }}>
             <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>We Build Alongside Your Team</p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: 12 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#2a3a4a", marginBottom: 12 }}>
               Whether you&apos;re launching a new offering, repositioning your brand, improving visibility, scaling demand generation, strengthening revenue operations, or preparing for investment, we work as an extension of your leadership team.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#444", marginBottom: 12 }}>
               Our role isn&apos;t simply to execute deliverables. It&apos;s to help you make better strategic decisions, prioritize the right opportunities, and build systems that continue creating value long after individual projects are complete.
             </p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.8, color: "#444" }}>
               Because the strongest partnerships are built on shared goals — not transactions.
             </p>
           </div>
@@ -1795,25 +1766,24 @@ export default function Home() {
 
           {/* Our Promise box */}
           <div className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{
-            position: "relative", background: "#0F1B2D", borderRadius: 16, padding: "56px 64px",
+            position: "relative", background: "rgba(255,255,255,0.82)", borderRadius: 16, padding: "56px 64px",
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center",
-            overflow: "hidden",
+            overflow: "hidden", boxShadow: "0 8px 32px rgba(15,27,45,0.10)", borderLeft: "4px solid #cb772d",
           }}>
-            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(to right, transparent, #cb772d, transparent)" }} />
             <div>
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 16 }}>
                 Our Promise
               </p>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.9, color: "rgba(255,255,255,0.8)", marginBottom: 8 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.9, color: "#2a3a4a", marginBottom: 8 }}>
                 We won&apos;t recommend services you don&apos;t need.
               </p>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.9, color: "rgba(255,255,255,0.8)", marginBottom: 8 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.9, color: "#2a3a4a", marginBottom: 8 }}>
                 We won&apos;t chase vanity metrics.
               </p>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.9, color: "rgba(255,255,255,0.8)", marginBottom: 20 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, lineHeight: 1.9, color: "#2a3a4a", marginBottom: 20 }}>
                 We won&apos;t confuse activity with progress.
               </p>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.65)" }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, lineHeight: 1.8, color: "#555" }}>
                 Instead, we&apos;ll help you focus on what matters most:
               </p>
             </div>
@@ -1827,13 +1797,13 @@ export default function Home() {
                 "Supporting smarter business decisions.",
               ].map(item => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                  <div style={{ width: 28, height: 28, borderRadius: "50%", background: "rgba(203,119,45,0.15)", border: "1px solid rgba(203,119,45,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div style={{ width: 28, height: 28, borderRadius: "50%", background: "rgba(203,119,45,0.12)", border: "1px solid rgba(203,119,45,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3L10 3" stroke="#cb772d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </div>
-                  <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: "rgba(255,255,255,0.85)" }}>{item}</span>
+                  <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: "#333" }}>{item}</span>
                 </div>
               ))}
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontStyle: "italic", lineHeight: 1.7, color: "rgba(255,255,255,0.65)", marginTop: 8 }}>
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontStyle: "italic", lineHeight: 1.7, color: "#666", marginTop: 8 }}>
                 Because when your business grows, that&apos;s how we measure our success.
               </p>
             </div>
