@@ -517,7 +517,7 @@ export default function Home() {
 
       {/* ── S1: HERO ──────────────────────────────────────── */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <video autoPlay muted loop playsInline poster="/images/bg-hero-lake.png" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}>
+        <video autoPlay muted loop playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}>
           <source src="/images/hero_gif.mp4" type="video/mp4" />
         </video>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,18,40,0.55)" }} />

@@ -77,10 +77,10 @@ export default function GTMPage() {
       {/* ── HERO ───────────────────────────────────────────── */}
       <section style={{
         position: "relative", minHeight: "92vh", display: "flex", alignItems: "center", overflow: "hidden",
-        backgroundImage: "url('/images/horse mane circuit lines_1.png')",
-        backgroundSize: "cover", backgroundPosition: "center top",
+        backgroundImage: "url('/images/bg-hero-lake.png')",
+        backgroundSize: "cover", backgroundPosition: "center 40%",
       }}>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(8,16,36,0.90)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(8,16,36,0.72)" }} />
         <CircuitOverlay />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "160px 40px 100px", width: "100%" }}>
           <p className="hero-body-anim" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#cb772d", marginBottom: 20 }}>
