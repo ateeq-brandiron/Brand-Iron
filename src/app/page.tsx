@@ -936,7 +936,7 @@ export default function Home() {
 
           {/* 6 outcome cards */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-            [
+            {[
               { title: "Greater Discoverability", body: "Become easier to find across search engines, AI-powered platforms, industry publications, and digital channels where modern buyers begin their research. When buyers can find you earlier, you create more opportunities to earn their business." },
               { title: "Stronger Brand Authority", body: "Build trust through strategic positioning, consistent messaging, thought leadership, and a digital presence that reinforces credibility at every stage of the buying journey. Organizations that establish authority become the ones buyers remember, and recommend." },
               { title: "Higher-Quality Demand", body: "Shift from generating more activity to creating better opportunities. By aligning messaging, targeting, and customer journeys, we help organizations attract prospects who are a stronger fit for their business." },
@@ -1152,7 +1152,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.9, color: "rgba(255,255,255,0.75)", maxWidth: 860, margin: "48px auto 0", textAlign: "center" }}>
+          <p className={`reveal${partnerView.inView ? ' visible' : ''}`} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 17, lineHeight: 1.9, color: "#555", maxWidth: 860, margin: "48px auto 0", textAlign: "center" }}>
             We&apos;re here to help you build what&apos;s next. Whether you&apos;re defining your brand, entering a new market, improving AI visibility, scaling revenue operations, or preparing for your next stage of growth, Brand Iron is ready to help you move forward with clarity, confidence, and purpose. Every successful growth story begins with a conversation. Let&apos;s start yours.
           </p>
         </div>
